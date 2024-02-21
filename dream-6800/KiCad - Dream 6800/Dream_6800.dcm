@@ -1,0 +1,90 @@
+EESchema-DOCLIB  Version 2.0  Date: 03/11/2018 10:58:40
+#
+$CMP 6116
+D SRAM 2KO
+K SRAM 2KO
+$ENDCMP
+#
+$CMP 74HC74
+D Dual D FlipFlop, Set & Reset
+K TTL DFF
+F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+$CMP 74LS04
+D Hex Inverseur
+K TTL not inv
+$ENDCMP
+#
+$CMP 74LS08
+D Quad And2
+K TTL and2
+$ENDCMP
+#
+$CMP 74LS09
+D Quad And2 Open Collect
+K TTL and2 OpenCol
+$ENDCMP
+#
+$CMP 74LS10
+D Triple Nand3
+K TTL Nand3
+$ENDCMP
+#
+$CMP 74LS11
+D Triple And3
+K TTL And3
+$ENDCMP
+#
+$CMP 74LS123
+D Dual retriggerable Monostable
+K TTL monostable
+$ENDCMP
+#
+$CMP 74LS20
+D Dual Nand 4 inputs
+K TTL Nand4
+$ENDCMP
+#
+$CMP 74LS22
+D Dual Nand 4 inputs Open Collect.
+K TTL Nand4 OpenCol
+$ENDCMP
+#
+$CMP 74LS40
+D Dual Nand 4 inputs
+K TTL Nand4
+$ENDCMP
+#
+$CMP 74LS74
+D Dual D FlipFlop, Set & Reset
+K TTL DFF
+F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+$CMP 74LS93
+D Divide by 2 & 8 counter
+K TTL CNT CNT4
+$ENDCMP
+#
+$CMP CONN_3X2
+D Symbole general de connecteur
+K CONN
+$ENDCMP
+#
+$CMP LM741
+D Op amp
+K Ampliop
+F AmpliOp.sch
+$ENDCMP
+#
+$CMP MC6820
+D Interface parallele 2 x 8 bits
+K MPRO
+$ENDCMP
+#
+$CMP NE566
+D Function Generator
+$ENDCMP
+#
+#End Doc Library

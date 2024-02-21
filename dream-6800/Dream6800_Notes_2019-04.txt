@@ -1,0 +1,292 @@
+;------------------------------------
+; Dream 6800 brief construction notes
+;------------------------------------
+
+Welcome to the construction notes for this slightly modified version of 
+the 1978 DREAM6800 by MJ Bauer.
+
+The main changes centre around the upgrading of the original 2708 EPROM
+to a 2716/2732 permitting a single 5v power supply design, the PSU has
+been redesigned to use a fixed 5v buck switching regulator allowing for cool running
+and wider input voltage range. The final change was to upgrade address decoding logic
+to permit the use of UM6116 2k byte chips this gives a total of 4k byte RAM whilst
+keeping to vintage style IC's.
+
+The parts list below provides a list of all parts required, notes have been added to indicate
+component specifics such as lead pitch, dielectric type etc...
+Part numbers have not been supplied except for the more difficult parts to source where
+a parts list notes section shows the various suppliers I used to obtain these parts.
+Some parts such as the keyboard and speaker were obtained from Ebay, I know no other
+supplier for these specific parts.
+
+
+It is highly recommended to proceed with the build in a structured manner whilst
+referring to the original DREAM6800 documentation and revised schematics :-
+
+1) Inspect the PCB for any damaged traces using a magnifying glass if necessary.
+
+2) Fit one value of the component type at a time, double checking your work as you go.
+   Start with capacitors, then resistors, then IC sockets etc..  DO NOT FIT IC'S !!!!
+
+3) DIL sockets are highly recommended for all IC's, removing soldered IC's can be tricky!!!
+
+4) I would recommend making a little cardboard insulating washer to fit under oscillator crystal.
+
+5) I have insulated the switching regulator from the heatsink but this is not strictly necessary.
+
+6) Apply 12v DC power and verify switching regulator operation (5v output)
+
+7) Insert all IC's and verify operation using original documentation.
+
+
+*** Note ***
+Resistor R19 may need adjustment to get the NE566 VCO to oscillate at 2400hz
+In my board I found that 10k ohm gave correct operation
+
+
+Finally, I hope the board brings you  many hours of nostalgic fun
+
+Regards
+
+David Fry
+
+;----------------
+; COMPONENT LIST
+;----------------
+
+
+;------------
+; Capacitors
+;------------
+
+| C1,C9		150pF		5mm Pitch Ceramic
+      
+| C2         	2.2uF		2.5mm Pitch Tant
+      
+| C3         	10uF		2.5mm Pitch Tant
+        
+| C4         	33nF		5mm Pitch Film
+       
+| C5,C8         10nF		5mm Pitch Film
+       
+| C6         	1nF		5mm Pitch Film
+        
+| C7         	22nF		5mm Pitch Film
+       
+| C10        	3n3		5mm Pitch Ceramic
+      
+| C12        	47pf		5mm Pitch Ceramic
+       
+| C13,C16,C17   100uF		2.5mm Pitch Low Imp Elect
+      
+| C14        	1500uF		5mm Pitch Low Imp Elect
+      
+| C15,C18,C35   22uF		2.5mm Pich Tant
+             
+| C11,C19,C20   100nF		5mm Pitch MLCC Ceramic           
+| C21,C22,C23      
+| C24,C25,C26           
+| C27,C28,C29       
+| C30,C31,C32      
+| C33,C34      
+
+| C36		1uF		2.5mm Pitch Tantalum (Low Imp Elect)
+
+		
+
+;-----------
+; Resistors
+;-----------
+
+| R1         	1k		All resistors are 0.25w metal film
+          
+| R2        	100R 
+       
+| R3,R7,R20	4k7
+                
+| R6         	47          
+        
+| R8,R26       	470
+         
+| R4,R5,R9	2k2
+| R22,R27,R29
+        
+| R10,R25       220
+        
+| R11,R14,R18   10k
+| R23,R28
+        
+| R12,R13       22k         
+                
+| R15,R16,R17   1k5         
+                
+| R19        	5k6 (10k)	Adjust for 2.4Khz osc tone
+                  
+| R21        	6k8         
+               
+| R24        	120                 
+                          
+| R30        	75
+          
+| R31        	10
+          
+| RV1        	5k      
+
+
+
+;----------------
+; Semiconductors
+;----------------
+     
+      
+| D1,D2,D3      1N4148            
+| D4
+     
+| D5         	BAT43
+      
+| D6         	1N5402
+      
+| D7         	MBR350
+
+| D8		1N4002		(1A Std Rectifier)
+
+
+      
+| Q1         	2N3906
+      
+| Q2         	2N3904
+
+      
+    
+| U1         	MC6800
+      
+| U2         	2716		(Or 2732 EPROM)
+        
+| U3,U4		6116        
+       
+| U5,U6         74LS367     
+     
+| U7         	CD4014
+      
+| U8         	MC6875
+     
+| U9         	MC6821
+     
+| U10        	74LS10
+      
+| U11,U17	74LS04
+      
+| U12        	74LS08
+      
+| U13        	CD4040
+      
+| U14,U15	74LS93
+           
+| U16        	74LS20      
+      
+| U18        	74LS11
+      
+| U19        	74LS123
+     
+| U20        	7440		*** SEE PART NOTES ***
+        
+| U21        	74LS74
+      
+| U22        	74121		*** SEE PART NOTES ***
+       
+| U23        	LM741
+       
+| U24        	NE566		*** SEE PART NOTES ***
+       
+| U25        	74LS138
+     
+| U26        	LM2576-5.0	*** SEE PART NOTES ***
+  
+| U27        	LT1054		*** SEE PART NOTES ***
+
+
+
+     
+| X1         	4Mhz		*** SEE PART NOTES ***
+
+| J1         	Video_Out	*** SEE PART NOTES ***
+  
+| J2         	180_DIN		*** SEE PART NOTES ***
+     
+| L1         	10uH Axial 	*** SEE PART NOTES ***
+       
+| L2         	120uH 		*** SEE PART NOTES ***      
+
+| CON1       	12v DC		*** SEE PART NOTES ***
+
+ 
+       
+| P1         	EPROM		3 pin 0.1" header
+       
+| P2         	Spkr 		3 pin 0.1" Molex KK connector
+       
+| P3         	I/O Pins  	8 pin 0.1" Molex KK connector
+  
+| P4         	Key Matrix  	8 pin 0.1" Molex KK connector
+
+| P5         	Keys    	3 pin 0.1" Molex KK connector
+    
+| P6         	Expansion	NOT FITTED
+
+
+
+
+;-------------
+; PARTS NOTES
+;-------------
+
+Due to obsolesence some parts for this project are either tricky to locate or
+are component footprint specific, here is a list of suppliers and part numbers
+from where I obtained these parts..
+It maybe that you can locate these parts elsewhere, but I doubt it will
+be possible to obtain all parts from a single supplier...
+
+
+;;; DIGIKEY PARTS
+
+https://www.digikey.co.uk/
+
+-RV1-	5k Preset Resistor		3386H-1-502LF		3386H-502LF-ND
+-L1-    FIXED IND 10UH 370MA 750 MOHM	78F100J-RC		M10135-ND
+-L2-	FIXED IND 120UH 3.2A 82 MOHM	AIUR-15-121K		AIUR-15-121K-ND
+-U26-	IC REG BUCK 5V 3A TO220-5	LM2576T-5.0/NOPB	LM2576T-5.0/NOPB-ND	
+-D7-	DIODE SCHOTTKY 50V 3A DO201AD	MBR350RLG		MBR350RLGOSCT-ND
+-D5-	DIODE SCHOTTKY 30V 200MA DO35	BAT43			497-2492-1-ND
+-D6-	DIODE GEN PURP 200V 3A DO201AD	1N5402RLG		1N5402RLGOSCT-ND
+-X1-	CRYSTAL 4.0000MHZ SERIES T/H	ECS-40-S-1		X081-ND
+-CON1-	2.1mm Power Jack		EJ508A			EJ508A-ND
+-C14-	1500uF 25v SMPS Capacitor	UHW1E152MHD		493-6948-ND
+	HEATSINK TO220 			530614B00000G		HS278-ND
+-J1-    CONN RCA JACK MONO 3.2MM R/A	PJRAN1X1U04X		PJRAN1X1U04X-ND
+
+
+
+;;; UTSOURCE PARTS
+
+https://uk.utsource.net/
+
+-U24-	NE566
+-U27-	LT1054
+
+
+
+;;; EBAY PARTS (Use Advanced Search by keyword & seller)
+
+-J2-	5 PIN DIN PCB SKT		Ebay seller - lyn3009
+	20 KEY HEX KEYBOARD ASSY	Ebay seller - wonderco_buy
+	57mm 8OHM SPEAKER		Ebay seller - szdepot88
+-U20-	7440 TTL			Ebay seller - vila_restor
+-U22-	74121 TTL			Ebay seller - vila_restor
+
+
+
+
+
+
+
+

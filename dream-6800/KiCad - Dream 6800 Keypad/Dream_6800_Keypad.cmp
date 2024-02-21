@@ -1,0 +1,171 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 08/11/2018 22:19:08
+
+BeginCmp
+TimeStamp = /5BE0FD3F;
+Reference = K1;
+ValeurCmp = Keys;
+IdModule  = VinKK3;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BE0FD30;
+Reference = P1;
+ValeurCmp = Key Matrix;
+IdModule  = VinKK8;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC2FF25;
+Reference = P2;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC2FF1F;
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC2FF19;
+Reference = P4;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC2FF0C;
+Reference = P5;
+ValeurCmp = CONN_1;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307C5;
+Reference = SW1;
+ValeurCmp = C;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307CB;
+Reference = SW2;
+ValeurCmp = 8;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307D1;
+Reference = SW3;
+ValeurCmp = 4;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307D7;
+Reference = SW4;
+ValeurCmp = 0;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC30881;
+Reference = SW5;
+ValeurCmp = RST;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307DD;
+Reference = SW6;
+ValeurCmp = D;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307EF;
+Reference = SW7;
+ValeurCmp = 9;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC30801;
+Reference = SW8;
+ValeurCmp = 5;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC30813;
+Reference = SW9;
+ValeurCmp = 1;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307E3;
+Reference = SW10;
+ValeurCmp = E;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307F5;
+Reference = SW11;
+ValeurCmp = A;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC30807;
+Reference = SW12;
+ValeurCmp = 6;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC30819;
+Reference = SW13;
+ValeurCmp = 2;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307E9;
+Reference = SW14;
+ValeurCmp = F;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC307FB;
+Reference = SW15;
+ValeurCmp = B;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC3080D;
+Reference = SW16;
+ValeurCmp = 7;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC3081F;
+Reference = SW17;
+ValeurCmp = 3;
+IdModule  = SW_KB1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5BC3087B;
+Reference = SW18;
+ValeurCmp = FN;
+IdModule  = SW_KB1;
+EndCmp
+
+EndListe
