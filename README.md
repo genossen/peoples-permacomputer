@@ -38,3 +38,15 @@ mindset behind which we are functioning:
 
 This project is a humble response to the challenge posed by the above
 problem.
+
+## The People's Permacomputer
+
+The hobbyist computer movement of the 1970s was rich in ideas, and
+courageous--sometimes breathtaking--in its efforts to allow the lay
+person to realise their access to an electronic computer.
+
+One such model of computer that immediately proved attractive for the
+purpose of a permacomputer is Mike Bauer's [DREAM
+6800](http://www.mjbauer.biz/DREAM6800.htm).
+
+...to be continued.
