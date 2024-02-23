@@ -5,6 +5,18 @@ computer", or "the permacomputer") is a project dedicated to
 resourcing the specification, and then construction of a
 'permacomputer'.
 
+## Who?
+
+*"The Committee"*
+
+- [50hz](https://cathode.church/@50htz)
+
+- [shufei](https://social.sdf.org/@Shufei)
+
+- [vidak](https://zoinks.one/users/vidak)
+
+Yes you can join the committee.
+
 ## What is a permacomputer?
 
 A permacomputer is a computer which attempts to embody the virtues of
@@ -39,11 +51,30 @@ mindset behind which we are functioning:
 This project is a humble response to the challenge posed by the above
 problem.
 
-## The People's Permacomputer
+## Intergenerational communication
+
+We seem to take it for granted that a computer in everyone's hand just
+is democratic computing. Indeed, the ubiquity of contemporary
+computation has been confused for 'democracy'.
+
+As quickly as we marched towards computing for the masses, we marched
+just as swiftly away.
+
+There do today however still exist flourishing movements which are
+worthy of mention--although not exclusive in this honour, much of the
+GNU movement is to be credited with _any_ sanity being preserved in
+present-day mass computation.
 
 The hobbyist computer movement of the 1970s was rich in ideas, and
 courageous--sometimes breathtaking--in its efforts to allow the lay
 person to realise their access to an electronic computer.
+
+Need we speak of the hetereogenous array of kit computers and their
+attendant clubs and magazines? Some of mention are influenc
+
+## The People's Permacomputer
+
+
 
 One such model of computer that immediately proved attractive for the
 purpose of a permacomputer is Mike Bauer's [DREAM
