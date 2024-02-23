@@ -69,8 +69,13 @@ The hobbyist computer movement of the 1970s was rich in ideas, and
 courageous--sometimes breathtaking--in its efforts to allow the lay
 person to realise their access to an electronic computer.
 
-Need we speak of the hetereogenous array of kit computers and their
-attendant clubs and magazines? Some of mention are influenc
+Need we speak of the heterogenous array of kit computers and their
+attendant clubs and magazines? Some of mention are entire influential
+computing platforms in their own right:
+
+- Altair 8800
+- Apple I and II
+- Commodore 64 and the VIC-20
 
 ## The People's Permacomputer
 
