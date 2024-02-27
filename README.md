@@ -5,6 +5,17 @@ computer", or "the permacomputer") is a project dedicated to
 resourcing the specification, and then construction of a
 'permacomputer'.
 
+1. [Who are the people running this project?](https://sr.ht/~vidak/peoples-permacomputer/#who)
+2. [What is a permacomputer?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-a-permacomputer)
+3. [What is the point of this project?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-the-point-of-this-project)
+4. [What previous historical traditions inspire this
+   project?](https://sr.ht/~vidak/peoples-permacomputer/#adventures-in-the-traditions-of-computation)
+    1. [GNU](https://sr.ht/~vidak/peoples-permacomputer/#gnu)
+	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
+	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
+5. [](https://sr.ht/~vidak/peoples-permacomputer/#the-peoplex27s-permacomputer)
+
+
 ## Who?
 
 *"The Committee"*
@@ -51,7 +62,7 @@ mindset behind which we are functioning:
 This project is a humble response to the challenge posed by the above
 problem.
 
-## Intergenerational communication
+## Adventures in the traditions of computation
 
 We seem to take it for granted that a computer in everyone's hand just
 is democratic computing. Indeed, the ubiquity of contemporary
@@ -114,8 +125,7 @@ unchecked economic profit.
 
 
 
-One such model of computer that immediately proved attractive for the
-purpose of a permacomputer is Mike Bauer's [DREAM
+ Mike Bauer's [DREAM
 6800](http://www.mjbauer.biz/DREAM6800.htm).
 
 ...to be continued.
