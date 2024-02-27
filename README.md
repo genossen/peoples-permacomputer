@@ -14,7 +14,7 @@ resourcing the specification, and then construction of a
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
 	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
 5. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
-6. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-hetereogeneity)
+6. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-heterogeneity)
 
 ## Who?
 
@@ -165,7 +165,7 @@ thoroughly combine two previously mutually exclusive set of practices
 which, even if they were only able to survive the collapse in part,
 are invaluable when applied correctly.
 
-## Permacomputing and hetereogeneity
+## Permacomputing and heterogeneity
 
 Our research was long and laborious. When the results of our
 information gathering started to become clearer, we discovered that it
