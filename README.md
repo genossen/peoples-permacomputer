@@ -183,4 +183,17 @@ several.
    microcontroller kits, like the Arduino Uno or Mega.
 
 Each of these four approaches manages to present a view of the
-fundamentals of computing from a different perspective.
+fundamentals of computing from a different perspective. It seems to
+us, at least, that there are various competing demands that must be
+balanced delicately in order to run a community organisation. There is
+no 'one size fits all'.
+
+A mnemonic can be derived from the four computer models we humbly
+offer up to solve your computing woes:
+
+- THE DREAM 
+- THE OLDER BROTHER
+- THE SALVAGE
+- THE CHEAP + NASTY
+
+to be continued...
