@@ -14,7 +14,7 @@ resourcing the specification, and then construction of a
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
 	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
 5. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
-
+6. [Four heterogeneous permacomputer models]()
 
 ## Who?
 
@@ -165,9 +165,22 @@ thoroughly combine two previously mutually exclusive set of practices
 which, even if they were only able to survive the collapse in part,
 are invaluable when applied correctly.
 
+## Permacomputing and hetereogeneity
 
+Our research was long and laborious. When the results of our
+information gathering started to become clearer, we discovered that it
+was not appropriate to offer up one model of permacomputer, but
+several.
 
- Mike Bauer's [DREAM
-6800](http://www.mjbauer.biz/DREAM6800.htm).
+1. Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
+2. The DREAM's 'older brother': a more powerful permacomputer able to
+   deal with more complex human demands.
+3. Permacomputers constructed from salvage, such as e-waste. One such
+   proof of concept we imagine demonstrating is the collection and
+   repurposing of ESP32C3 microcontrollers from inside 'smart
+   lighting'.
+4. Permacomputers derived from popular off-the-shelf contemporary
+   microcontroller kits, like the Arduino Uno or Mega.
 
-...to be continued.
+Each of these four approaches manages to present a view of the
+fundamentals of computing from a different perspective.
