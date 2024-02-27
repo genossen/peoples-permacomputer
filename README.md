@@ -13,7 +13,7 @@ resourcing the specification, and then construction of a
     1. [GNU](https://sr.ht/~vidak/peoples-permacomputer/#gnu)
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
 	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
-5. [](https://sr.ht/~vidak/peoples-permacomputer/#the-peoplex27s-permacomputer)
+5. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
 
 
 ## Who?
@@ -88,9 +88,9 @@ Need we speak of the heterogenous array of kit computers and their
 attendant clubs and magazines? Some of mention are entire influential
 computing platforms in their own right:
 
-- Altair 8800
-- Apple I and II
-- Commodore 64 and the VIC-20
+- Altair 8800.
+- Apple I and II.
+- Commodore 64 and the VIC-20.
 
 ### From minicomputers to microcomputers
 
@@ -121,7 +121,49 @@ exposed and made accessible to the user? Indeed, the devices we take
 for granted today are deliberately obfuscated for the purpose of
 unchecked economic profit.
 
-## The People's Permacomputer
+## Mutual exclusion
+
+There are many influential projects which attempt to address the same
+set of values driving the people's permacomputer project. Some worthy
+of note can be listed in no particular order:
+
+- [Collapse OS](http://collapseos.org/).
+- [uxn](https://100r.co/site/uxn.html).
+- The [RC2014](https://rc2014.co.uk/) computer kit.
+- Ben Eater's [6502 project](https://eater.net/6502) video series.
+
+All of these projects are concerned with some subset of the principles
+the permacomputer project holds dear. Collapse OS is software that
+aims to be system agnostic, and assumes the previous acquisition of
+some supported hardware.
+
+The **uxn** ecosystem is rich and continues to flourish. However,
+while this project shares much with our own concerns for
+sustainability and the long-term persistence of electronic computing,
+we diverge from **uxn** on one fundamental point: we aim to
+_physically provide_ the community with complete systems that are
+easily turned on and interrogated by the lay computer user.
+
+That is not to say **uxn** does not also shine in such areas, but
+**uxn** is (very consciously) an emulator. The people's computer
+project aims to _quite literally place completed general purpose
+computers into people's possession_.
+
+While one horn of the dilemma may be expressed as "software without
+dedicated hardware", the reverse can be said to be true of the
+plerotha of projects similar to the RC2014, and Ben Eater's breadboard
+6502 project. In _this_ case, it is "hardware without dedicated
+software".
+
+These two aspects of a general purpose computer--its own unique
+physical construction, and its capacity to perform abstraction through
+judicious programming--are usually siloed off from one-another
+intellectually.
+
+In this way, the people's permacomputer is an attempt to blend, and
+thoroughly combine two previously mutually exclusive set of practices
+which, even if they were only able to survive the collapse in part,
+are invaluable when applied correctly.
 
 
 
