@@ -14,7 +14,7 @@ resourcing the specification, and then construction of a
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
 	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
 5. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
-6. [Four heterogeneous permacomputer models]()
+6. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-hetereogeneity)
 
 ## Who?
 
