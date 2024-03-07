@@ -1,0 +1,49 @@
+;----------------
+; Integrated Circuits
+;----------------
+
+| U1         	MC6800		https://www.aliexpress.com/item/1005004479143065.html
+      
+| U2         	2716		*** AT28C256 ALREADY ON HAND
+        
+| U3,U4		6116		*** UT6264CPC-70LL ALREADY ON HAND
+       
+| U5,U6         74LS367		https://www.ebay.com.au/itm/392646329463
+     
+| U7         	CD4014		https://www.aliexpress.com/item/1005006007339909.html
+      
+| U8         	MC6875		https://www.aliexpress.com/item/4000045848422.html
+     
+| U9         	MC6821		*** MOS6522 ALREADY ON HAND
+     
+| U10        	74LS10		https://www.ebay.com.au/itm/124270171410
+      
+| U11,U17	74LS04		https://www.ebay.com.au/itm/334703255973
+      
+| U12        	74LS08		https://www.ebay.com.au/itm/234861194857
+      
+| U13        	CD4040		https://www.aliexpress.com/item/1005006389797996.html
+      
+| U14,U15	74LS93		https://www.ebay.com.au/itm/234860939045
+           
+| U16        	74LS20		https://www.ebay.com.au/itm/392646331384
+      
+| U18        	74LS11		https://www.ebay.com.au/itm/234868819629
+      
+| U19        	74LS123		https://www.aliexpress.com/item/1005005071495170.html
+     
+| U20        	7440		https://www.aliexpress.com/item/1005005805134654.html
+        
+| U21        	74LS74		https://www.ebay.com.au/itm/234862799526
+      
+| U22        	74121		*** ALREADY ON HAND
+       
+| U23        	LM741		https://www.aliexpress.com/item/1005006103890733.html
+       
+| U24        	NE566		https://www.aliexpress.com/item/1005006022531540.html
+       
+| U25        	74LS138		https://www.ebay.com.au/itm/184350879253
+     
+| U26        	LM2576-5.0	https://www.aliexpress.com/item/1005005877381901.html
+  
+| U27        	LT1054		https://www.aliexpress.com/item/1005005658624513.html
