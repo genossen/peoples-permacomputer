@@ -25,7 +25,7 @@ resourcing the specification, and then construction of a
 
 - [vidak](https://mastodon.sdf.org/@vidak)
 
- - [permacomputing matrix space](#permacomputing:matrix.solarpunk.au)
+ - [permacomputing matrix space](https://matrix.to/#/#permacomputing:matrix.solarpunk.au)
  
  Yes you can join the committee.
 
