@@ -9,7 +9,7 @@ resourcing the specification, and then construction of a
 2. [What is a permacomputer?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-a-permacomputer)
 3. [What is the point of this project?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-the-point-of-this-project)
 4. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
-5. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-heterogeneity)
+5. [Project phase one results](https://sr.ht/~vidak/peoples-permacomputer/#project-phase-one-results)
 6. [What previous historical traditions inspire this project?](https://sr.ht/~vidak/peoples-permacomputer/#adventures-in-the-traditions-of-computation)
     1. [GNU](https://sr.ht/~vidak/peoples-permacomputer/#gnu)
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
