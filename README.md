@@ -119,11 +119,11 @@ information gathering started to become clearer, we discovered that it
 was not appropriate to offer up any one particular token computer
 hardware platform.
 
-### Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
+### A ** Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
 
 Please see the [README of this project's previous phase](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/README.old.1.md).
 
-### Permacomputers derived from popular microcontroller kits. See [ulisp](http://ulisp.com).
+### B ** Permacomputers derived from popular microcontroller kits. See [ulisp](http://ulisp.com).
 
 This particular course of action would require:
 
@@ -142,13 +142,13 @@ discussion](https://mastodon.sdf.org/@vidak/112547427824046030).
 
 And this [earlier one too](https://mastodon.sdf.org/@vidak/112523739708726479).
 
-### The [EDUC-8 PDP-8 clone](https://en.wikipedia.org/wiki/EDUC-8).
+### C ** The [EDUC-8 PDP-8 clone](https://en.wikipedia.org/wiki/EDUC-8).
 
 See [here](https://github.com/ibm2030/EDUC8).
 
 Also this [fediverse post](https://mastodon.sdf.org/@vidak/112579608839260322).
 
-### A minimalistic serial-only [6502 homebrew platform](https://github.com/adumont/hb6502)
+### D ** A minimalistic serial-only [6502 homebrew platform](https://github.com/adumont/hb6502)
 
 This proof-of-concept design is perfect for an ultra-simple and
 easily-constructed computer.
