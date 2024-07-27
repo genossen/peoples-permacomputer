@@ -8,13 +8,12 @@ resourcing the specification, and then construction of a
 1. [Who are the people running this project?](https://sr.ht/~vidak/peoples-permacomputer/#who)
 2. [What is a permacomputer?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-a-permacomputer)
 3. [What is the point of this project?](https://sr.ht/~vidak/peoples-permacomputer/#what-is-the-point-of-this-project)
-4. [What previous historical traditions inspire this
-   project?](https://sr.ht/~vidak/peoples-permacomputer/#adventures-in-the-traditions-of-computation)
+4. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
+5. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-heterogeneity)
+6. [What previous historical traditions inspire this project?](https://sr.ht/~vidak/peoples-permacomputer/#adventures-in-the-traditions-of-computation)
     1. [GNU](https://sr.ht/~vidak/peoples-permacomputer/#gnu)
 	2. [Homebrew and hobbyist computing](https://sr.ht/~vidak/peoples-permacomputer/#hobbyist-computing)
 	3. [The minicomputer 'revolution'](https://sr.ht/~vidak/peoples-permacomputer/#from-minicomputers-to-microcomputers)
-5. [What distinguishes this project from the others?](https://sr.ht/~vidak/peoples-permacomputer/#mutual-exclusion)
-6. [Four heterogeneous permacomputer models](https://sr.ht/~vidak/peoples-permacomputer/#permacomputing-and-heterogeneity)
 
 ## Who?
 
@@ -26,7 +25,9 @@ resourcing the specification, and then construction of a
 
 - [vidak](https://mastodon.sdf.org/@vidak)
 
-Yes you can join the committee.
+ - [permacomputing matrix space](#permacomputing:matrix.solarpunk.au)
+ 
+ Yes you can join the committee.
 
 ## What is a permacomputer?
 
@@ -40,13 +41,18 @@ _permaculture_.
 
 ## What is the point of this project?
 
-The people's permacomputer project is an attempt to _physically
-realise_ a permacomputer.
+Originally, the people's permacomputer project was an attempt to
+_physically realise_ a permacomputer. After thorough research into the
+contemporary efforts to build small, accessible and easily constructed
+hobbyist computers, it became clear that the task of the permacomputer
+project was not necessarily to adopt or replicate the efforts of the
+actual great numbers of others.
 
-This will involve not just the production of an actual model
-permacomputer, but also the development of a list of suggested social
-and cultural practices around computing that will, it is hoped, assist
-in the continued human practice of electronic computing.
+Luckily, the focus of this project was always broader than just
+something concrete and tangible. We also suggested the development of
+a list of suggested social and cultural practices around computing
+that would assist in the continued human practice of electronic
+computing.
 
 There are many different dialectical approaches to making an
 introduction to the people's permacomputer. One thought experiment
@@ -61,6 +67,78 @@ mindset behind which we are functioning:
 
 This project is a humble response to the challenge posed by the above
 problem.
+
+## Mutual exclusion
+
+There are many influential projects which attempt to address the same
+set of values driving the people's permacomputer project. Some worthy
+of note can be listed in no particular order:
+
+- [Collapse OS](http://collapseos.org/).
+- [uxn](https://100r.co/site/uxn.html).
+- The [RC2014](https://rc2014.co.uk/) computer kit.
+- Ben Eater's [6502 project](https://eater.net/6502) video series.
+
+All of these projects are concerned with some subset of the principles
+the permacomputer project holds dear. The project which most closely
+resembles the strategy that the permacomputer project is now taking is
+that of Collapse OS--software that aims to be system agnostic, and
+assumes the previous acquisition of some supported hardware.
+
+The **uxn** ecosystem is rich and continues to flourish. This project
+shares much with our own concerns for sustainability and the long-term
+persistence of electronic computing, but we diverge from **uxn** on
+one fundamental point: the **uxn** ecosystem is a virtual computer,
+and while an actual one, is not intended to _be a physical one_. This
+is a delicate point because the audiences between the different
+projects are in many ways intersecting. That said, **uxn** is (very
+consciously) an emulator. The people's computer project aims to _quite
+literally place completed general purpose computers into people's
+possession_.
+
+While one horn of the dilemma may be expressed as "software without
+dedicated hardware", the reverse can be said to be true of the
+plerotha of projects similar to the RC2014, and Ben Eater's breadboard
+6502 project. In _this_ case, it is "hardware without dedicated
+software".
+
+These two aspects of a general purpose computer--its own unique
+physical construction, and its capacity to perform abstraction through
+judicious programming--are usually siloed off from one-another
+intellectually.
+
+In this way, the people's permacomputer is an attempt to blend, and
+thoroughly combine two previously mutually exclusive set of practices
+which, even if they were only able to survive the collapse in part,
+are invaluable when applied correctly.
+
+## Project phase one results
+
+Our research was long and laborious. When the results of our
+information gathering started to become clearer, we discovered that it
+was not appropriate to offer up any one particular token computer
+hardware platform.
+
+### Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
+### Permacomputers derived from popular microcontroller kits. See [ulisp](http://ulisp.com).
+### The [EDUC-8 PDP-8 clone](https://en.wikipedia.org/wiki/EDUC-8)
+### A minimalistic serial-only [6502 homebrew platform](https://github.com/adumont/hb6502)
+
+Each of these four approaches manages to present a view of the
+fundamentals of computing from a different perspective. It seems to
+us, at least, that there are various competing demands that must be
+balanced delicately in order to run a community organisation. There is
+no 'one size fits all'.
+
+A mnemonic can be derived from the four computer models we humbly
+offer up to solve your computing woes:
+
+- THE DREAM 
+- THE OLDER BROTHER
+- THE SALVAGE
+- THE CHEAP + NASTY
+
+to be continued...
 
 ## Adventures in the traditions of computation
 
@@ -120,80 +198,3 @@ When was the last time the entire structure of a modern smartphone was
 exposed and made accessible to the user? Indeed, the devices we take
 for granted today are deliberately obfuscated for the purpose of
 unchecked economic profit.
-
-## Mutual exclusion
-
-There are many influential projects which attempt to address the same
-set of values driving the people's permacomputer project. Some worthy
-of note can be listed in no particular order:
-
-- [Collapse OS](http://collapseos.org/).
-- [uxn](https://100r.co/site/uxn.html).
-- The [RC2014](https://rc2014.co.uk/) computer kit.
-- Ben Eater's [6502 project](https://eater.net/6502) video series.
-
-All of these projects are concerned with some subset of the principles
-the permacomputer project holds dear. Collapse OS is software that
-aims to be system agnostic, and assumes the previous acquisition of
-some supported hardware.
-
-The **uxn** ecosystem is rich and continues to flourish. However,
-while this project shares much with our own concerns for
-sustainability and the long-term persistence of electronic computing,
-we diverge from **uxn** on one fundamental point: we aim to
-_physically provide_ the community with complete systems that are
-easily turned on and interrogated by the lay computer user.
-
-That is not to say **uxn** does not also shine in such areas, but
-**uxn** is (very consciously) an emulator. The people's computer
-project aims to _quite literally place completed general purpose
-computers into people's possession_.
-
-While one horn of the dilemma may be expressed as "software without
-dedicated hardware", the reverse can be said to be true of the
-plerotha of projects similar to the RC2014, and Ben Eater's breadboard
-6502 project. In _this_ case, it is "hardware without dedicated
-software".
-
-These two aspects of a general purpose computer--its own unique
-physical construction, and its capacity to perform abstraction through
-judicious programming--are usually siloed off from one-another
-intellectually.
-
-In this way, the people's permacomputer is an attempt to blend, and
-thoroughly combine two previously mutually exclusive set of practices
-which, even if they were only able to survive the collapse in part,
-are invaluable when applied correctly.
-
-## Permacomputing and heterogeneity
-
-Our research was long and laborious. When the results of our
-information gathering started to become clearer, we discovered that it
-was not appropriate to offer up one model of permacomputer, but
-several.
-
-1. Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
-2. The DREAM's 'older brother': a more powerful permacomputer able to
-   deal with more complex human demands.
-3. Permacomputers constructed from salvage, such as e-waste. One such
-   proof of concept we imagine demonstrating is the collection and
-   repurposing of ESP32C3 microcontrollers from inside 'smart
-   lighting'.
-4. Permacomputers derived from popular off-the-shelf contemporary
-   microcontroller kits, like the Arduino Uno or Mega.
-
-Each of these four approaches manages to present a view of the
-fundamentals of computing from a different perspective. It seems to
-us, at least, that there are various competing demands that must be
-balanced delicately in order to run a community organisation. There is
-no 'one size fits all'.
-
-A mnemonic can be derived from the four computer models we humbly
-offer up to solve your computing woes:
-
-- THE DREAM 
-- THE OLDER BROTHER
-- THE SALVAGE
-- THE CHEAP + NASTY
-
-to be continued...
