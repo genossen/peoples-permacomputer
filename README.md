@@ -148,8 +148,7 @@ See [here](https://github.com/ibm2030/EDUC8).
 
 Also this [fediverse post](https://mastodon.sdf.org/@vidak/112579608839260322).
 
-### A minimalistic serial-only [6502 homebrew
-platform](https://github.com/adumont/hb6502)
+### A minimalistic serial-only [6502 homebrew platform](https://github.com/adumont/hb6502)
 
 This proof-of-concept design is perfect for an ultra-simple and
 easily-constructed computer.
