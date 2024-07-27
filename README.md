@@ -24,7 +24,7 @@ resourcing the specification, and then construction of a
 
 - [shufei](https://social.sdf.org/@Shufei)
 
-- [vidak](https://zoinks.one/users/vidak)
+- [vidak](https://mastodon.sdf.org/@vidak)
 
 Yes you can join the committee.
 
