@@ -121,6 +121,17 @@ hardware platform.
 
 ### Mike Bauer's [DREAM 6800](http://www.mjbauer.biz/DREAM6800.htm).
 ### Permacomputers derived from popular microcontroller kits. See [ulisp](http://ulisp.com).
+
+> had a chat with @50htz about the permacomputer project today. 
+> my current thoughts are we need:
+> - a text editor
+> - a telnet client
+> - a gopher browser
+> all this software will be run over serial at first, and then we can
+> deal with the perpetually thorny topic of video out
+> will video displays of the solarpunk post-apocalypse future even 
+> mostly support composite out?
+
 ### The [EDUC-8 PDP-8 clone](https://en.wikipedia.org/wiki/EDUC-8)
 ### A minimalistic serial-only [6502 homebrew platform](https://github.com/adumont/hb6502)
 
