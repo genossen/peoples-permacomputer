@@ -201,22 +201,6 @@ between the old and the new.
   
   See [this fedi reference](https://retro.social/@permacomputer/112469206126820567).
 
-Each of these four approaches manages to present a view of the
-fundamentals of computing from a different perspective. It seems to
-us, at least, that there are various competing demands that must be
-balanced delicately in order to run a community organisation. There is
-no 'one size fits all'.
-
-A mnemonic can be derived from the four computer models we humbly
-offer up to solve your computing woes:
-
-- THE DREAM 
-- THE OLDER BROTHER
-- THE SALVAGE
-- THE CHEAP + NASTY
-
-to be continued...
-
 ## Adventures in the traditions of computation
 
 We seem to take it for granted that a computer in everyone's hand just
