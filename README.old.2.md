@@ -41,6 +41,19 @@ _permaculture_.
 
 ## What is the point of this project?
 
+Originally, the people's permacomputer project was an attempt to
+_physically realise_ a permacomputer. After thorough research into the
+contemporary efforts to build small, accessible and easily constructed
+hobbyist computers, it became clear that the task of the permacomputer
+project was not necessarily to adopt or replicate the efforts of the
+actual great numbers of others.
+
+Luckily, the focus of this project was always broader than just
+something concrete and tangible. We also suggested the development of
+a list of suggested social and cultural practices around computing
+that would assist in the continued human practice of electronic
+computing.
+
 There are many different dialectical approaches to making an
 introduction to the people's permacomputer. One thought experiment
 that has proved especially popular and easy to grasp sums up the
@@ -52,46 +65,8 @@ mindset behind which we are functioning:
 > 21st century is impossible. You need a computer for a task. What do
 > you do?
 
-This project is a response to the challenge posed by the above
-problem. The purpose of this project is to design and then construct
-computers that will be able to _survive a societal_ collapse.
-
-A permacomputer for the people involves two radically differing
-criteria of success, yet these requirements, paradoxically, cannot be
-seperated from one another--fulfilling _both_ these two criteria is
-required for a successful project.
-
-The first criterion is a computer which is well-engineered. The
-computer offered up by this project aim to be easy to grasp upon
-immediate interaction, and have a profound, transformational effect on
-the power of the user's capacity for rational and critical thought.
-
-Permacomputers must also be rugged and durable. An inoperable computer
-is otherwise known in hacker circles as a "brick". The length of time
-the project determined adequate for the "life span" of a permacomputer
-is a duration far in excess of contemporary standards. The intention
-behind this project's design was to allow communities of people to
-possess and maintain a computer collectively.
-
-It is difficult to provide an accurate estimate for exactly how many
-years the life cycle of a permacomputer design can be. This project
-suggests a life span beyond that of a human individual.
-
-Despite this conern, this project assumes that are threats outside the
-domain of engineering to the permacomputer, which would otherwise
-possess indefinite operation:
-
-The second criterion is to ensure that there continues to be a human
-cultural tradition of electronic computing, or that this tradition may
-be able to be rediscovered or reconstructed. The project does not want
-to merely effect an engineering feat, but also transmit the cultural
-memory of electronic digital computing into the future.
-
-It is hoped that, should the project succeed, humanity will be able to
-be saved from the gruelling tedium of many forms of onerous economic
-work. Without a computer, these necessary social roles would involve
-either great effort, or be personally unfulfilling or degrading;
-shameful.
+This project is a humble response to the challenge posed by the above
+problem.
 
 ## Mutual exclusion
 
@@ -105,9 +80,10 @@ of note can be listed in no particular order:
 - Ben Eater's [6502 project](https://eater.net/6502) video series.
 
 All of these projects are concerned with some subset of the principles
-the permacomputer project holds dear. Collapse OS is software that
-aims to be system agnostic, and assumes the previous acquisition of
-some supported hardware.
+the permacomputer project holds dear. The project which most closely
+resembles the strategy that the permacomputer project is now taking is
+that of Collapse OS--software that aims to be system agnostic, and
+assumes the previous acquisition of some supported hardware.
 
 The **uxn** ecosystem is rich and continues to flourish. This project
 shares much with our own concerns for sustainability and the long-term
