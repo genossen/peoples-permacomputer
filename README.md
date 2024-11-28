@@ -77,8 +77,8 @@ It is difficult to provide an accurate estimate for exactly how many
 years the life cycle of a permacomputer design can be. This project
 suggests a life span beyond that of a human individual.
 
-Despite this conern, this project assumes that are threats outside the
-domain of engineering to the permacomputer, which would otherwise
+Despite this concern, this project assumes that are threats outside
+the domain of engineering to the permacomputer, which would otherwise
 possess indefinite operation:
 
 The second criterion is to ensure that there continues to be a human
@@ -88,7 +88,7 @@ to merely effect an engineering feat, but also transmit the cultural
 memory of electronic digital computing into the future.
 
 It is hoped that, should the project succeed, humanity will be able to
-be saved from the gruelling tedium of many forms of onerous economic
+be saved from the grueling tedium of many forms of onerous economic
 work. Without a computer, these necessary social roles would involve
 either great effort, or be personally unfulfilling or degrading;
 shameful.
