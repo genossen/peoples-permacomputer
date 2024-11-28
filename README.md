@@ -21,7 +21,7 @@ resourcing the specification, and then construction of a
 
 - [50hz](https://cathode.church/@50htz)
 
-- [shufei](https://social.sdf.org/@Shufei)
+- [shufei](https://mastodon.sdf.org/@Shufei)
 
 - [vidak](https://mastodon.sdf.org/@vidak)
 
