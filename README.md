@@ -58,7 +58,7 @@ computers that will be able to _survive a societal_ collapse.
 
 A permacomputer for the people involves two radically differing
 criteria of success, yet these requirements, paradoxically, cannot be
-seperated from one another--fulfilling _both_ these two criteria is
+separated from one another--fulfilling _both_ these two criteria is
 required for a successful project.
 
 The first criterion is a computer which is well-engineered. The
