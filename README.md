@@ -137,7 +137,7 @@ are invaluable when applied correctly.
 
 ## Project results
 
-- [First](https://sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
+- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
 
 ## Adventures in the traditions of computation
 
