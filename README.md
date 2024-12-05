@@ -43,6 +43,10 @@ and traditions which shares a set of social and ecological values
 inspired by the 70s land management and settlement design of
 _permaculture_.
 
+## Project results
+
+- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
+
 ## What is the point of this project?
 
 There are many different dialectical approaches to making an
@@ -139,10 +143,6 @@ In this way, the people's permacomputer is an attempt to blend, and
 thoroughly combine two previously mutually exclusive set of practices
 which, even if they were only able to survive the collapse in part,
 are invaluable when applied correctly.
-
-## Project results
-
-- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
 
 ## Adventures in the traditions of computation
 
