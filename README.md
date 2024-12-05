@@ -1,3 +1,5 @@
+![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/logo2-small.jpg)
+
 # The People's Permacomputer Project
 
 The People's Permacomputer (henceforth known as "the people's
@@ -24,7 +26,9 @@ resourcing the specification, and then construction of a
 
 - [vidak](https://mastodon.sdf.org/@vidak)
 
- - [permacomputing matrix space](https://matrix.to/#/#permacomputing:matrix.solarpunk.au)
+- [permacomputing matrix space](https://matrix.to/#/#permacomputing:matrix.solarpunk.au)
+ 
+- [project social media profile](https://retro.social/@permacomputer) 
  
  Yes you can join the committee.
 
