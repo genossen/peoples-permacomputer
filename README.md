@@ -51,7 +51,7 @@ _permaculture_.
 
 - [2024-12-04](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-12-04-mcu-analysis.md) - Microcontroller Video Out.
 
-- [2024-11-28](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-11-28) - Project Start Phase 2.
+- [2024-11-28](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-11-28-start-phase-2.md) - Project Start Phase 2.
 
 ## What is the point of this project?
 
