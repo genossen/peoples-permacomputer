@@ -1,5 +1,5 @@
 
-![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/logo2-small.jpg)
+<img src="https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/logo2-small.jpg">
 
 # The People's Permacomputer Project
 
