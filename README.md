@@ -47,6 +47,10 @@ _permaculture_.
 
 - [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
 
+## Project logs
+
+- [2024-12-04](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2023-12-04-mcu-analysis.md) - Microcontroller Video Out.
+
 ## What is the point of this project?
 
 There are many different dialectical approaches to making an
