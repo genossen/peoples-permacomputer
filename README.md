@@ -40,7 +40,7 @@ permacomputing.
 
 Foundationally, permacomputing _itself_ is set of community practices
 and traditions which shares a set of social and ecological values
-inspired by the 70s land management and settlement design of
+inspired by the land management and settlement design of
 _permaculture_.
 
 ## Project results
