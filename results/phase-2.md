@@ -5,7 +5,7 @@
 This proof-of-concept design is perfect for an ultra-simple and
 easily-constructed computer.
 
-![](https://github.com/adumont/hb6502/blob/main/sbc/imgs/IMG_20210507_202922_616.jpg)
+![](https://github.com/adumont/hb6502/blob/main/sbc/imgs/IMG_20210507_202922_616.jpg?raw=true)
 
 This is the memory map:
 
