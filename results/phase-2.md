@@ -5,7 +5,7 @@
 This proof-of-concept design is perfect for an ultra-simple and
 easily-constructed computer.
 
-![](https://github.com/adumont/hb6502/blob/main/sbc/imgs/IMG_20210507_202922_616.jpg?raw=true)
+![](https://github.com/adumont/hb6502/blob/main/sbc/imgs/IMG_20210507_202922_616.jpg?raw=true){ width=50% }
 
 This is the memory map:
 
@@ -51,7 +51,7 @@ cognitively overwhelming to expect the visual display capabilities of
 the permacomputer to conform to video designs contemporary with the
 1970s and 1980s.
 
-### MCU Video display
+### MCU Video display.
 
 **The project found a solution to composite video output in small
 microcontrollers.** The idea is not to directly integrate video into the
@@ -69,3 +69,6 @@ one part of the system fails, you can still use the other half.
 [READ
 MORE](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-12-04-mcu-analysis.md)
 
+### MCU Selection.
+
+![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/grant-searle-display-processor/ATMega328Video%202.2.gif)
