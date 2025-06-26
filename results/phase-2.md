@@ -1,5 +1,8 @@
 # Project phase two results
 
+1. [Computer module.](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-2.md#a--computer-module-a-hrefhttpsgithubcomadumonthb6502github-repo-user-audmonta)
+2. [Video display processor](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-2.md#b--video-display-processor)
+
 ## A ** Computer module. [GITHUB REPO: USER AUDMONT](https://github.com/adumont/hb6502)
 
 This proof-of-concept design is perfect for an ultra-simple and
