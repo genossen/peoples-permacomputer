@@ -113,7 +113,7 @@ resistor\
         Pin 5 (PD3) - Double height if pulled low via a 10K resistor\
         Pin 4 (PD2) - Non-bold if pulled low via a 10K resistor\
 
-#### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors
+#### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors.
 
 - Project 1: PAL or NTSC multi-mode text and graphics display with
   I^2^C, 4 or 8 bit interface\
@@ -121,34 +121,21 @@ resistor\
 - Use both together to allow any project that uses serial I/O to have
 a screen and keyboard***
 
-![](Grant's%20video%20and%20keyboard%20interface_files/MixedDisplay.jpg)
-
------------------------------------------------------------------------------------
-
-
-
-
- 
-
-
 ------------------------------------------------------------------------
 
-**[]{#Prototype}PROTOTYPE**
+#### Prototype.
 
 The two parts of the above schematic (8 bit interface, PAL mode) are
-constructed as shown here. A resistor links each reset to the power
-because I program the chips in-circuit.
+constructed as shown here.
 
-![](Grant's%20video%20and%20keyboard%20interface_files/MonitorAndKeyboardPrototype.jpg){border="0"
-width="500" height="404"}
+<img src="https://git.sr.ht/~vidak/peoples-permacomputer/blob/master/static/grant-searle-display-processor/MonitorAndKeyboardPrototype.jpg">
 
 *Note: this picture is for the schematic version 2.1. Minor wiring
 changes for version 2.2*
 
 ------------------------------------------------------------------------
 
-**[]{#ProcessingAndCircuitDescription}PROCESSING AND CIRCUIT
-DESCRIPTION**
+#### Processing and circuit description.
 
 The serial/keyboard controller runs at 11.0592MHz (to coincide with the
 115200 Baud serial interface) and the display processor runs at 16MHz.
@@ -165,44 +152,26 @@ The keyboard used is a standard \"PC\" keyboard with a PS/2 connector
 as needed. Non-ASCII keys return codes, but this isn\'t finalised yet
 and is easily changed in the code.
 
-Here is a block diagram of the display and keyboard interface being used
-together as a serial-driven I/O for a microcomputer system:
+#### ATmega88/168/328 processor (Serial and keyboard I/O).
 
-                 
-![](Grant's%20video%20and%20keyboard%20interface_files/ATmega%20display%20and%20kb%20block.gif){border="0"
-width="600" height="394"}
-
-**ATmega88/168/328 processor (Serial and keyboard I/O)\
-**This buffers the serial input and stores it in a circular buffer 800
+This buffers the serial input and stores it in a circular buffer 800
 chars in size. The RTS is cleared when less than 32 character spaces
 remain in the buffer and is set when there are less than 32 char spaces
 used. This is to allow overrun from the sending system without losing
 characters.\
+
 When a character or command is to be sent to the display processor, the
 code is placed on the output port pins.\
 Some ANSI commands are interpreted and converted to the relevant video
 processor commands.
 
-**ATmega328 processor (video)\
-**This has 2K RAM so can accommodate an 80x25 char display with some
-bytes remaining for workspace. The main processing is transferring data
-from the memory to the output serial shifter, and producing the HSYNC
-and VSYNC signals. During the inactive time of the display, the input
-port/status bits can be read and the incoming data interpreted either as
-a command or as a character that is inserted into the display. Scrolling
-and clearing of the screen is handled within this processor (very
-quickly!)\
-It is mainly Daryl\'s code in there, but I have adapted it for the
-ATmega328 processor which has 2K RAM, added some routines of my own and
-altered the row/col cursor positioning commands to take a parameter byte
-instead of using a set of character spaces and changed the method to
-allow the display of control-code characters. This allowed me to modify
-it to produce an 80x25 display. I also changed the code so that only one
-timer is needed instead of two. Additionally the handshaking/data read
-code was changed to allow me to interface to the keyboard/serial
-controller without needing a latch or the other chips that he used. The
-dot clock runs at 16MHz to allow an 80 column display to be shown on a
-standard video monitor/TV.
+#### ATmega328 processor (video).
 
-An  ATmega328 pin (see schematic) determines whether PAL (50Hz) or NTSC
-(60Hz) display is required. Connect via a resistor to ground for NTSC.
+This has 2K RAM so can accommodate an 80x25 char display with some
+bytes remaining for workspace. The main processing is transferring
+data from the memory to the output serial shifter, and producing the
+HSYNC and VSYNC signals. During the inactive time of the display, the
+input port/status bits can be read and the incoming data interpreted
+either as a command or as a character that is inserted into the
+display. Scrolling and clearing of the screen is handled within this
+processor (very quickly!).
