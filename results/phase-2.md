@@ -71,21 +71,7 @@ MORE](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-1
 
 ### MCU Selection. "The Grant Searle".
 
-<img src="https://git.sr.ht/~vidak/peoples-permacomputer/blob/master/static/grant-searle-display-processor/ATMega328Video%202.2.gif">
-
-![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/?raw=true)
-
-#### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors
-
-- Project 1: PAL or NTSC multi-mode text and graphics display with
-  I^2^C, 4 or 8 bit interface\
-- Project 2: PC keyboard\--\>serial and serial\--\>display interface\
-- Use both together to allow any project that uses serial I/O to have
-a screen and keyboard***
-
-![](Grant's%20video%20and%20keyboard%20interface_files/MixedDisplay.jpg)
-
------------------------------------------------------------------------------------
+<img src="https://git.sr.ht/~vidak/peoples-permacomputer/blob/master/static/grant-searle-display-processor/MixedDisplay.jpg">
 
 #### SCHEMATIC FOR BOTH PROJECTS 
 
@@ -106,8 +92,7 @@ needed.**
 
 **(NOT SHOWING DEFAULT FONT CONFIGURATION RESISTORS - SEE BELOW)**
 
-![](Grant's%20video%20and%20keyboard%20interface_files/ATMega328Video%202.2.gif){border="0"
-width="1200" height="533"}
+<img src="https://git.sr.ht/~vidak/peoples-permacomputer/blob/master/static/grant-searle-display-processor/ATMega328Video%202.2.gif">
 
 **Note 1:** Not all power supply pins are not shown. These must be
 connected to the appropriate power rail.\
@@ -127,6 +112,22 @@ it, pull the following display lines low with 10K resistors:\
 resistor\
         Pin 5 (PD3) - Double height if pulled low via a 10K resistor\
         Pin 4 (PD2) - Non-bold if pulled low via a 10K resistor\
+
+#### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors
+
+- Project 1: PAL or NTSC multi-mode text and graphics display with
+  I^2^C, 4 or 8 bit interface\
+- Project 2: PC keyboard\--\>serial and serial\--\>display interface\
+- Use both together to allow any project that uses serial I/O to have
+a screen and keyboard***
+
+![](Grant's%20video%20and%20keyboard%20interface_files/MixedDisplay.jpg)
+
+-----------------------------------------------------------------------------------
+
+
+
+
  
 
 
