@@ -69,21 +69,19 @@ one part of the system fails, you can still use the other half.
 [READ
 MORE](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-12-04-mcu-analysis.md)
 
-### MCU Selection.
+### MCU Selection. "The Grant Searle".
 
 ![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/grant-searle-display-processor/ATMega328Video%202.2.gif?raw=true)
 
-**Monitor and keyboard controllers\
-*Controlled by low-cost ATMEL \"Mega\" processors\
-- Project 1: PAL or NTSC multi-mode text and graphics display with
-I^2^C, 4 or 8 bit interface\
-- Project 2: PC keyboard\--\>serial and serial\--\>display interface\
-- Use both together to allow any project that uses serial I/O to have a
-screen and keyboard***
+#### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors
 
-***![](Grant's%20video%20and%20keyboard%20interface_files/MixedDisplay.jpg){border="0"
-width="700" height="375"}\
-(actual picture of screen)***
+- Project 1: PAL or NTSC multi-mode text and graphics display with
+  I^2^C, 4 or 8 bit interface\
+- Project 2: PC keyboard\--\>serial and serial\--\>display interface\
+- Use both together to allow any project that uses serial I/O to have
+a screen and keyboard***
+
+![](Grant's%20video%20and%20keyboard%20interface_files/MixedDisplay.jpg)
 
 -----------------------------------------------------------------------------------
 
