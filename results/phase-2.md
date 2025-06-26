@@ -38,11 +38,12 @@ own television.
 
 Reasons for reaching this decision are that 
 
-    (a) it is expected that televisions will be possible to salvage in a hypothetical societal collapse; 
-    (b) given that the video standard chosen by the project is
-    analogue composite video, this simple form of signal should have some
-    hope of being able to reverse engineered should cultural knowledge
-    around computing significantly degenerate.
+1. it is expected that televisions will be possible to salvage in a
+   hypothetical societal collapse;
+2. given that the video standard chosen by the project is analogue
+   composite video, this simple form of signal should have some hope
+   of being able to reverse engineered should cultural knowledge
+   around computing significantly degenerate.
 
 The second phase builds on the results of the first. The work done in
 the second phase concluded that it was prohibitively expensive and
@@ -50,8 +51,10 @@ cognitively overwhelming to expect the visual display capabilities of
 the permacomputer to conform to video designs contemporary with the
 1970s and 1980s.
 
-The project found a solution to composite video output in small
-microcontrollers. The idea is not to directly integrate video into the
+### MCU Video display
+
+**The project found a solution to composite video output in small
+microcontrollers.** The idea is not to directly integrate video into the
 8 bit computer design, but use a cheap microcontroller as a video
 terminal, and have the computer use its ACIA chip to communicate with
 it via serial.
@@ -65,8 +68,4 @@ one part of the system fails, you can still use the other half.
 
 [READ
 MORE](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-12-04-mcu-analysis.md)
-
-asdf.
-
-## C ** asdf
 
