@@ -71,7 +71,9 @@ MORE](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-1
 
 ### MCU Selection. "The Grant Searle".
 
-![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/grant-searle-display-processor/ATMega328Video%202.2.gif?raw=true)
+<img src="https://git.sr.ht/~vidak/peoples-permacomputer/blob/master/static/grant-searle-display-processor/ATMega328Video%202.2.gif">
+
+![](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/static/?raw=true)
 
 #### Monitor and keyboard controllers Controlled by low-cost ATMEL \"Mega\" processors
 
@@ -85,7 +87,7 @@ a screen and keyboard***
 
 -----------------------------------------------------------------------------------
 
-**[]{#Schematic}SCHEMATIC FOR BOTH PROJECTS**
+#### SCHEMATIC FOR BOTH PROJECTS 
 
 *This consists of two modules and when used together produces a generic
 ANSI terminal (also supporting graphics) using a TTL compatible serial
