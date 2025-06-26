@@ -23,11 +23,11 @@ resourcing the specification, and then construction of a
 
 - [50hz](https://cathode.church/@50htz)
 
-- [shufei](https://mastodon.sdf.org/@Shufei)
+- [shufei](https://merveilles.town/@Shufei)
 
-- [vidak](https://mastodon.sdf.org/@vidak)
+- [vidak](https://social.solarpunk.au/users/vidak)
 
-- [permacomputing matrix space](https://matrix.to/#/#permacomputing:matrix.solarpunk.au)
+- [crypto-anarchist research xmpp group](xmpp:crypto-anarchist-research@social.shadowkat.net?join)
  
 - [project social media profile](https://retro.social/@permacomputer) 
  
@@ -47,7 +47,11 @@ _permaculture_.
 
 - [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
 
+- [Second](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-2.md) phase.
+
 ## Project logs
+
+- [2025-06-22](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2025-06-22-project-refresh.md) - Project Refresh.
 
 - [2024-12-04](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/log/2024-12-04-mcu-analysis.md) - Microcontroller Video Out.
 

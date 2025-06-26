@@ -1,0 +1,30 @@
+; ************************************************************
+; PROJECT:
+; AUTHOR:
+; ************************************************************
+
+; Micro + software running
+; ------------------------------------------------------------
+.MICRO "ATmega16"
+.PROGRAM "vidoverlay.asm" "font.inc"
+.TARGET "osd.hex"
+
+.TRACE              ; Activate micro trace
+
+; Following lines are optional; if not included
+; exactly these values are taken by default
+; ------------------------------------------------------------
+.POWER VDD=5 VSS=0  ; Power nodes
+.CLOCK 16meg         ; Micro clock
+.STORE 333m         ; Trace (micro+signals) storage time  two video frames
+
+; Define here the hardware around the micro
+; ------------------------------------------------------------
+R1 PC7 VIDEO 1k  ;sync
+R2 PB7 VIDEO 330 ;video
+R3	VIDEO VSS 75 ;75 ohm load
+
+X1  TTY(9600 8) PD0 PD1 ;TTY terminal
+.PLOT V(VIDEO)
+
+

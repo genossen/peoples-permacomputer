@@ -1,0 +1,46 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.0</VERSION>
+ <DEVICE>ATmega16</DEVICE>
+ <WORKING_DIR>C:\Download\osd</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Download\osd\vidoverlay.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+  <FILE>C:\Download\osd\font.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Download\osd\osd.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Download\osd\osd.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Download\osd\osd.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RAMBUF><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>64</LINE></RAMBUF>
+  <RAMPTR><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>65</LINE></RAMPTR>
+  <CURSOR><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>66</LINE></CURSOR>
+  <TMP_YL><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>67</LINE></TMP_YL>
+  <TMP_YH><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>68</LINE></TMP_YH>
+  <TMP_ZL><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>69</LINE></TMP_ZL>
+  <LINE><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>70</LINE></LINE>
+  <LINEH><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>71</LINE></LINEH>
+  <SYNCPOL><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>72</LINE></SYNCPOL>
+  <RESET><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>98</LINE></RESET>
+  <HSYNC1><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>346</LINE></HSYNC1>
+  <VSYNC><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>421</LINE></VSYNC>
+  <HSYNC2><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>354</LINE></HSYNC2>
+  <CLRS><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>330</LINE></CLRS>
+  <MAIN><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>154</LINE></MAIN>
+  <CHRTAB><FILE>C:\Download\osd\font.inc</FILE><LINE>1</LINE></CHRTAB>
+  <CLSLOOP><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>338</LINE></CLSLOOP>
+  <DELAY><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>368</LINE></DELAY>
+  <LINE248><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>377</LINE></LINE248>
+  <LINE251><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>385</LINE></LINE251>
+  <LINE263><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>393</LINE></LINE263>
+  <SYNC_OFF><FILE>C:\Download\osd\vidoverlay.asm</FILE><LINE>406</LINE></SYNC_OFF>
+ </LABELS>
+</ASSEMBLER_INFO>

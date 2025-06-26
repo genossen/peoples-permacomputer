@@ -1,0 +1,2266 @@
+
+AVRASM ver. 1.74  vidoverlay.asm Fri Oct 28 19:41:00 2005
+
+
+0000bc   +  	SHIFTREG2VID R16
+0000cf   +  	SHIFTREG2VID R16
+0000e2   +  	SHIFTREG2VID R16
+0000f5   +  	SHIFTREG2VID R16
+000108   +  	SHIFTREG2VID R16
+00011b   +  	SHIFTREG2VID R16
+00012e   +  	SHIFTREG2VID R16
+000141   +  	SHIFTREG2VID R16
+000154   +  	SHIFTREG2VID R16
+000167   +  	SHIFTREG2VID R16
+00017a   +  	SHIFTREG2VID R16
+00018d   +  	SHIFTREG2VID R16
+0001a0   +  	SHIFTREG2VID R16
+0001b3   +  	SHIFTREG2VID R16
+0001c6   +  	SHIFTREG2VID R16
+0001d9   +  	SHIFTREG2VID R16
+0001ec   +  	SHIFTREG2VID R16
+0001fe   +  	SHIFTREG2VID R17
+000210   +  	SHIFTREG2VID R18
+000222   +  	SHIFTREG2VID R19
+000234   +  	SHIFTREG2VID R20
+000246   +  	SHIFTREG2VID R21
+000258   +  	SHIFTREG2VID R22
+00026a   +  	SHIFTREG2VID R23
+00027c   +  	SHIFTREG2VID R24
+00028e   +  	SHIFTREG2VID R25
+0002a0   +  	SHIFTREG2VID R26
+0002b2   +  	SHIFTREG2VID R27
+0002c4   +  	SHIFTREG2VID R28
+0002d6   +  	SHIFTREG2VID R29
+0002e8   +  	SHIFTREG2VID R30
+0002fa   +  	SHIFTREG2VID R31
+         ; Video overlay demonstration
+         ; Author: Rog Blake (rogblake2000@yahoo.com)
+         
+         ; Echos characters received over serial port to display
+         ; over live video. Excuse the ugly font - it's from an old TRS-80
+         ; Prototyped using the STK-500
+         
+         ; Fonts 2 and 3 are alternate fonts from a TRS-80
+         
+         ; To do graphics, you can just build images using graphic characters
+         ; or you can modify the code to display the bitmap in RAM rather
+         ; than doing the character look-ups. The Mega16 doesn't have
+         ; enough RAM to support beyond 100x100, which is one of the reasons
+         ; I chose to display characters instead (achieving 192x160)
+         
+         ; If you use a Mega32 or Mega128, you have more RAM to work with
+         ; so you could achieve higher resolution on pure graphics
+         
+         ; Assumes 14.31818 MHz XTAL, though this can be changed to 16 MHz
+         ; External HSYNC to INT0
+         ; External VSYNC to INT1
+         ; PB7 -> 330 ohm resistor -> 75 ohm resistor to ground
+         
+          	.include "C:\Program Files\Atmel\AVR Tools\include\m16def.inc"
+         ;***************************************************************************
+         ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+         ;* 
+         ;* Number				:AVR000
+         ;* File Name			:"m16def.inc"
+         ;* Title				:Register/Bit Definitions for the ATmega16
+         ;* Date                 :07.09.2001
+         ;* Version              :1.00
+         ;* Support telephone	:+47 72 88 87 20 (ATMEL Norway)
+         ;* Support fax			:+47 72 88 87 18 (ATMEL Norway)
+         ;* Support E-mail		:avr@atmel.no
+         ;* Target MCU			:ATmega16
+         ;*
+         ;* DESCRIPTION
+         ;* When including this file in the assembly program file, all I/O register	
+         ;* names and I/O register bit names appearing in the data book can be used.
+         ;* In addition, the six registers forming the three data pointers X, Y and
+         ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+         ;* SRAM is also defined 
+         ;*
+         ;* The Register names are represented by their hexadecimal address.
+         ;* 
+         ;* The Register Bit names are represented by their bit number (0-7).
+         ;* 
+         ;* Please observe the difference in using the bit names with instructions
+         ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc" 
+         ;* (skip if bit in register set/cleared). The following example illustrates
+         ;* this:
+         ;* 
+         ;* in	r16,PORTB				;read PORTB latch
+         ;* sbr	r16,(1<<PB6)+(1<<PB5)	;set PB6 and PB5 (use masks, not bit#)
+         ;* out  PORTB,r16				;output to PORTB
+         ;*
+         ;* in	r16,TIFR				;read the Timer Interrupt Flag Register
+         ;* sbrc	r16,TOV0				;test the overflow flag (use bit#)
+         ;* rjmp	TOV0_is_set				;jump if set
+         ;* ...							;otherwise do something else
+         ;***************************************************************************
+         
+         ;***** Specify Device
+          .device ATmega16
+         
+         ;***** I/O Register Definitions
+          .equ	SREG	=$3f
+          .equ	SPH		=$3e
+          .equ	SPL		=$3d
+          .equ	OCR0	=$3c		
+          .equ	GICR	=$3b		; New name for GIMSK
+          .equ	GIMSK	=$3b
+          .equ	GIFR	=$3a
+          .equ	TIMSK	=$39
+          .equ	TIFR	=$38
+          .equ	SPMCR	=$37
+          .equ    I2CR    =$36
+          .equ    TWCR    =$36
+          .equ    MCUCR   =$35
+          .equ    MCUSR   =$34
+          .equ    MCUCSR	=$34		; New name for MCUSR
+          .equ	TCCR0	=$33
+          .equ	TCNT0	=$32
+          .equ    OSCCAL  =$31
+          .equ    SFIOR   =$30
+          .equ	TCCR1A	=$2f
+          .equ	TCCR1B	=$2e
+          .equ	TCNT1H	=$2d
+          .equ	TCNT1L	=$2c
+          .equ	OCR1AH	=$2b
+          .equ	OCR1AL	=$2a
+          .equ	OCR1BH	=$29
+          .equ	OCR1BL	=$28
+          .equ	ICR1H	=$27
+          .equ	ICR1L	=$26
+          .equ	TCCR2	=$25
+          .equ	TCNT2	=$24
+          .equ	OCR2	=$23
+          .equ	ASSR	=$22
+          .equ	WDTCR	=$21
+          .equ    UBRRHI  =$20
+          .equ    UBRRH   =$20		; New name for UBRRHI
+          .equ	EEARH	=$1f
+          .equ	EEARL	=$1e
+          .equ	EEDR	=$1d
+          .equ	EECR	=$1c
+          .equ	PORTA	=$1b
+          .equ	DDRA	=$1a
+          .equ	PINA	=$19
+          .equ	PORTB	=$18
+          .equ	DDRB	=$17
+          .equ	PINB	=$16
+          .equ	PORTC	=$15
+          .equ	DDRC	=$14
+          .equ	PINC	=$13
+          .equ	PORTD	=$12
+          .equ	DDRD	=$11
+          .equ	PIND	=$10
+          .equ	SPDR	=$0f
+          .equ	SPSR	=$0e
+          .equ	SPCR	=$0d
+          .equ	UDR		=$0c
+          .equ	UCSRA	=$0b
+          .equ	USR		=$0b    ; For compatibility with S8535
+          .equ	UCSRB	=$0a
+          .equ	UCR		=$0a    ; For compatibility with S8535
+          .equ	UCSRC	=$20	; Note! UCSRC equals UBRRH 
+          .equ	UBRR	=$09
+          .equ	UBRRL	=$09	; New name for UBRR
+          .equ	ACSR	=$08
+          .equ    ADMUX   =$07
+          .equ    ADCSR   =$06
+          .equ    ADCH    =$05
+          .equ    ADCL    =$04
+          .equ    TWDR    =$03
+          .equ    TWAR    =$02
+          .equ    TWSR    =$01
+          .equ    TWBR    =$00
+          .equ    I2DR    =$03
+          .equ    I2AR    =$02
+          .equ    I2SR    =$01
+          .equ    I2BR    =$00
+         
+         ;***** Bit Definitions
+         
+         ; GIMSK / GICR
+          .equ	INT1	=7
+          .equ	INT0	=6
+          .equ	INT2	=5	
+          .equ	IVSEL	=1      
+          .equ	IVCE	=0      
+         	
+         ; GIFR
+          .equ	INTF1	=7
+          .equ	INTF0	=6
+          .equ	INTF2	=5       
+         
+         ; TIMSK
+          .equ    TOIE0   =0
+          .equ    OCIE0   =1	 
+          .equ    TOIE1   =2
+          .equ    OCIE1B  =3
+          .equ    OCIE1A  =4
+          .equ    TICIE1  =5
+          .equ    TOIE2   =6
+          .equ    OCIE2   =7
+         
+         ; TIFR
+          .equ    TOV0    =0
+          .equ    OCF0    =1	 
+          .equ    TOV1    =2
+          .equ    OCF1B   =3
+          .equ    OCF1A   =4
+          .equ    ICF1    =5
+          .equ    TOV2    =6
+          .equ    OCF2    =7
+         
+         ; SPMCR
+          .equ	SPMIE	=7
+          .equ	ASB	=6
+          .equ	ASRE	=4
+          .equ	BLBSET	=3
+          .equ	PGWRT	=2
+          .equ	PGERS	=1
+          .equ	SPMEN	=0
+         	
+         ; TWCR
+          .equ    TWINT   =7
+          .equ    TWEA    =6
+          .equ    TWSTA   =5
+          .equ    TWSTO   =4
+          .equ    TWWC    =3
+          .equ    TWEN    =2
+         
+          .equ    TWIE    =0
+         
+         ; MCUCR
+         	
+          .equ    SM2     =7   
+          .equ    SE      =6
+          .equ    SM1     =5
+          .equ    SM0     =4
+          .equ    ISC11   =3
+          .equ    ISC10   =2
+          .equ    ISC01   =1
+          .equ    ISC00   =0
+         
+         ; MCUSR
+          .equ    ISC2    =6   
+          .equ    WDRF    =3
+          .equ    BORF    =2
+          .equ    EXTRF   =1
+          .equ    PORF    =0
+         
+         ; TCCR0
+          .equ    FOC0    =7   
+          .equ    PWM0    =6  ;OBSOLETE! Use WGM00
+          .equ    WGM00   =6
+          .equ	COM01	=5   
+          .equ	COM00	=4   
+          .equ	CTC0	=3  ;OBSOLETE! Use WGM01
+          .equ    WGM01   =3
+          .equ	CS02	=2
+          .equ	CS01	=1
+          .equ	CS00	=0
+         
+         ; SFIOR
+          .equ	ADTS2	=7	 			
+          .equ	ADTS1	=6	 			
+          .equ	ADTS0	=5	 			
+          .equ    ADHSM   =4
+          .equ    ACME    =3
+          .equ    PUD     =2
+          .equ    PSR2    =1
+          .equ    PSR10   =0
+         
+         ; TCCR1A
+          .equ	COM1A1	=7
+          .equ	COM1A0	=6
+          .equ	COM1B1	=5
+          .equ	COM1B0	=4
+          .equ	FOC1A	=3
+          .equ	FOC1B	=2
+          .equ	PWM11	=1  ; OBSOLETE! Use WGM11
+          .equ	PWM10	=0  ; OBSOLETE! Use WGM10
+          .equ	WGM11	=1
+          .equ	WGM10	=0
+         
+         ; TCCR1B
+          .equ	ICNC1	=7
+          .equ	ICES1	=6
+          .equ	CTC11	=4  ; OBSOLETE! Use WGM13
+          .equ	CTC10	=3  ; OBSOLETE! Use WGM12
+          .equ	CTC1	=3  ; OBSOLETE! Use WGM12
+          .equ	WGM13	=4
+          .equ	WGM12	=3
+          .equ	CS12	=2
+          .equ	CS11	=1
+          .equ	CS10	=0
+         
+         ; TCCR2
+          .equ	FOC2	=7
+          .equ    PWM2    =6  ; OBSOLETE! Use WGM20
+          .equ    WGM20   =6
+          .equ    COM21   =5
+          .equ    COM20   =4
+          .equ    CTC2    =3  ; OBSOLETE! Use WGM21
+          .equ    WGM21   =3
+          .equ    CS22    =2
+          .equ    CS21    =1
+          .equ    CS20    =0
+         
+         ; ASSR
+          .equ    AS2     =3
+          .equ    TCN2UB  =2
+          .equ    OCR2UB  =1
+          .equ    TCR2UB  =0
+         
+         ; WDTCR
+          .equ	WDTOE	=4
+          .equ	WDE	=3
+          .equ	WDP2	=2
+          .equ	WDP1	=1
+          .equ	WDP0	=0
+         
+         ; EECR
+          .equ    EERIE   =3
+          .equ	EEMWE	=2
+          .equ	EEWE	=1
+          .equ	EERE	=0
+         
+         ; PORTA
+          .equ	PA7	=7
+          .equ	PA6	=6
+          .equ	PA5	=5
+          .equ	PA4	=4
+          .equ	PA3	=3
+          .equ	PA2	=2
+          .equ	PA1	=1
+          .equ	PA0	=0
+         
+         ; DDRA
+          .equ	DDA7	=7
+          .equ	DDA6	=6
+          .equ	DDA5	=5
+          .equ	DDA4	=4
+          .equ	DDA3	=3
+          .equ	DDA2	=2
+          .equ	DDA1	=1
+          .equ	DDA0	=0
+         
+         ; PINA
+          .equ	PINA7	=7
+          .equ	PINA6	=6
+          .equ	PINA5	=5
+          .equ	PINA4	=4
+          .equ	PINA3	=3
+          .equ	PINA2	=2
+          .equ	PINA1	=1
+          .equ	PINA0	=0
+         
+         ; PORTB
+          .equ	PB7	=7
+          .equ	PB6	=6
+          .equ	PB5	=5
+          .equ	PB4	=4
+          .equ	PB3	=3
+          .equ	PB2	=2
+          .equ	PB1	=1
+          .equ	PB0	=0
+         
+         ; DDRB
+          .equ	DDB7	=7
+          .equ	DDB6	=6
+          .equ	DDB5	=5
+          .equ	DDB4	=4
+          .equ	DDB3	=3
+          .equ	DDB2	=2
+          .equ	DDB1	=1
+          .equ	DDB0	=0
+         
+         ; PINB
+          .equ	PINB7	=7
+          .equ	PINB6	=6
+          .equ	PINB5	=5
+          .equ	PINB4	=4
+          .equ	PINB3	=3
+          .equ	PINB2	=2
+          .equ	PINB1	=1
+          .equ	PINB0	=0
+         
+         ; PORTC
+          .equ	PC7	=7
+          .equ	PC6	=6
+          .equ	PC5	=5
+          .equ	PC4	=4
+          .equ	PC3	=3
+          .equ	PC2	=2
+          .equ	PC1	=1
+          .equ	PC0	=0
+         
+         ; DDRC
+          .equ	DDC7	=7
+          .equ	DDC6	=6
+          .equ	DDC5	=5
+          .equ	DDC4	=4
+          .equ	DDC3	=3
+          .equ	DDC2	=2
+          .equ	DDC1	=1
+          .equ	DDC0	=0
+         
+         ; PINC
+          .equ	PINC7	=7
+          .equ	PINC6	=6
+          .equ	PINC5	=5
+          .equ	PINC4	=4
+          .equ	PINC3	=3
+          .equ	PINC2	=2
+          .equ	PINC1	=1
+          .equ	PINC0	=0
+         
+         ; PORTD
+          .equ	PD7	=7
+          .equ	PD6	=6
+          .equ	PD5	=5
+          .equ	PD4	=4
+          .equ	PD3	=3
+          .equ	PD2	=2
+          .equ	PD1	=1
+          .equ	PD0	=0
+         
+         ; DDRD
+          .equ	DDD7	=7
+          .equ	DDD6	=6
+          .equ	DDD5	=5
+          .equ	DDD4	=4
+          .equ	DDD3	=3
+          .equ	DDD2	=2
+          .equ	DDD1	=1
+          .equ	DDD0	=0
+         
+         ; PIND
+          .equ	PIND7	=7
+          .equ	PIND6	=6
+          .equ	PIND5	=5
+          .equ	PIND4	=4
+          .equ	PIND3	=3
+          .equ	PIND2	=2
+          .equ	PIND1	=1
+          .equ	PIND0	=0
+         
+         ; SPSR
+          .equ	SPIF	=7
+          .equ	WCOL	=6
+          .equ	SPI2X	=0
+         
+         ; SPCR
+          .equ	SPIE	=7
+          .equ	SPE	=6
+          .equ	DORD	=5
+          .equ	MSTR	=4
+          .equ	CPOL	=3
+          .equ	CPHA	=2
+          .equ	SPR1	=1
+          .equ	SPR0	=0
+         
+         ; UCSRA
+          .equ	RXC	=7
+          .equ	TXC	=6
+          .equ	UDRE	=5
+          .equ	FE	=4
+          .equ	OR	=3
+          .equ	DOR	=3	;New name for OR
+          .equ	PE	=2	 
+          .equ	U2X	=1
+          .equ	MPCM	=0
+         
+         ; UCSRB
+          .equ	RXCIE	=7
+          .equ	TXCIE	=6
+          .equ	UDRIE	=5
+          .equ	RXEN	=4
+          .equ	TXEN	=3
+          .equ	CHR9	=2
+          .equ	UCSZ2	=2	; New name for CHR9
+          .equ	RXB8	=1
+          .equ	TXB8	=0
+         
+         ;UCSRC
+          .equ	URSEL	=7	 
+          .equ	UMSEL	=6	 
+          .equ	UPM1	=5	 
+          .equ	UPM0	=4	 
+          .equ	USBS	=3	 
+          .equ	UCSZ1	=2	 
+          .equ	UCSZ0	=1	 
+          .equ	UCPOL	=0	 
+         
+         ; ACSR
+          .equ	ACD	=7
+          .equ    ACBG    =6
+          .equ	ACO	=5
+          .equ	ACI	=4
+          .equ	ACIE	=3
+          .equ	ACIC	=2
+          .equ	ACIS1	=1
+          .equ	ACIS0	=0
+         
+         ; ADMUX
+          .equ    REFS1   =7
+          .equ    REFS0   =6
+          .equ    ADLAR   =5
+          .equ    MUX4    =4
+          .equ    MUX3    =3
+          .equ    MUX2    =2
+          .equ    MUX1    =1
+          .equ    MUX0    =0
+         
+         ; ADCSR
+          .equ    ADEN    =7
+          .equ    ADSC    =6
+          .equ	ADATE	=5	 
+          .equ    ADFR    =5
+          .equ    ADIF    =4
+          .equ    ADIE    =3
+          .equ    ADPS2   =2
+          .equ    ADPS1   =1
+          .equ    ADPS0   =0
+         
+         ; TWAR
+          .equ    TWGCE   =0
+         
+          .def	XL	=r26
+          .def	XH	=r27
+          .def	YL	=r28
+          .def	YH	=r29
+          .def	ZL	=r30
+          .def	ZH	=r31
+         
+          .equ 	RAMEND =$45F
+         
+          .equ 	BOOTSTART	=$1E00  ;OBSOLETE!!! temporarily kept for compatibility
+         ;.equ 	LARGEBOOTSTART	=$0C00  ;largest boot block is 2KB
+         ;.equ 	SMALLBOOTSTART	=$0F80  ;smallest boot block is 256B
+          .equ 	SMALLBOOTSTART	=0b1111110000000  ;($1F80) smallest boot block is 256B
+          .equ 	SECONDBOOTSTART	=0b1111100000000  ;($1F00) second boot block size is 512B
+          .equ 	THIRDBOOTSTART	=0b1111000000000  ;($1E00) third boot block size is 1KB
+          .equ 	LARGEBOOTSTART	=0b1110000000000  ;($1C00) largest boot block is 2KB
+          .equ	PAGESIZE	=64     ;number of WORDS in a page
+          .equ 	FLASHEND	=$1fff
+         
+          .equ	INT0addr=$002	;External Interrupt0 Vector Address
+          .equ	INT1addr=$004	;External Interrupt1 Vector Address
+          .equ	OC2addr =$006	;Output Compare2 Interrupt Vector Address
+          .equ	OVF2addr=$008	;Overflow2 Interrupt Vector Address
+          .equ	ICP1addr=$00A	;Input Capture1 Interrupt Vector Address
+          .equ	OC1Aaddr=$00C	;Output Compare1A Interrupt Vector Address
+          .equ	OC1Baddr=$00E	;Output Compare1B Interrupt Vector Address
+          .equ	OVF1addr=$010	;Overflow1 Interrupt Vector Address
+          .equ	OVF0addr=$012	;Overflow0 Interrupt Vector Address
+          .equ	SPIaddr =$014	;SPI Interrupt Vector Address
+          .equ	URXCaddr=$016	;UART Receive Complete Interrupt Vector Address
+          .equ	UDREaddr=$018	;UART Data Register Empty Interrupt Vector Address
+          .equ	UTXCaddr=$01A	;UART Transmit Complete Interrupt Vector Address
+          .equ	ADCCaddr=$01C	;ADC Interrupt Vector Address
+          .equ	ERDYaddr=$01E	;EEPROM Interrupt Vector Address
+          .equ	ACIaddr =$020	;Analog Comparator Interrupt Vector Address
+          .equ    TWIaddr =$022   ;Irq. vector address for Two-Wire Interface
+          .equ	INT2addr=$024   ;External Interrupt2 Vector Address
+          .equ	OC0addr =$026   ;Output Compare0 Interrupt Vector Address
+          .equ	SPMRaddr=$028   ;Store Program Memory Ready Interrupt Vector Address
+         
+          .equ	VIDPORT 		= PORTB
+          .equ	SYNCPORT		= PORTC
+          .equ    VIDDDR			= DDRB
+          .equ	SYNCDDR			= DDRC
+          .equ	VIDPIN			= PB7
+          .equ	SYNCPIN			= PC7
+          .equ	lineTime		= 509
+          .equ	NORM_SYNC_LINE	= 1
+          .equ	VSYNC_LINE		= 243
+          .equ	FIELD_LINE		= 263
+          .equ	SYNCON			= 0
+          .equ 	SYNCOFF			= 1
+          .equ    NORMSYNC		= 0x02
+          .equ	INVSYNC			= 0x01
+         
+          .MACRO SHIFTREG2VID		; Shift 6 bits of register out to port
+          	OUT VIDPORT,@0		; Bit 7
+          	LSL @0
+          	NOP
+          	OUT VIDPORT,@0		; Bit 6
+          	LSL @0
+          	NOP
+          	OUT VIDPORT,@0		; Bit 5
+          	LSL @0
+          	NOP
+          	OUT VIDPORT,@0		; Bit 4
+          	LSL @0
+          	NOP
+          	OUT VIDPORT,@0		; Bit 3
+          	LSL @0
+          	NOP
+          	OUT VIDPORT,@0		; Bit 2
+          	LSL @0
+          	NOP
+          .ENDMACRO
+         
+          .dseg
+          	.org 	0x60
+000060      RAMBUF:		.byte	1000
+000448      RAMPTR:		.byte	2
+00044a      CURSOR:		.byte	2
+00044c      TMP_YL:		.byte	1
+00044d      TMP_YH:		.byte	1
+00044e      TMP_ZL:		.byte	1
+00044f      LINE:		.byte   1
+000450      LINEH:		.byte   1
+000451      SYNCPOL: 	.byte	1
+         
+          .cseg
+          	.org 0
+000000 940c 002a 	JMP	RESET	;RESET vector
+000002 940c 032a 	JMP	HSYNC1	;IRQ0 vector
+000004 940c 0378 	JMP	VSYNC	;IRQ1 vector
+000006 940c 002a 	JMP	RESET	;T2 COMPARE vector
+000008 940c 002a 	JMP	RESET	;T2 OVF vector
+00000a 940c 002a 	JMP	RESET	;T1 CAPTURE vector
+00000c 940c 0334 	JMP	HSYNC2	;T1 COMPARE A vector
+00000e 940c 002a 	JMP	RESET	;T1 COMPARE B vector
+000010 940c 002a 	JMP	RESET	;T1 OVF vector
+000012 940c 002a 	JMP	RESET	;T0 OVF vector
+000014 940c 002a 	JMP	RESET	;SERIAL XFER COMPLETE vector
+000016 940c 002a 	JMP	RESET	;USART RX vector
+000018 940c 002a 	JMP	RESET	;USART DREG EMPTY vector
+00001a 940c 002a 	JMP	RESET	;USART TX vector
+00001c 940c 002a 	JMP	RESET	;ADC vector
+00001e 940c 002a 	JMP	RESET	;EEPROM vector
+000020 940c 002a 	JMP	RESET	;COMPARATOR vector
+000022 940c 002a 	JMP	RESET	;2-WIRE vector
+000024 940c 002a 	JMP	RESET	;IRQ2 vector
+000026 940c 002a 	JMP	RESET	;T0 COMPARE vector
+000028 940c 002a 	JMP	RESET	;SPM READY vector
+         
+          RESET:
+00002a e004      	LDI	R16,HIGH(RAMEND)	; Init SP
+00002b bf0e      	OUT	SPH,R16
+00002c e50f      	LDI	R16,LOW(RAMEND)
+00002d bf0d      	OUT	SPL,R16
+         	
+         ;	LDI R16, 0xA7
+         ;	OUT OSCCAL, R16
+         
+00002e e003       	LDI R16, 0x03 					;One NTSC line 509
+00002f bd0b      	OUT OCR1AH, R16
+000030 ef0a      	LDI R16, 0xFA
+000031 bd0a      	OUT OCR1AL, R16
+         
+000032 e009        	LDI R16,(1 << WGM12)|(1 << CS10)	;full speed; clear-on-match
+000033 bd0e       	OUT TCCR1B, R16
+000034 e000          LDI R16, 0x00						;turn off pwm and oc lines
+000035 bd0f        	OUT TCCR1A, R16
+000036 e100        	LDI R16, (1 << OCIE1A)				;enable interrupt T1A compare
+000037 bf09        	OUT TIMSK, R16
+000038 e800      	LDI R16, (1<<VIDPIN)
+000039 bb07         	OUT VIDDDR, R16
+00003a e800      	LDI R16, (1<<SYNCPIN)
+00003b bb04      	OUT SYNCDDR, R16
+00003c e002      	LDI	R16, NORMSYNC
+00003d 9300 0451 	STS	SYNCPOL, R16
+         
+00003f e001      	LDI	R16,1				; Line = 1
+000040 9300 044f 	STS	LINE,R16
+000042 e000      	LDI	R16, 0x00
+000043 9300 0450 	STS	LINEH,R16
+         
+000045 ec00      	LDI	R16,(1 << INT0) | (1 << INT1)
+000046 bf0b      	OUT	GICR,R16
+         
+000047 2700      	CLR R16
+000048 bd00      	OUT UBRRH,R16
+000049 e607      	LDI R16, 103				; 9600 baud
+00004a b909      	OUT UBRRL,R16
+00004b e108      	LDI R16,(1 << RXEN) | (1 << TXEN)
+00004c b90a      	OUT UCSRB,R16
+00004d e806      	LDI R16,(1 << URSEL) | (1 << UCSZ1) | (1 << UCSZ0)	; 8N1
+00004e bd00      	OUT UCSRC,R16
+         
+         
+00004f e0d0      	LDI	YH,HIGH(RAMBUF)
+000050 93d0 0448 	STS	RAMPTR,YH
+000052 e6c0      	LDI	YL,LOW(RAMBUF)
+000053 93c0 0449 	STS	RAMPTR+1,YL
+         
+000055 e40a      	LDI	R16,(1 << SE) | (1 << ISC11) | (1 << ISC01)
+000056 bf05      	OUT	MCUCR,R16			; Enable sleep and interrupt on rising edge of ext int
+         	
+000057 940e 031b 	CALL CLRS
+000059 9478      	SEI
+         	
+          MAIN:
+00005a 9588      	SLEEP					; Wait for sync
+         
+00005b 9100 044f 	LDS	 R16,LINE			; Read line counter
+00005d 3208      	CPI	 R16,40 			; Ignore first 40 lines
+00005e f3d8      	BRCS MAIN
+00005f 3c08      	CPI	 R16,200			; And everything beyond line 200
+000060 f7c8      	BRCC MAIN
+         
+000061 2711      	CLR	 R17
+000062 e2f0      	LDI	 ZH,HIGH(CHRTAB*2)	; ZH = Table offset
+000063 2fe0      	MOV	 ZL,R16				; + line number
+000064 70e7      	ANDI ZL,7
+000065 0ffe      	ADD	 ZH,ZL
+         
+000066 5208      	SUBI R16,$28
+000067 e0d0      	LDI	 YH,HIGH(RAMBUF)	; Point to current character line in RAM
+000068 e6c0      	LDI	 YL,LOW(RAMBUF)
+000069 7f08      	ANDI R16,0xF8
+00006a 0f00      	LSL	 R16				; Add line offset (line*32)
+00006b 1f11      	ROL	 R17
+00006c 0f00      	LSL	 R16
+00006d 1f11      	ROL	 R17
+00006e 0fc0      	ADD	 YL,R16
+00006f 1fd1      	ADC	 YH,R17
+         
+000070 91e9      	LD	 ZL,Y+
+000071 9104      	LPM	 R16,Z
+000072 91e9      	LD	 ZL,Y+				; Read next character from RAM buffer into LSB
+000073 9004      	LPM	 R0,Z				; Look it up
+000074 91e9      	LD	 ZL,Y+				; Fill all 32 registers
+000075 9014      	LPM	 R1,Z
+000076 91e9      	LD	 ZL,Y+
+000077 9024      	LPM	 R2,Z
+000078 91e9      	LD	 ZL,Y+
+000079 9034      	LPM	 R3,Z
+00007a 91e9      	LD	 ZL,Y+
+00007b 9044      	LPM	 R4,Z
+00007c 91e9      	LD	 ZL,Y+
+00007d 9054      	LPM	 R5,Z
+00007e 91e9      	LD	 ZL,Y+
+00007f 9064      	LPM	 R6,Z
+000080 91e9      	LD	 ZL,Y+
+000081 9074      	LPM	 R7,Z
+000082 91e9      	LD	 ZL,Y+
+000083 9084      	LPM	 R8,Z
+000084 91e9      	LD	 ZL,Y+
+000085 9094      	LPM	 R9,Z
+000086 91e9      	LD	 ZL,Y+
+000087 90a4      	LPM	 R10,Z
+000088 91e9      	LD	 ZL,Y+
+000089 90b4      	LPM	 R11,Z
+00008a 91e9      	LD	 ZL,Y+
+00008b 90c4      	LPM	 R12,Z
+00008c 91e9      	LD	 ZL,Y+
+00008d 90d4      	LPM	 R13,Z
+00008e 91e9      	LD	 ZL,Y+
+00008f 90e4      	LPM	 R14,Z
+000090 91e9      	LD	 ZL,Y+
+000091 90f4      	LPM	 R15,Z
+000092 91e9      	LD	 ZL,Y+
+000093 9114      	LPM	 R17,Z
+000094 91e9      	LD	 ZL,Y+
+000095 9124      	LPM	 R18,Z
+000096 91e9      	LD	 ZL,Y+
+000097 9134      	LPM	 R19,Z
+000098 91e9      	LD	 ZL,Y+
+000099 9144      	LPM	 R20,Z
+00009a 91e9      	LD	 ZL,Y+
+00009b 9154      	LPM	 R21,Z
+00009c 91e9      	LD	 ZL,Y+
+00009d 9164      	LPM	 R22,Z
+00009e 91e9      	LD	 ZL,Y+
+00009f 9174      	LPM	 R23,Z
+0000a0 91e9      	LD	 ZL,Y+
+0000a1 9184      	LPM	 R24,Z
+0000a2 91e9      	LD	 ZL,Y+
+0000a3 9194      	LPM	 R25,Z
+0000a4 91e9      	LD	 ZL,Y+
+0000a5 91a4      	LPM	 R26,Z
+0000a6 91e9      	LD	 ZL,Y+
+0000a7 91b4      	LPM	 R27,Z
+0000a8 91e9      	LD	 ZL,Y+				; Want to preserve YH & YL for now
+0000a9 91e4      	LPM	 ZL,Z
+0000aa 93e0 044c 	STS	 TMP_YL,ZL
+0000ac 91e9      	LD	 ZL,Y+
+0000ad 91e4      	LPM	 ZL,Z
+0000ae 93e0 044d 	STS	 TMP_YH,ZL
+0000b0 91e9      	LD	 ZL,Y+
+0000b1 91e4      	LPM	 ZL,Z
+0000b2 93e0 044e 	STS	 TMP_ZL,ZL			; Also want to preserve ZL
+0000b4 91e9      	LD	 ZL,Y+
+0000b5 91f4      	LPM	 ZH,Z
+0000b6 91e0 044e 	LDS	 ZL,TMP_ZL			; Load up YH, YL, and ZL
+0000b8 91c0 044c 	LDS	 YL,TMP_YL
+0000ba 91d0 044d 	LDS	 YH,TMP_YH	
+         
+         ; Start shifting out to the screen
+0000bc   +  	SHIFTREG2VID R16
+         
+0000ce 2d00      	MOV  R16,R0
+0000cf   +  	SHIFTREG2VID R16
+         
+0000e1 2d01      	MOV  R16,R1
+0000e2   +  	SHIFTREG2VID R16
+         
+0000f4 2d02      	MOV  R16,R2
+0000f5   +  	SHIFTREG2VID R16
+         
+000107 2d03      	MOV R16,R3
+000108   +  	SHIFTREG2VID R16
+         
+00011a 2d04      	MOV R16,R4
+00011b   +  	SHIFTREG2VID R16
+         
+00012d 2d05      	MOV R16,R5
+00012e   +  	SHIFTREG2VID R16
+         
+000140 2d06      	MOV R16,R6
+000141   +  	SHIFTREG2VID R16
+         
+000153 2d07      	MOV R16,R7
+000154   +  	SHIFTREG2VID R16
+         
+000166 2d08      	MOV R16,R8
+000167   +  	SHIFTREG2VID R16
+         
+000179 2d09      	MOV R16,R9
+00017a   +  	SHIFTREG2VID R16
+         
+00018c 2d0a      	MOV R16,R10
+00018d   +  	SHIFTREG2VID R16
+         
+00019f 2d0b      	MOV R16,R11
+0001a0   +  	SHIFTREG2VID R16
+         
+0001b2 2d0c      	MOV R16,R12
+0001b3   +  	SHIFTREG2VID R16
+         
+0001c5 2d0d      	MOV R16,R13
+0001c6   +  	SHIFTREG2VID R16
+         
+0001d8 2d0e      	MOV R16,R14
+0001d9   +  	SHIFTREG2VID R16
+         
+0001eb 2d0f      	MOV R16,R15
+0001ec   +  	SHIFTREG2VID R16
+         
+0001fe   +  	SHIFTREG2VID R17
+000210   +  	SHIFTREG2VID R18
+000222   +  	SHIFTREG2VID R19
+000234   +  	SHIFTREG2VID R20
+000246   +  	SHIFTREG2VID R21
+000258   +  	SHIFTREG2VID R22
+00026a   +  	SHIFTREG2VID R23
+00027c   +  	SHIFTREG2VID R24
+00028e   +  	SHIFTREG2VID R25
+0002a0   +  	SHIFTREG2VID R26
+0002b2   +  	SHIFTREG2VID R27
+0002c4   +  	SHIFTREG2VID R28
+0002d6   +  	SHIFTREG2VID R29
+0002e8   +  	SHIFTREG2VID R30
+0002fa   +  	SHIFTREG2VID R31
+00030c 98c7      	CBI	VIDPORT, VIDPIN
+         
+00030d 9b5f      	SBIS UCSRA,RXC			; Character received?
+00030e cd4b      	RJMP MAIN				; No -> Keep looping
+00030f 91c0 044b 	LDS	 YL,CURSOR+1		; Otherwise, add to screen buffer
+000311 91d0 044a 	LDS	 YH,CURSOR
+000313 b10c      	IN	 R16,UDR
+000314 9309      	ST	 Y+,R16
+000315 93c0 044b 	STS	 CURSOR+1,YL		; Save new cursor position
+000317 93d0 044a 	STS	 CURSOR,YH
+000319 b90c      	OUT  UDR,R16			; Echo back to terminal
+00031a cd3f      	RJMP MAIN
+         
+          CLRS:
+00031b e0d0      	LDI	 YH,HIGH(RAMBUF)	; Reset cursor position
+00031c 93d0 044a 	STS	 CURSOR,YH
+00031e e6c0      	LDI	 YL,LOW(RAMBUF)
+00031f 93c0 044b 	STS	 CURSOR+1,YL
+000321 2700      	CLR	 R16
+000322 2711      	CLR	 R17
+000323 e023      	LDI	 R18,3				; Clear screen memory
+          CLSLOOP:
+000324 9309      	ST   Y+,R16
+000325 951a      	DEC	 R17
+000326 f7e9      	BRNE CLSLOOP
+000327 952a      	DEC	 R18
+000328 f7d9      	BRNE CLSLOOP
+000329 9508      	RET
+         
+          HSYNC1:
+00032a 91c0 044f 	LDS	 YL,LINE			; Increment line counter
+00032c 91d0 0450 	LDS	 YH,LINEH
+00032e 9621      	ADIW YL,1
+00032f 93c0 044f 	STS	 LINE,YL
+000331 93d0 0450 	STS	 LINEH,YH
+000333 9518      	RETI
+         
+          HSYNC2:
+000334 93af      	PUSH	XL
+000335 93bf      	PUSH	XH
+000336 93cf      	PUSH	YL
+000337 93df      	PUSH	YH
+000338 93ef      	PUSH	ZL
+000339 93ff      	PUSH	ZH
+00033a b7ef      	IN		ZL, SREG
+00033b 91c0 0451 	LDS 	YL, SYNCPOL
+00033d fdc0      	SBRC	YL, SYNCON
+00033e 9aaf      	SBI		SYNCPORT, SYNCPIN
+00033f ffc0      	SBRS	YL, SYNCON
+000340 98af      	CBI		SYNCPORT, SYNCPIN
+000341 e0fe      	LDI		ZH, 0x0E
+          DELAY:
+000342 95fa      	DEC		ZH
+000343 f7f1      	BRNE	DELAY
+         ; LineCount++
+000344 91c0 044f 	LDS     YL, LINE
+000346 91d0 0450 	LDS     YH, LINEH
+000348 9621      	ADIW    YL, 0x01
+000349 93c0 044f 	STS     LINE, YL
+00034b 93d0 0450 	STS     LINEH, YH
+          LINE248:
+00034d e0b0      	LDI		XH, high(248)
+00034e 3fc8      	CPI     YL, low(248)
+00034f 07db      	CPC     YH, XH
+000350 f419      	BRNE    LINE251
+         ;inverted sync
+000351 e0a1      	LDI		XL, INVSYNC
+000352 93a0 0451 	STS		SYNCPOL, XL
+          LINE251:
+000354 e0b0      	LDI		XH, high(251)
+000355 3fcb      	CPI     YL, low(251)
+000356 07db      	CPC     YH, XH
+000357 f419      	BRNE    LINE263
+         ;normal sync;
+000358 e0a2      	LDI		XL, NORMSYNC
+000359 93a0 0451 	STS		SYNCPOL, XL
+          LINE263:
+00035b e0b1      	LDI		XH, high(263)
+00035c 30c7      	CPI     YL, low(263)
+00035d 07db      	CPC     YH, XH
+00035e f459      	BRNE    SYNC_OFF
+         ;LineCount = 0;
+00035f 27aa      	CLR  	XL
+000360 93a0 044f 	STS  	LINE, XL
+000362 93a0 0450 	STS  	LINEH, XL			; Reset line counter
+000364 e0b0      	LDI	 	XH,HIGH(RAMBUF)	; Reset RAM pointer during vsync
+000365 93b0 0448 	STS	 	RAMPTR,XH
+000367 e6a0      	LDI	 	XL,LOW(RAMBUF)
+000368 93a0 0449 	STS	 	RAMPTR+1,XL
+          SYNC_OFF:
+00036a 91c0 0451 	LDS 	YL, SYNCPOL
+00036c fdc1      	SBRC	YL, SYNCOFF
+00036d 9aaf      	SBI		SYNCPORT, SYNCPIN
+00036e ffc1      	SBRS	YL, SYNCOFF
+00036f 98af      	CBI		SYNCPORT, SYNCPIN
+000370 bfef      	OUT		SREG, ZL
+000371 91ff      	POP		ZH
+000372 91ef      	POP		ZL
+000373 91df      	POP		YH
+000374 91cf      	POP		YL
+000375 91bf      	POP		XH
+000376 91af      	POP		XL
+000377 9518      	RETI
+         
+          VSYNC:
+000378 2700      	CLR  R16
+000379 9300 044f 	STS  LINE,R16
+00037b 9300 0450 	STS  LINEH,R16			; Reset line counter
+00037d e0b0      	LDI	 XH,HIGH(RAMBUF)	; Reset RAM pointer during vsync
+00037e 93b0 0448 	STS	 RAMPTR,XH
+000380 e6a0      	LDI	 XL,LOW(RAMBUF)
+000381 93a0 0449 	STS	 RAMPTR+1,XL
+000383 91df      	POP YH
+000384 91cf      	POP YL
+000385 91bf      	POP XH
+000386 91af      	POP XL
+000387 9518      	RETI
+         
+          	.org 0x1000
+         
+          .include "C:\Download\osd\font.inc"
+          CHRTAB:
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 00
+001000 0000
+001001 0000
+001002 0000
+001003 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 01
+001004 0000
+001005 0000
+001006 0000
+001007 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 02
+001008 0000
+001009 0000
+00100a 0000
+00100b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 03
+00100c 0000
+00100d 0000
+00100e 0000
+00100f 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 04
+001010 0000
+001011 0000
+001012 0000
+001013 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 05
+001014 0000
+001015 0000
+001016 0000
+001017 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 06
+001018 0000
+001019 0000
+00101a 0000
+00101b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 07
+00101c 0000
+00101d 0000
+00101e 0000
+00101f 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 08
+001020 0000
+001021 0000
+001022 0000
+001023 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 09
+001024 0000
+001025 0000
+001026 0000
+001027 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0a
+001028 0000
+001029 0000
+00102a 0000
+00102b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0b
+00102c 0000
+00102d 0000
+00102e 0000
+00102f 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0c
+001030 0000
+001031 0000
+001032 0000
+001033 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0d
+001034 0000
+001035 0000
+001036 0000
+001037 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0e
+001038 0000
+001039 0000
+00103a 0000
+00103b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 0f
+00103c 0000
+00103d 0000
+00103e 0000
+00103f 0000
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 10
+001040 f000
+001041 ff0f
+001042 f000
+001043 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 11
+001044 f000
+001045 ff0f
+001046 f000
+001047 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 12
+001048 f000
+001049 ff0f
+00104a f000
+00104b ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 13
+00104c f000
+00104d ff0f
+00104e f000
+00104f ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 14
+001050 f000
+001051 ff0f
+001052 f000
+001053 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 15
+001054 f000
+001055 ff0f
+001056 f000
+001057 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 16
+001058 f000
+001059 ff0f
+00105a f000
+00105b ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 17
+00105c f000
+00105d ff0f
+00105e f000
+00105f ff0f
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 18
+001060 0000
+001061 0000
+001062 0000
+001063 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 19
+001064 0000
+001065 0000
+001066 0000
+001067 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1a
+001068 0000
+001069 0000
+00106a 0000
+00106b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1b
+00106c 0000
+00106d 0000
+00106e 0000
+00106f 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1c
+001070 0000
+001071 0000
+001072 0000
+001073 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1d
+001074 0000
+001075 0000
+001076 0000
+001077 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1e
+001078 0000
+001079 0000
+00107a 0000
+00107b 0000
+          	.db	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 	; 1f
+00107c 0000
+00107d 0000
+00107e 0000
+00107f 0000
+          	.db	0x00,0xf8,0x20,0x08,0x40,0xf8,0x00,0x70 	; 20
+001080 f800
+001081 0820
+001082 f840
+001083 7000
+          	.db	0x20,0x00,0xf8,0x00,0x20,0x00,0x70,0x70 	; 21
+001084 0020
+001085 00f8
+001086 0020
+001087 7070
+          	.db	0xf8,0x70,0x70,0x70,0x70,0x00,0x70,0x08 	; 22
+001088 70f8
+001089 7070
+00108a 0070
+00108b 0870
+          	.db	0xf8,0x20,0x70,0x70,0xf8,0xf8,0xf8,0xf8 	; 23
+00108c 20f8
+00108d 7070
+00108e f8f8
+00108f f8f8
+          	.db	0x00,0x20,0x50,0x50,0x20,0xc0,0x40,0x60 	; 24
+001090 2000
+001091 5050
+001092 c020
+001093 6040
+          	.db	0x10,0x40,0x20,0x00,0x00,0x00,0x00,0x00 	; 25
+001094 4010
+001095 0020
+001096 0000
+001097 0000
+          	.db	0x70,0x20,0x70,0x70,0x10,0xf8,0x30,0xf8 	; 26
+001098 2070
+001099 7070
+00109a f810
+00109b f830
+          	.db	0x70,0x70,0x00,0x60,0x10,0x00,0x40,0x70 	; 27
+00109c 7070
+00109d 6000
+00109e 0010
+00109f 7040
+          	.db	0x00,0x20,0xf0,0x70,0xf0,0xf8,0xf8,0x78 	; 28
+0010a0 2000
+0010a1 70f0
+0010a2 f8f0
+0010a3 78f8
+          	.db	0x88,0x70,0x08,0x88,0x80,0x88,0x88,0x70 	; 29
+0010a4 7088
+0010a5 8808
+0010a6 8880
+0010a7 7088
+          	.db	0xf0,0x70,0xf0,0x70,0xf8,0x88,0x88,0x88 	; 2a
+0010a8 70f0
+0010a9 70f0
+0010aa 88f8
+0010ab 8888
+          	.db	0x88,0x88,0xf8,0x70,0x00,0x70,0x20,0x00 	; 2b
+0010ac 8888
+0010ad 70f8
+0010ae 7000
+0010af 0020
+          	.db	0x30,0x70,0x80,0x00,0x08,0x00,0x10,0x68 	; 2c
+0010b0 7030
+0010b1 0080
+0010b2 0008
+0010b3 6810
+          	.db	0x80,0x20,0x08,0x80,0x60,0x00,0x00,0x00 	; 2d
+0010b4 2080
+0010b5 8008
+0010b6 0060
+0010b7 0000
+          	.db	0xb0,0x68,0x00,0x00,0x20,0x00,0x00,0x00 	; 2e
+0010b8 68b0
+0010b9 0000
+0010ba 0020
+0010bb 0000
+          	.db	0x00,0x88,0x00,0x10,0x20,0x40,0x40,0x50 	; 2f
+0010bc 8800
+0010bd 1000
+0010be 4020
+0010bf 5040
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 30
+0010c0 f000
+0010c1 ff0f
+0010c2 f000
+0010c3 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 31
+0010c4 f000
+0010c5 ff0f
+0010c6 f000
+0010c7 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 32
+0010c8 f000
+0010c9 ff0f
+0010ca f000
+0010cb ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 33
+0010cc f000
+0010cd ff0f
+0010ce f000
+0010cf ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 34
+0010d0 f000
+0010d1 ff0f
+0010d2 f000
+0010d3 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 35
+0010d4 f000
+0010d5 ff0f
+0010d6 f000
+0010d7 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 36
+0010d8 f000
+0010d9 ff0f
+0010da f000
+0010db ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 37
+0010dc f000
+0010dd ff0f
+0010de f000
+0010df ff0f
+          	.db	0x00,0x00,0x08,0x1c,0x3c,0x3c,0x04,0x20 	; 38
+0010e0 0000
+0010e1 1c08
+0010e2 3c3c
+0010e3 2004
+          	.db	0x00,0x3c,0x61,0x0c,0x06,0x16,0x2c,0x08 	; 39
+0010e4 3c00
+0010e5 0c61
+0010e6 1606
+0010e7 082c
+          	.db	0x00,0x40,0x20,0x24,0x00,0x08,0x00,0x00 	; 3a
+0010e8 4000
+0010e9 2420
+0010ea 0800
+0010eb 0000
+          	.db	0x00,0x00,0x00,0x00,0x08,0x00,0x49,0x00 	; 3b
+0010ec 0000
+0010ed 0000
+0010ee 0008
+0010ef 0049
+          	.db	0x1c,0x1e,0x00,0x7e,0x00,0x00,0x04,0x01 	; 3c
+0010f0 1e1c
+0010f1 7e00
+0010f2 0000
+0010f3 0104
+          	.db	0x10,0x3f,0x1c,0x00,0x00,0x1e,0x22,0x3c 	; 3d
+0010f4 3f10
+0010f5 001c
+0010f6 1e00
+0010f7 3c22
+          	.db	0x42,0x3e,0x08,0x3c,0x5f,0xff,0xfc,0x78 	; 3e
+0010f8 3e42
+0010f9 3c08
+0010fa ff5f
+0010fb 78fc
+          	.db	0x61,0x0e,0x1c,0x0e,0xff,0x08,0x08,0x08 	; 3f
+0010fc 0e61
+0010fd 0e1c
+0010fe 08ff
+0010ff 0808
+          	.db	0x00,0x80,0x20,0x08,0x20,0x88,0x08,0x88 	; 40
+001100 8000
+001101 0820
+001102 8820
+001103 8808
+          	.db	0x40,0x20,0x00,0x20,0xa8,0x20,0x88,0x88 	; 41
+001104 2040
+001105 2000
+001106 20a8
+001107 8888
+          	.db	0x88,0xa8,0x88,0x88,0xa8,0x28,0x50,0x08 	; 42
+001108 a888
+001109 8888
+00110a 28a8
+00110b 0850
+          	.db	0x88,0x20,0x88,0x88,0xa8,0x88,0x88,0xa8 	; 43
+00110c 2088
+00110d 8888
+00110e 88a8
+00110f a888
+          	.db	0x00,0x20,0x50,0x50,0x78,0xc8,0xa0,0x60 	; 44
+001110 2000
+001111 5050
+001112 c878
+001113 60a0
+          	.db	0x20,0x20,0xa8,0x20,0x00,0x00,0x00,0x08 	; 45
+001114 2020
+001115 20a8
+001116 0000
+001117 0800
+          	.db	0x88,0x60,0x88,0x88,0x30,0x80,0x40,0x08 	; 46
+001118 6088
+001119 8888
+00111a 8030
+00111b 0840
+          	.db	0x88,0x88,0x60,0x60,0x20,0x00,0x20,0x88 	; 47
+00111c 8888
+00111d 6060
+00111e 0020
+00111f 8820
+          	.db	0x88,0x50,0x48,0x88,0x48,0x80,0x80,0x80 	; 48
+001120 5088
+001121 8848
+001122 8048
+001123 8080
+          	.db	0x88,0x20,0x08,0x90,0x80,0xd8,0xc8,0x88 	; 49
+001124 2088
+001125 9008
+001126 d880
+001127 88c8
+          	.db	0x88,0x88,0x88,0x88,0x20,0x88,0x88,0x88 	; 4a
+001128 8888
+001129 8888
+00112a 8820
+00112b 8888
+          	.db	0x88,0x88,0x08,0x40,0x80,0x10,0x50,0x00 	; 4b
+00112c 8888
+00112d 4008
+00112e 1080
+00112f 0050
+          	.db	0x30,0x08,0x80,0x00,0x08,0x00,0x28,0x98 	; 4c
+001130 0830
+001131 0080
+001132 0008
+001133 9828
+          	.db	0x80,0x00,0x00,0x80,0x20,0x00,0x00,0x00 	; 4d
+001134 0080
+001135 8000
+001136 0020
+001137 0000
+          	.db	0xc8,0x98,0x00,0x00,0x20,0x00,0x00,0x00 	; 4e
+001138 98c8
+001139 0000
+00113a 0020
+00113b 0000
+          	.db	0x00,0x88,0x00,0x20,0x20,0x20,0xa8,0xa8 	; 4f
+00113c 8800
+00113d 2000
+00113e 2020
+00113f a8a8
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 50
+001140 f000
+001141 ff0f
+001142 f000
+001143 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 51
+001144 f000
+001145 ff0f
+001146 f000
+001147 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 52
+001148 f000
+001149 ff0f
+00114a f000
+00114b ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 53
+00114c f000
+00114d ff0f
+00114e f000
+00114f ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 54
+001150 f000
+001151 ff0f
+001152 f000
+001153 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 55
+001154 f000
+001155 ff0f
+001156 f000
+001157 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 56
+001158 f000
+001159 ff0f
+00115a f000
+00115b ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 57
+00115c f000
+00115d ff0f
+00115e f000
+00115f ff0f
+          	.db	0x1c,0x36,0x1c,0x1c,0x42,0x42,0x08,0x10 	; 58
+001160 361c
+001161 1c1c
+001162 4242
+001163 1008
+          	.db	0x00,0x22,0x12,0x12,0x08,0x06,0x52,0x14 	; 59
+001164 2200
+001165 1212
+001166 0608
+001167 1452
+          	.db	0x20,0x48,0x10,0x24,0x00,0x1c,0x18,0x00 	; 5a
+001168 4820
+001169 2410
+00116a 1c00
+00116b 0018
+          	.db	0x18,0x00,0x00,0x02,0x1c,0x00,0x2a,0x00 	; 5b
+00116c 0018
+00116d 0200
+00116e 001c
+00116f 002a
+          	.db	0x22,0x10,0x08,0x20,0x32,0x00,0x08,0x02 	; 5c
+001170 1022
+001171 2008
+001172 0032
+001173 0208
+          	.db	0x08,0x52,0x22,0x00,0x02,0x20,0x55,0x42 	; 5d
+001174 5208
+001175 0022
+001176 2002
+001177 4255
+          	.db	0x24,0x4a,0x1c,0x7a,0x60,0x04,0x02,0x44 	; 5e
+001178 4a24
+001179 7a1c
+00117a 0460
+00117b 4402
+          	.db	0x82,0x06,0x22,0x08,0xe3,0x14,0x14,0x14 	; 5f
+00117c 0682
+00117d 0822
+00117e 14e3
+00117f 1414
+          	.db	0x00,0x80,0x20,0x08,0x10,0xd8,0x10,0x88 	; 60
+001180 8000
+001181 0820
+001182 d810
+001183 8810
+          	.db	0xf0,0x10,0x00,0x20,0x70,0x40,0xd8,0x88 	; 61
+001184 10f0
+001185 2000
+001186 4070
+001187 88d8
+          	.db	0x88,0xa8,0x88,0x88,0xa8,0x10,0x50,0x08 	; 62
+001188 a888
+001189 8888
+00118a 10a8
+00118b 0850
+          	.db	0x50,0x70,0x80,0x88,0xa8,0x88,0x88,0xa8 	; 63
+00118c 7050
+00118d 8880
+00118e 88a8
+00118f a888
+          	.db	0x00,0x20,0x50,0xf8,0xa0,0x10,0xa0,0x40 	; 64
+001190 2000
+001191 f850
+001192 10a0
+001193 40a0
+          	.db	0x40,0x10,0x70,0x20,0x00,0x00,0x00,0x10 	; 65
+001194 1040
+001195 2070
+001196 0000
+001197 1000
+          	.db	0x98,0x20,0x08,0x08,0x50,0xf0,0x80,0x10 	; 66
+001198 2098
+001199 0808
+00119a f050
+00119b 1080
+          	.db	0x88,0x88,0x60,0x00,0x40,0xf8,0x10,0x08 	; 67
+00119c 8888
+00119d 0060
+00119e f840
+00119f 0810
+          	.db	0x08,0x88,0x48,0x80,0x48,0x80,0x80,0x80 	; 68
+0011a0 8808
+0011a1 8048
+0011a2 8048
+0011a3 8080
+          	.db	0x88,0x20,0x08,0xa0,0x80,0xa8,0xa8,0x88 	; 69
+0011a4 2088
+0011a5 a008
+0011a6 a880
+0011a7 88a8
+          	.db	0x88,0x88,0x88,0x80,0x20,0x88,0x88,0x88 	; 6a
+0011a8 8888
+0011a9 8088
+0011aa 8820
+0011ab 8888
+          	.db	0x50,0x50,0x10,0x40,0x40,0x10,0x88,0x00 	; 6b
+0011ac 5050
+0011ad 4010
+0011ae 1040
+0011af 0088
+          	.db	0x20,0x78,0xb0,0x70,0x68,0x70,0x20,0x98 	; 6c
+0011b0 7820
+0011b1 70b0
+0011b2 7068
+0011b3 9820
+          	.db	0xb0,0x60,0x08,0x90,0x20,0xd0,0xb0,0x70 	; 6d
+0011b4 60b0
+0011b5 9008
+0011b6 d020
+0011b7 70b0
+          	.db	0x88,0x88,0xb0,0x78,0xf8,0x88,0x88,0x88 	; 6e
+0011b8 8888
+0011b9 78b0
+0011ba 88f8
+0011bb 8888
+          	.db	0x88,0x88,0xf8,0x20,0x20,0x20,0x10,0x50 	; 6f
+0011bc 8888
+0011bd 20f8
+0011be 2020
+0011bf 5010
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 70
+0011c0 f000
+0011c1 ff0f
+0011c2 f000
+0011c3 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 71
+0011c4 f000
+0011c5 ff0f
+0011c6 f000
+0011c7 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 72
+0011c8 f000
+0011c9 ff0f
+0011ca f000
+0011cb ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 73
+0011cc f000
+0011cd ff0f
+0011ce f000
+0011cf ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 74
+0011d0 f000
+0011d1 ff0f
+0011d2 f000
+0011d3 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 75
+0011d4 f000
+0011d5 ff0f
+0011d6 f000
+0011d7 ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 76
+0011d8 f000
+0011d9 ff0f
+0011da f000
+0011db ff0f
+          	.db	0x00,0xf0,0x0f,0xff,0x00,0xf0,0x0f,0xff 	; 77
+0011dc f000
+0011dd ff0f
+0011de f000
+0011df ff0f
+          	.db	0x3e,0x7f,0x3e,0x08,0xa5,0xa5,0x10,0x08 	; 78
+0011e0 7f3e
+0011e1 083e
+0011e2 a5a5
+0011e3 0810
+          	.db	0x39,0x3c,0x14,0x10,0x10,0x08,0x12,0x22 	; 79
+0011e4 3c39
+0011e5 1014
+0011e6 0810
+0011e7 2212
+          	.db	0x20,0x50,0x10,0x24,0x32,0x20,0x24,0x3e 	; 7a
+0011e8 5020
+0011e9 2410
+0011ea 2032
+0011eb 3e24
+          	.db	0x24,0x3e,0x3e,0x64,0x2a,0x62,0x2a,0x22 	; 7b
+0011ec 3e24
+0011ed 643e
+0011ee 622a
+0011ef 222a
+          	.db	0x41,0x10,0x00,0x10,0x4c,0x08,0x10,0x7f 	; 7c
+0011f0 1041
+0011f1 1000
+0011f2 084c
+0011f3 7f10
+          	.db	0x04,0x24,0x41,0x36,0x04,0x1c,0x2a,0x9d 	; 7d
+0011f4 2404
+0011f5 3641
+0011f6 1c04
+0011f7 9d2a
+          	.db	0x18,0x4a,0x2a,0xa5,0x63,0x03,0xfc,0x44 	; 7e
+0011f8 4a18
+0011f9 a52a
+0011fa 0363
+0011fb 44fc
+          	.db	0x84,0x0a,0x22,0x08,0xdd,0x08,0x08,0x22 	; 7f
+0011fc 0a84
+0011fd 0822
+0011fe 08dd
+0011ff 2208
+          	.db	0x00,0x80,0x20,0x08,0x78,0xa8,0xa0,0xf8 	; 80
+001200 8000
+001201 0820
+001202 a878
+001203 f8a0
+          	.db	0x48,0xf8,0xf8,0xa8,0x20,0xf8,0xa8,0xa8 	; 81
+001204 f848
+001205 a8f8
+001206 f820
+001207 a8a8
+          	.db	0xf8,0xb8,0xb8,0xe8,0xe8,0xa8,0x50,0xf8 	; 82
+001208 b8f8
+001209 e8b8
+00120a a8e8
+00120b f850
+          	.db	0x20,0x70,0x40,0xf8,0xe8,0xe8,0xb8,0xb8 	; 83
+00120c 7020
+00120d f840
+00120e e8e8
+00120f b8b8
+          	.db	0x00,0x20,0x00,0x50,0x70,0x20,0x40,0x80 	; 84
+001210 2000
+001211 5000
+001212 2070
+001213 8040
+          	.db	0x40,0x10,0xf8,0xf8,0x60,0xf8,0x00,0x20 	; 85
+001214 1040
+001215 f8f8
+001216 f860
+001217 2000
+          	.db	0xa8,0x20,0x70,0x30,0x90,0x08,0xf0,0x20 	; 86
+001218 20a8
+001219 3070
+00121a 0890
+00121b 20f0
+          	.db	0x70,0x78,0x00,0x60,0x80,0x00,0x08,0x10 	; 87
+00121c 7870
+00121d 6000
+00121e 0080
+00121f 1008
+          	.db	0x68,0x88,0x70,0x80,0x48,0xe0,0xe0,0x98 	; 88
+001220 8868
+001221 8070
+001222 e048
+001223 98e0
+          	.db	0xf8,0x20,0x08,0xc0,0x80,0xa8,0x98,0x88 	; 89
+001224 20f8
+001225 c008
+001226 a880
+001227 8898
+          	.db	0xf0,0x88,0xf0,0x70,0x20,0x88,0x50,0x88 	; 8a
+001228 88f0
+001229 70f0
+00122a 8820
+00122b 8850
+          	.db	0x20,0x20,0x20,0x40,0x20,0x10,0x00,0x00 	; 8b
+00122c 2020
+00122d 4020
+00122e 1020
+00122f 0000
+          	.db	0x10,0x88,0xc8,0x88,0x98,0x88,0x70,0x68 	; 8c
+001230 8810
+001231 88c8
+001232 8898
+001233 6870
+          	.db	0xc8,0x20,0x08,0xa0,0x20,0xa8,0xc8,0x88 	; 8d
+001234 20c8
+001235 a008
+001236 a820
+001237 88c8
+          	.db	0xc8,0x98,0xc8,0x80,0x20,0x88,0x88,0x88 	; 8e
+001238 98c8
+001239 80c8
+00123a 8820
+00123b 8888
+          	.db	0x50,0x78,0x10,0x40,0x00,0x10,0x00,0xa8 	; 8f
+00123c 7850
+00123d 4010
+00123e 1000
+00123f a800
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; 90
+001240 0000
+001241 0000
+001242 f0f0
+001243 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; 91
+001244 0f0f
+001245 0f0f
+001246 ffff
+001247 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; 92
+001248 0000
+001249 0000
+00124a f0f0
+00124b f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; 93
+00124c 0f0f
+00124d 0f0f
+00124e ffff
+00124f ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; 94
+001250 0000
+001251 0000
+001252 f0f0
+001253 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; 95
+001254 0f0f
+001255 0f0f
+001256 ffff
+001257 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; 96
+001258 0000
+001259 0000
+00125a f0f0
+00125b f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; 97
+00125c 0f0f
+00125d 0f0f
+00125e ffff
+00125f ffff
+          	.db	0x7f,0x7f,0x7f,0x6b,0x81,0x81,0x20,0x04 	; 98
+001260 7f7f
+001261 6b7f
+001262 8181
+001263 0420
+          	.db	0x46,0x22,0x18,0x0c,0x3e,0x10,0x12,0x3e 	; 99
+001264 2246
+001265 0c18
+001266 103e
+001267 3e12
+          	.db	0x20,0x60,0x10,0x24,0x12,0x18,0x42,0x54 	; 9a
+001268 6020
+001269 2410
+00126a 1812
+00126b 5442
+          	.db	0x24,0x48,0x48,0x24,0x2a,0x14,0x1c,0x41 	; 9b
+00126c 4824
+00126d 2448
+00126e 142a
+00126f 411c
+          	.db	0x41,0x10,0x3e,0x0c,0x00,0x14,0x10,0x08 	; 9c
+001270 1041
+001271 0c3e
+001272 1400
+001273 0810
+          	.db	0x3e,0x08,0x41,0x49,0x48,0x22,0x14,0xa1 	; 9d
+001274 083e
+001275 4941
+001276 2248
+001277 a114
+          	.db	0x24,0x3a,0x28,0xa5,0x62,0xfc,0x00,0x78 	; 9e
+001278 3a24
+001279 a528
+00127a fc62
+00127b 7800
+          	.db	0x68,0x70,0x22,0x0e,0xf3,0x1c,0x1c,0x22 	; 9f
+00127c 7068
+00127d 0e22
+00127e 1cf3
+00127f 221c
+          	.db	0x00,0x80,0x20,0x08,0x20,0xd8,0xc0,0x50 	; a0
+001280 8000
+001281 0820
+001282 d820
+001283 50c0
+          	.db	0x28,0x10,0x00,0x70,0xa8,0x40,0xd8,0x88 	; a1
+001284 1028
+001285 7000
+001286 40a8
+001287 88d8
+          	.db	0x88,0x88,0xa8,0xa8,0x88,0xc0,0x50,0x08 	; a2
+001288 8888
+001289 a8a8
+00128a c088
+00128b 0850
+          	.db	0x50,0x20,0x20,0x88,0x88,0xa8,0xa8,0x88 	; a3
+00128c 2050
+00128d 8820
+00128e a888
+00128f 88a8
+          	.db	0x00,0x20,0x00,0xf8,0x28,0x40,0xa8,0x00 	; a4
+001290 2000
+001291 f800
+001292 4028
+001293 00a8
+          	.db	0x40,0x10,0x70,0x20,0x60,0x00,0x00,0x40 	; a5
+001294 1040
+001295 2070
+001296 0060
+001297 4000
+          	.db	0xc8,0x20,0x80,0x08,0xf8,0x08,0x88,0x40 	; a6
+001298 20c8
+001299 0880
+00129a 08f8
+00129b 4088
+          	.db	0x88,0x08,0x60,0x60,0x40,0xf8,0x10,0x20 	; a7
+00129c 0888
+00129d 6060
+00129e f840
+00129f 2010
+          	.db	0xa8,0xf8,0x48,0x80,0x48,0x80,0x80,0x88 	; a8
+0012a0 f8a8
+0012a1 8048
+0012a2 8048
+0012a3 8880
+          	.db	0x88,0x20,0x08,0xa0,0x80,0x88,0x88,0x88 	; a9
+0012a4 2088
+0012a5 a008
+0012a6 8880
+0012a7 8888
+          	.db	0x80,0xa8,0xa0,0x08,0x20,0x88,0x50,0xa8 	; aa
+0012a8 a880
+0012a9 08a0
+0012aa 8820
+0012ab a850
+          	.db	0x50,0x20,0x40,0x40,0x10,0x10,0x00,0x00 	; ab
+0012ac 2050
+0012ad 4040
+0012ae 1010
+0012af 0000
+          	.db	0x00,0x78,0x88,0x80,0x88,0xf8,0x20,0x08 	; ac
+0012b0 7800
+0012b1 8088
+0012b2 f888
+0012b3 0820
+          	.db	0x88,0x20,0x08,0xc0,0x20,0xa8,0x88,0x88 	; ad
+0012b4 2088
+0012b5 c008
+0012b6 a820
+0012b7 8888
+          	.db	0xb0,0x68,0x80,0x70,0x20,0x88,0x88,0xa8 	; ae
+0012b8 68b0
+0012b9 7080
+0012ba 8820
+0012bb a888
+          	.db	0x20,0x08,0x20,0x20,0x20,0x20,0x00,0x50 	; af
+0012bc 0820
+0012bd 2020
+0012be 2020
+0012bf 5000
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; b0
+0012c0 0000
+0012c1 0000
+0012c2 f0f0
+0012c3 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; b1
+0012c4 0f0f
+0012c5 0f0f
+0012c6 ffff
+0012c7 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; b2
+0012c8 0000
+0012c9 0000
+0012ca f0f0
+0012cb f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; b3
+0012cc 0f0f
+0012cd 0f0f
+0012ce ffff
+0012cf ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; b4
+0012d0 0000
+0012d1 0000
+0012d2 f0f0
+0012d3 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; b5
+0012d4 0f0f
+0012d5 0f0f
+0012d6 ffff
+0012d7 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; b6
+0012d8 0000
+0012d9 0000
+0012da f0f0
+0012db f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; b7
+0012dc 0f0f
+0012dd 0f0f
+0012de ffff
+0012df ffff
+          	.db	0x7f,0x3e,0x3e,0x7f,0xa5,0x99,0x10,0x08 	; b8
+0012e0 3e7f
+0012e1 7f3e
+0012e2 99a5
+0012e3 0810
+          	.db	0x46,0x22,0x10,0x0a,0x10,0x1c,0x02,0x22 	; b9
+0012e4 2246
+0012e5 0a10
+0012e6 1c10
+0012e7 2202
+          	.db	0x22,0x50,0x18,0x3a,0x14,0x20,0x42,0x14 	; ba
+0012e8 5022
+0012e9 3a18
+0012ea 2014
+0012eb 1442
+          	.db	0x38,0x48,0x08,0x24,0x2a,0x08,0x08,0x49 	; bb
+0012ec 4838
+0012ed 2408
+0012ee 082a
+0012ef 4908
+          	.db	0x63,0x50,0x00,0x10,0x32,0x22,0x08,0x7f 	; bc
+0012f0 5063
+0012f1 1000
+0012f2 2232
+0012f3 7f08
+          	.db	0x10,0x12,0x7f,0x49,0x50,0x1c,0x2a,0xa1 	; bd
+0012f4 1210
+0012f5 497f
+0012f6 1c50
+0012f7 a12a
+          	.db	0x18,0x0a,0x2a,0xb9,0x64,0x02,0x00,0x4a 	; be
+0012f8 0a18
+0012f9 b92a
+0012fa 0264
+0012fb 4a00
+          	.db	0x16,0x90,0x1c,0x00,0xf7,0x2a,0x2a,0x22 	; bf
+0012fc 9016
+0012fd 001c
+0012fe 2af7
+0012ff 222a
+          	.db	0x00,0x80,0x20,0x08,0x10,0x88,0x80,0x50 	; c0
+001300 8000
+001301 0820
+001302 8810
+001303 5080
+          	.db	0x08,0x20,0x00,0x20,0x70,0x20,0x88,0x88 	; c1
+001304 2008
+001305 2000
+001306 2070
+001307 8888
+          	.db	0x88,0x88,0xa8,0xa8,0x88,0x80,0x50,0x08 	; c2
+001308 8888
+001309 a8a8
+00130a 8088
+00130b 0850
+          	.db	0x88,0x20,0x00,0x88,0x88,0xa8,0xa8,0x88 	; c3
+00130c 2088
+00130d 8800
+00130e a888
+00130f 88a8
+          	.db	0x00,0x00,0x00,0x50,0xf0,0x98,0x90,0x00 	; c4
+001310 0000
+001311 5000
+001312 98f0
+001313 0090
+          	.db	0x20,0x20,0xa8,0x20,0x40,0x00,0x60,0x80 	; c5
+001314 2020
+001315 20a8
+001316 0040
+001317 8060
+          	.db	0x88,0x20,0x80,0x88,0x10,0x88,0x88,0x80 	; c6
+001318 2088
+001319 8880
+00131a 8810
+00131b 8088
+          	.db	0x88,0x10,0x60,0x40,0x20,0x00,0x20,0x00 	; c7
+00131c 1088
+00131d 4060
+00131e 0020
+00131f 0020
+          	.db	0xa8,0x88,0x48,0x88,0x48,0x80,0x80,0x88 	; c8
+001320 88a8
+001321 8848
+001322 8048
+001323 8880
+          	.db	0x88,0x20,0x88,0x90,0x80,0x88,0x88,0x88 	; c9
+001324 2088
+001325 9088
+001326 8880
+001327 8888
+          	.db	0x80,0x90,0x90,0x88,0x20,0x88,0x20,0xd8 	; ca
+001328 9080
+001329 8890
+00132a 8820
+00132b d820
+          	.db	0x88,0x20,0x80,0x40,0x08,0x10,0x00,0x00 	; cb
+00132c 2088
+00132d 4080
+00132e 1008
+00132f 0000
+          	.db	0x00,0x00,0xc8,0x88,0x98,0x80,0x20,0x88 	; cc
+001330 0000
+001331 88c8
+001332 8098
+001333 8820
+          	.db	0x88,0x20,0x88,0xa0,0x20,0xa8,0x88,0x88 	; cd
+001334 2088
+001335 a088
+001336 a820
+001337 8888
+          	.db	0x80,0x08,0x80,0x08,0x28,0x98,0x50,0xa8 	; ce
+001338 0880
+001339 0880
+00133a 9828
+00133b a850
+          	.db	0x50,0x88,0x40,0x20,0x20,0x20,0x00,0xa8 	; cf
+00133c 8850
+00133d 2040
+00133e 2020
+00133f a800
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; d0
+001340 0000
+001341 0000
+001342 f0f0
+001343 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; d1
+001344 0f0f
+001345 0f0f
+001346 ffff
+001347 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; d2
+001348 0000
+001349 0000
+00134a f0f0
+00134b f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; d3
+00134c 0f0f
+00134d 0f0f
+00134e ffff
+00134f ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; d4
+001350 0000
+001351 0000
+001352 f0f0
+001353 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; d5
+001354 0f0f
+001355 0f0f
+001356 ffff
+001357 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; d6
+001358 0000
+001359 0000
+00135a f0f0
+00135b f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; d7
+00135c 0f0f
+00135d 0f0f
+00135e ffff
+00135f ffff
+          	.db	0x3e,0x1c,0x1c,0x6b,0x99,0xa5,0x08,0x10 	; d8
+001360 1c3e
+001361 6b1c
+001362 a599
+001363 1008
+          	.db	0x39,0x3c,0x30,0x12,0x08,0x02,0x02,0x14 	; d9
+001364 3c39
+001365 1230
+001366 0208
+001367 1402
+          	.db	0x22,0x4a,0x24,0x20,0x18,0x1c,0x24,0x14 	; da
+001368 4a22
+001369 2024
+00136a 1c18
+00136b 1424
+          	.db	0x20,0x30,0x08,0x24,0x1c,0x14,0x08,0x49 	; db
+00136c 3020
+00136d 2408
+00136e 141c
+00136f 4908
+          	.db	0x22,0x30,0x08,0x20,0x4c,0x7f,0x08,0x20 	; dc
+001370 3022
+001371 2008
+001372 7f4c
+001373 2008
+          	.db	0x08,0x25,0x22,0x36,0x60,0x02,0x55,0x9d 	; dd
+001374 2508
+001375 3622
+001376 0260
+001377 9d55
+          	.db	0x24,0x0a,0x1c,0xa9,0x7b,0xfc,0x00,0x44 	; de
+001378 0a24
+001379 a91c
+00137a fc7b
+00137b 4400
+          	.db	0x29,0x90,0x08,0x00,0xff,0x08,0x14,0x2a 	; df
+00137c 9029
+00137d 0008
+00137e 08ff
+00137f 2a14
+          	.db	0x00,0x80,0xf8,0xf8,0x08,0xf8,0x00,0xd8 	; e0
+001380 8000
+001381 f8f8
+001382 f808
+001383 d800
+          	.db	0x08,0x00,0xf8,0x00,0x20,0x00,0x70,0x70 	; e1
+001384 0008
+001385 00f8
+001386 0020
+001387 7070
+          	.db	0xf8,0x70,0x70,0x70,0x70,0x00,0xd8,0x08 	; e2
+001388 70f8
+001389 7070
+00138a 0070
+00138b 08d8
+          	.db	0xf8,0x20,0x20,0x70,0xf8,0xf8,0xf8,0xf8 	; e3
+00138c 20f8
+00138d 7020
+00138e f8f8
+00138f f8f8
+          	.db	0x00,0x20,0x00,0x50,0x20,0x18,0x68,0x00 	; e4
+001390 2000
+001391 5000
+001392 1820
+001393 0068
+          	.db	0x10,0x40,0x20,0x00,0x80,0x00,0x60,0x00 	; e5
+001394 4010
+001395 0020
+001396 0080
+001397 0060
+          	.db	0x70,0x70,0xf8,0x70,0x10,0x70,0x70,0x80 	; e6
+001398 7070
+001399 70f8
+00139a 7010
+00139b 8070
+          	.db	0x70,0x60,0x00,0x80,0x10,0x00,0x40,0x20 	; e7
+00139c 6070
+00139d 8000
+00139e 0010
+00139f 2040
+          	.db	0x70,0x88,0xf0,0x70,0xf0,0xf8,0x80,0x78 	; e8
+0013a0 8870
+0013a1 70f0
+0013a2 f8f0
+0013a3 7880
+          	.db	0x88,0x70,0x70,0x88,0xf8,0x88,0x88,0x70 	; e9
+0013a4 7088
+0013a5 8870
+0013a6 88f8
+0013a7 7088
+          	.db	0x80,0x68,0x88,0x70,0x20,0x70,0x20,0x88 	; ea
+0013a8 6880
+0013a9 7088
+0013aa 7020
+0013ab 8820
+          	.db	0x88,0x20,0xf8,0x70,0x00,0x70,0x00,0xf8 	; eb
+0013ac 2088
+0013ad 70f8
+0013ae 7000
+0013af f800
+          	.db	0x00,0x00,0xb0,0x70,0x68,0x70,0x20,0x70 	; ec
+0013b0 0000
+0013b1 70b0
+0013b2 7068
+0013b3 7020
+          	.db	0x88,0x70,0x70,0x90,0x70,0xa8,0x88,0x70 	; ed
+0013b4 7088
+0013b5 9070
+0013b6 a870
+0013b7 7088
+          	.db	0x80,0x08,0x80,0xf0,0x10,0x68,0x20,0x50 	; ee
+0013b8 0880
+0013b9 f080
+0013ba 6810
+0013bb 5020
+          	.db	0x88,0x70,0xf8,0x10,0x20,0x40,0x00,0x50 	; ef
+0013bc 7088
+0013bd 10f8
+0013be 4020
+0013bf 5000
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; f0
+0013c0 0000
+0013c1 0000
+0013c2 f0f0
+0013c3 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; f1
+0013c4 0f0f
+0013c5 0f0f
+0013c6 ffff
+0013c7 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; f2
+0013c8 0000
+0013c9 0000
+0013ca f0f0
+0013cb f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; f3
+0013cc 0f0f
+0013cd 0f0f
+0013ce ffff
+0013cf ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; f4
+0013d0 0000
+0013d1 0000
+0013d2 f0f0
+0013d3 f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; f5
+0013d4 0f0f
+0013d5 0f0f
+0013d6 ffff
+0013d7 ffff
+          	.db	0x00,0x00,0x00,0x00,0xf0,0xf0,0xf0,0xf0 	; f6
+0013d8 0000
+0013d9 0000
+0013da f0f0
+0013db f0f0
+          	.db	0x0f,0x0f,0x0f,0x0f,0xff,0xff,0xff,0xff 	; f7
+0013dc 0f0f
+0013dd 0f0f
+0013de ffff
+0013df ffff
+          	.db	0x08,0x08,0x08,0x08,0x42,0x42,0x04,0x20 	; f8
+0013e0 0808
+0013e1 0808
+0013e2 4242
+0013e3 2004
+          	.db	0x00,0x20,0x30,0x0c,0x06,0x0c,0x02,0x08 	; f9
+0013e4 2000
+0013e5 0c30
+0013e6 0c06
+0013e7 0802
+          	.db	0x1c,0x44,0x42,0x20,0x10,0x02,0x18,0x14 	; fa
+0013e8 441c
+0013e9 2042
+0013ea 0210
+0013eb 1418
+          	.db	0x20,0x00,0x08,0x18,0x08,0x23,0x08,0x36 	; fb
+0013ec 0020
+0013ed 1808
+0013ee 2308
+0013ef 3608
+          	.db	0x63,0x10,0x00,0x7e,0x00,0x00,0x10,0x40 	; fc
+0013f0 1063
+0013f1 7e00
+0013f2 0000
+0013f3 4010
+          	.db	0x04,0x42,0x22,0x00,0x40,0x3c,0x22,0x42 	; fd
+0013f4 4204
+0013f5 0022
+0013f6 3c40
+0013f7 4222
+          	.db	0x42,0x0a,0x08,0x66,0x60,0x04,0x00,0x4b 	; fe
+0013f8 0a42
+0013f9 6608
+0013fa 0460
+0013fb 4b00
+          	.db	0x49,0x60,0x1c,0x00,0xf7,0x14,0x3e,0x36 	; ff
+0013fc 6049
+0013fd 001c
+0013fe 14f7
+0013ff 363e
+         
+         
+
+Assembly complete with no errors.

@@ -1,0 +1,18 @@
+Creating   'vidoverlay.eep'
+Creating   'vidoverlay.hex'
+Creating   'vidoverlay.obj'
+Creating   'vidoverlay.lis'
+Creating   'vidoverlay.map'
+
+Assembling 'vidoverlay.asm'
+Including  'C:\Program Files\Atmel\AVR Tools\include\m16def.inc'
+Including  'C:\Download\osd\font.inc'
+
+Program memory usage:
+Code             :  904 words
+Constants (dw/db): 1024 words
+Unused           : 3192 words
+Total            : 5120 words
+
+Assembly complete with no errors.
+Deleting   'vidoverlay.eep'
