@@ -14,9 +14,11 @@ This particular course of action would require:
 
 ### L.E.D.
 
-See L.E.D. [README](../basiclang/text-editors/led/README.md).
+See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
+### VIC EDITYPE
 
+See `VIC EDITYPE` [README]().
 
 
 - a telnet client
