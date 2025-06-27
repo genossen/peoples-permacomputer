@@ -18,7 +18,7 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
 ### VIC EDITYPE
 
-See `VIC EDITYPE` [README]().
+See `VIC EDITYPE` [README](../basiclang/text-editors/editype/).
 
 
 - a telnet client
