@@ -42,7 +42,7 @@ _permaculture_.
 
 ## Project results
 
-- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase.
+- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase. `COMPLETE`
 
 - [Second](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-2.md) phase.
 
