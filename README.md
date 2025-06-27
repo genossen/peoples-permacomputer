@@ -43,17 +43,22 @@ _permaculture_.
 ## Project results
 
 - [First](results/phase-1.md) phase. `COMPLETE`
-    - `Hardware exploration.`
+    - **Hardware exploration**.
     - CHIP-8 virtual machine.
 	- MC6809 CPU platform.
 	- [DREAM6800](http://www.mjbauer.biz/DREAM6800.htm) SBC.
 
 - [Second](results/phase-2.md) phase. `COMPLETE`
-    - `Settled on hardware`.
+    - **Settled on hardware**.
 	- Basic 6502 setup.
 	- Microcontroller-based video.
 
 - [Third](results/phase-3.md) phase. `ACTIVE`
+    - **Paradigmatic microcomputer BASIC operating environment**.
+	- Distribute operating system as printed code listings.
+		- Text editors sourced.
+		- Telnet client not yet sourced.
+		- Gopher client not yet sourced.
 
 ## Project logs
 
