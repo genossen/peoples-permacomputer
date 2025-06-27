@@ -1,10 +1,13 @@
 
----
-title: L.E.D.
-subtitle: Line-Oriented Text Editor
-author: Arnie Lee
-date: Feb, 1981.
-...
+# L.E.D.
+
+## Line-Oriented Text Editor
+
+##  Arnie Lee
+
+## ABACUS SOFTWARE
+
+## Published: Compute! Magazine; Feb, 1981.
 
 The LED is line-oriented as opposed to word-oriented.  As such, it
 cannot be considered a true word processor although it does provide
