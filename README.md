@@ -42,9 +42,18 @@ _permaculture_.
 
 ## Project results
 
-- [First](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-1.md) phase. `COMPLETE`
+- [First](results/phase-1.md) phase. `COMPLETE`
+    - `Hardware exploration.`
+    - CHIP-8 virtual machine.
+	- MC6809 CPU platform.
+	- [DREAM6800](http://www.mjbauer.biz/DREAM6800.htm) SBC.
 
-- [Second](https://git.sr.ht/~vidak/peoples-permacomputer/tree/master/item/results/phase-2.md) phase.
+- [Second](results/phase-2.md) phase. `COMPLETE`
+    - `Settled on hardware`.
+	- Basic 6502 setup.
+	- Microcontroller-based video.
+
+- [Third](results/phase-3.md) phase. `ACTIVE`
 
 ## Project logs
 
