@@ -28,7 +28,7 @@ See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
 ### Scriptor
 
-See `Scriptor` [DIRECTORY](..basiclang/text-editors/scriptor/).
+See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 - Transcription not started.
 - Atari 400/800 (32K, 40K recommended).
