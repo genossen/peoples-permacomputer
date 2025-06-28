@@ -26,17 +26,11 @@ repo tinybasic will accept.
 
 ## Table of contents.
 
+### A gopher browser.
+
+_Research not started_.
+
 ### Text editors.
-
-Filename Platform Transcription status Lines of code
-
-| Filename                    | Year | Platform          | Transcription status | Lines of code |
-|-----------------------------|------|-------------------|----------------------|---------------|
-| [LED.BAS](#led)             | 1981 | CBM PET, APPLE II | COMPLETE             | < 300         |
-| [WRDPRO.BAS](#wrdpro)       | 1977 | TELEPRINTER       | COMPLETE             | ~ 350         |
-| [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20            | NOT STARTED          | NOT STARTED   |
-| [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT       | NOT STARTED          | NOT STARTED   |
-|                             |      |                   |                      |               |
 
 - `100 REM PET/APPLE II` [`LED.BAS`](#led) - _Transcription complete_.
 - `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro) - _Transcription complete_.
@@ -52,7 +46,18 @@ Filename Platform Transcription status Lines of code
 
 - `REM 700 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm)
 
-## A text editor.
+## GOPHER BROWSER.
+
+_Research not started_.
+
+## TEXT EDITORS
+
+| Filename                    | Year | Platform          | Transcription status | Lines of code |
+|-----------------------------|------|-------------------|----------------------|---------------|
+| [LED.BAS](#led)             | 1981 | CBM PET, APPLE II | COMPLETE             | < 300         |
+| [WRDPRO.BAS](#wrdpro)       | 1977 | TELEPRINTER       | COMPLETE             | ~ 350         |
+| [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20            | NOT STARTED          | NOT STARTED   |
+| [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT       | NOT STARTED          | NOT STARTED   |
 
 ### L.E.D.
 
@@ -100,9 +105,14 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 - **Transcription not started**.
 - Atari 400/800 (32K, 40K recommended).
 
-## A telnet client.
+## TERMINAL CLIENTS
 
-## DUMBTERM
+| Filename                 | Year | Platform | Transcription status | Lines of code |
+|--------------------------|------|----------|----------------------|---------------|
+| [DUMBTERM.BAS](#led)     | 1981 | VIC-20   | NOT STARTED          | 9             |
+| [DUMBTERM2.BAS](#wrdpro) | 1982 | VIC-20   | NOT STARTED          | ~ 30          |
+
+### DUMBTERM
 
 ![](../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg)
 
@@ -110,7 +120,7 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 > 35, August 1982
 > <https://archive.org/details/1982-08-compute-magazine>
 
-and
+### DUMBTERM Modification
 
 ![](../basiclang/utilities/vicstation/dumb-term-modification.jpg)
 
@@ -119,10 +129,6 @@ and
 > <https://archive.org/details/1981-02-compute-magazine>
 
 See `VICSTATION` [DIRECTORY](../basiclang/utilities/vicstation/).
-
-## A gopher browser.
-
-Research not started.
 
 ## File utilities.
 
