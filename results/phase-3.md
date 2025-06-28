@@ -75,7 +75,7 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 ## DUMBTERM
 
-![](../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg)
+![](../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg){ height=50% }
 
 > “Compute! Magazine Issue 027 : Internet Archive,” Compute! Magazine,
 > 35, August 1982
