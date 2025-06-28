@@ -1,0 +1,3 @@
+[submodule "basiclang/tinybasic"]
+	path = basiclang/tinybasic
+	url = https://github.com/slviajero/tinybasic
