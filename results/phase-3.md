@@ -59,7 +59,7 @@ _Research not started_.
 | Filename                    | Year | Platform          | Transcription status | Lines of code |
 |-----------------------------|------|-------------------|----------------------|---------------|
 | [LED.BAS](#led)             | 1981 | CBM PET, APPLE II | COMPLETE             | < 300         |
-| [WRDPRO.BAS](#wrdpro)       | 1977 | TELEPRINTER       | COMPLETE             | ~ 350         |
+| [WRDPRO.BAS](#wrdpro)       | 1977 | GE 635            | COMPLETE             | ~ 350         |
 | [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20            | NOT STARTED          | NOT STARTED   |
 | [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT       | NOT STARTED          | NOT STARTED   |
 
@@ -139,6 +139,10 @@ See `VICSTATION` [DIRECTORY](../basiclang/utilities/vicstation/).
 ---
 
 ## FILE UTILITIES
+
+| Filename                | Year | Platform | Transcription status | Lines of code |
+|-------------------------|------|----------|----------------------|---------------|
+| [UTILITY.BAS](#utility) | 1977 | GE 635   | NOT STARTED          | ~ 8 PAGES.    |
 
 ### UTILITY
 
