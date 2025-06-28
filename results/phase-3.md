@@ -50,7 +50,7 @@ See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
 
 ### VIC EDITYPE
 
-> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
+> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
 > 35, April 1983
 > <https://archive.org/details/1981-02-compute-magazine>
 
@@ -62,7 +62,7 @@ See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
 ### Scriptor
 
-> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
+> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
 > 35, April 1983
 > <https://archive.org/details/1981-02-compute-magazine>
 
@@ -73,7 +73,23 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 ## A telnet client.
 
-Research not started.
+## DUMBTERM
+
+![](../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg)
+
+> “Compute! Magazine Issue 027 : Internet Archive,” Compute! Magazine,
+> 35, August 1982
+> <https://archive.org/details/1982-08-compute-magazine>
+
+and
+
+![](../basiclang/utilities/vicstation/dumb-term-modification.jpg)
+
+> “Compute! Magazine Issue 036 : Internet Archive,” Compute! Magazine,
+> 35, May 1983
+> <https://archive.org/details/1981-02-compute-magazine>
+
+See `VICSTATION` [DIRECTORY](../basiclang/utilities/vicstation/).
 
 ## A gopher browser.
 
