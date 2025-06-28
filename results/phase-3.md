@@ -34,12 +34,20 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 - CBM PET/Apple II BASIC.
 - < 300 lines of code.
 
+### WRDPRO
+
+See `WRDPRO` [DIRECTORY](../basiclang/text-editors/wrdpro/).
+
+- Transcription started.
+- Word processor.
+
 ### VIC EDITYPE
 
 See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
 - Transcription not started.
 - Commodore BASIC V2.
+- Arcane code, so unlikely to be included in software distribution.
 
 ### Scriptor
 
