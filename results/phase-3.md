@@ -24,6 +24,8 @@ operate their permacomputer.
 It will take some time to render them into BASIC that the above github
 repo tinybasic will accept.
 
+---
+
 ## Table of contents.
 
 ### A gopher browser.
@@ -37,14 +39,16 @@ _Research not started_.
 - `300 REM VIC` [`EDITYPE.BAS`](#vic-editype)
 - `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor)
 
-### Filers.
-
-- `500 REM TELEPRINTER` [`UTILITY.BAS`](#utility)
-- `600 REM VIC` [`VICSTATION - FILE READER`](#vicstation---file-reader)
-
 ### Terminal programs.
 
-- `REM 700 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm)
+- `REM 500 VIC` [`DUMBTERM.BAS`](#dumbterm)
+- `REM 600 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm-modification)
+
+### Filers.
+
+- `700 REM TELEPRINTER` [`UTILITY.BAS`](#utility)
+
+---
 
 ## GOPHER BROWSER.
 
@@ -105,6 +109,8 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 - **Transcription not started**.
 - Atari 400/800 (32K, 40K recommended).
 
+---
+
 ## TERMINAL CLIENTS
 
 | Filename                                | Year | Platform | Transcription status | Lines of code |
@@ -130,13 +136,14 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 See `VICSTATION` [DIRECTORY](../basiclang/utilities/vicstation/).
 
-## File utilities.
+---
+
+## FILE UTILITIES
 
 ### UTILITY
 
 > Brown, R.W. (1977) Basic software library. 7, professional programs
 > Vol 7. Scientific Research Inst.
-
 
 See `UTILITY` [DIRECTORY](../basiclang/utilities/utility/).
 
@@ -160,9 +167,3 @@ See `UTILITY` [DIRECTORY](../basiclang/utilities/utility/).
 2880 PRINT "`LLI` SAME AS `LIS` EXCEPT USES LINE PRINTER"
 2890 PRINT "`LPA` SAME AS `PAG` EXCEPT USES LINE PRINTER"
 ```
-
-### VICSTATION - FILE READER
-
-![`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/Compute_Issue_036_1983_May_0189.jpg)
-
-![`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/dumb-term-modification.jpg)
