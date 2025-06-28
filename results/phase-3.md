@@ -28,8 +28,18 @@ repo tinybasic will accept.
 
 ### Text editors.
 
-- `100 REM PET/APPLE II` [`LED.BAS`](#led)
-- `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro)
+Filename Platform Transcription status Lines of code
+
+| Filename                    | Year | Platform          | Transcription status | Lines of code |
+|-----------------------------|------|-------------------|----------------------|---------------|
+| [LED.BAS](#led)             | 1981 | CBM PET, APPLE II | COMPLETE             | < 300         |
+| [WRDPRO.BAS](#wrdpro)       | 1977 | TELEPRINTER       | COMPLETE             | ~ 350         |
+| [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20            | NOT STARTED          | NOT STARTED   |
+| [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT       | NOT STARTED          | NOT STARTED   |
+|                             |      |                   |                      |               |
+
+- `100 REM PET/APPLE II` [`LED.BAS`](#led) - _Transcription complete_.
+- `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro) - _Transcription complete_.
 - `300 REM VIC` [`EDITYPE.BAS`](#vic-editype)
 - `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor)
 
@@ -63,8 +73,9 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
 See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
 
-- [Transcription started](../basiclang/text-editors/wrdpro/wrdpro.bas).
+- [Transcription complete](../basiclang/text-editors/wrdpro/wrdpro.bas).
 - Word processor.
+- ~ 350 lines of code.
 
 ### VIC EDITYPE
 
@@ -74,7 +85,7 @@ See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
 
 See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
-- Transcription not started.
+- **Transcription not started**.
 - Commodore BASIC V2.
 - Arcane code, so unlikely to be included in software distribution.
 
@@ -86,7 +97,7 @@ See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
 See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
-- Transcription not started.
+- **Transcription not started**.
 - Atari 400/800 (32K, 40K recommended).
 
 ## A telnet client.
@@ -120,9 +131,8 @@ Research not started.
 > Brown, R.W. (1977) Basic software library. 7, professional programs
 > Vol 7. Scientific Research Inst.
 
-```
-basiclang/utilities/utility/
-```
+
+See `UTILITY` [DIRECTORY](../basiclang/utilities/utility/).
 
 ```
 2720 PRINT "THE LIST OF POSSIBLE COMMANDS ARE AS FOLLOWS:"
