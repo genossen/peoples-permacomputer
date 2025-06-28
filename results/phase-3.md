@@ -24,6 +24,20 @@ operate their permacomputer.
 It will take some time to render them into BASIC that the above github
 repo tinybasic will accept.
 
+## Table of contents.
+
+### Text editors.
+
+- `100 REM` [`LED.BAS`](../basiclang/text-editors/led/)
+- `200 REM` [`WRDPRO.BAS`](../basiclang/text-editors/wrdpro/)
+- `300 REM` [`EDITYPE.BAS`](../basiclang/text-editors/editype/)
+- `400 REM` [`SCRIPTOR.BAS`](../basiclang/text-editors/scriptor/)
+
+### Filers.
+
+- `500 REM` [`UTILITY.BAS`](../basiclang/utilities/utility/)
+- `600 REM` [`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/Compute_Issue_036_1983_May_0189.jpg)
+
 ## A text editor.
 
 ### L.E.D.
