@@ -34,7 +34,7 @@ repo tinybasic will accept.
 
 See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
-- Transcription complete.
+- [Transcription complete](../basiclang/text-editors/led/led.bas).
 - CBM PET/Apple II BASIC.
 - < 300 lines of code.
 
@@ -43,9 +43,9 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 > Brown, R.W. (1977) Basic software library. 7, professional programs
 > Vol 7. Scientific Research Inst.
 
-See `WRDPRO` [DIRECTORY](../basiclang/text-editors/wrdpro/).
+See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
 
-- Transcription started.
+- [Transcription started](../basiclang/text-editors/wrdpro/wrdpro.bas).
 - Word processor.
 
 ### VIC EDITYPE
