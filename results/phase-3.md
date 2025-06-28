@@ -107,10 +107,10 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 ## TERMINAL CLIENTS
 
-| Filename                 | Year | Platform | Transcription status | Lines of code |
-|--------------------------|------|----------|----------------------|---------------|
-| [DUMBTERM.BAS](#led)     | 1981 | VIC-20   | NOT STARTED          | 9             |
-| [DUMBTERM2.BAS](#wrdpro) | 1982 | VIC-20   | NOT STARTED          | ~ 30          |
+| Filename                                | Year | Platform | Transcription status | Lines of code |
+|-----------------------------------------|------|----------|----------------------|---------------|
+| [DUMBTERM.BAS](#dumbterm)               | 1981 | VIC-20   | NOT STARTED          | 9             |
+| [DUMBTERM2.BAS](#dumbterm-modification) | 1982 | VIC-20   | NOT STARTED          | ~ 30          |
 
 ### DUMBTERM
 
