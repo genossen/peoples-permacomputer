@@ -140,3 +140,9 @@ basiclang/utilities/utility/
 2880 PRINT "`LLI` SAME AS `LIS` EXCEPT USES LINE PRINTER"
 2890 PRINT "`LPA` SAME AS `PAG` EXCEPT USES LINE PRINTER"
 ```
+
+### VICSTATION - FILE READER
+
+![`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/Compute_Issue_036_1983_May_0189.jpg)
+
+![`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/dumb-term-modification.jpg)
