@@ -75,7 +75,7 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
 ## DUMBTERM
 
-<img href="../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg" style="width: 50%;" />
+<img href="../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg" height=25% >
 
 > “Compute! Magazine Issue 027 : Internet Archive,” Compute! Magazine,
 > 35, August 1982
