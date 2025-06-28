@@ -28,15 +28,19 @@ repo tinybasic will accept.
 
 ### Text editors.
 
-- `100 REM` [`LED.BAS`](../basiclang/text-editors/led/)
-- `200 REM` [`WRDPRO.BAS`](../basiclang/text-editors/wrdpro/)
-- `300 REM` [`EDITYPE.BAS`](../basiclang/text-editors/editype/)
-- `400 REM` [`SCRIPTOR.BAS`](../basiclang/text-editors/scriptor/)
+- `100 REM PET/APPLE II` [`LED.BAS`](#led)
+- `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro)
+- `300 REM VIC` [`EDITYPE.BAS`](#vic-editype)
+- `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor)
 
 ### Filers.
 
-- `500 REM` [`UTILITY.BAS`](../basiclang/utilities/utility/)
-- `600 REM` [`VICSTATION - FILE READER`](#vicstation---file-reader)
+- `500 REM TELEPRINTER` [`UTILITY.BAS`](#utility)
+- `600 REM VIC` [`VICSTATION - FILE READER`](#vicstation---file-reader)
+
+### Terminal programs.
+
+- `REM 700 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm)
 
 ## A text editor.
 
