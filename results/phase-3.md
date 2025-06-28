@@ -36,7 +36,7 @@ repo tinybasic will accept.
 ### Filers.
 
 - `500 REM` [`UTILITY.BAS`](../basiclang/utilities/utility/)
-- `600 REM` [`VICSTATION - FILE READER`](../basiclang/utilities/vicstation/Compute_Issue_036_1983_May_0189.jpg)
+- `600 REM` [`VICSTATION - FILE READER`](#vicstation---file-reader)
 
 ## A text editor.
 
