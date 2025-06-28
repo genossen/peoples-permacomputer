@@ -28,6 +28,10 @@ repo tinybasic will accept.
 
 ### L.E.D.
 
+> “Compute! Magazine Issue 009 : Internet Archive,” Compute! Magazine,
+> 9, February 1981
+> <https://archive.org/details/1981-02-compute-magazine>
+
 See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
 - Transcription complete.
@@ -36,12 +40,19 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 
 ### WRDPRO
 
+> Brown, R.W. (1977) Basic software library. 7, professional programs
+> Vol 7. Scientific Research Inst.
+
 See `WRDPRO` [DIRECTORY](../basiclang/text-editors/wrdpro/).
 
 - Transcription started.
 - Word processor.
 
 ### VIC EDITYPE
+
+> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
+> 35, April 1983
+> <https://archive.org/details/1981-02-compute-magazine>
 
 See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 
@@ -50,6 +61,10 @@ See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 - Arcane code, so unlikely to be included in software distribution.
 
 ### Scriptor
+
+> “Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine,
+> 35, April 1983
+> <https://archive.org/details/1981-02-compute-magazine>
 
 See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
 
@@ -63,3 +78,35 @@ Research not started.
 ## A gopher browser.
 
 Research not started.
+
+## File utilities.
+
+### UTILITY
+
+> Brown, R.W. (1977) Basic software library. 7, professional programs
+> Vol 7. Scientific Research Inst.
+
+```
+basiclang/utilities/utility/
+```
+
+```
+2720 PRINT "THE LIST OF POSSIBLE COMMANDS ARE AS FOLLOWS:"
+2730 PRINT "`DAT` DATA OFF OF DISC IN OCTAL"
+2740 PRINT "`COP` COPIES WHOLE DISC"
+2750 PRINT "`FLS` COPIES ONLY THE FILES (TRACKS 6-76)"
+2760 PRINT "`BAS` COPIES ONLY BASIC (TRACKS 0-5)"
+2770 PRINT "`END` ENDS PROGRAM"
+2780 PRINT "`LIS` LISTS ASCII SAVED FILES (NO PAGING)"
+2790 PRINT "`PAG` LISTS ASCII SAVED FILE WITH PAGING"
+2800 PRINT "`DIR` LISTS THE DIRECTORY WITH HEADINGS"
+2810 PRINT "`SRT` PRINTS SORTED DIRECTORY WITH HEADINGS"
+2820 PRINT "`HEX` PRINTS DATA OFF OF DISC IN HEX"
+2830 PRINT "`CPF` COPIES DATA FILES"
+2840 PRINT "`MEM` RUNS MEMORY TEST BETWEEN TWO LIMITS SET."
+2850 PRINT "`MNT` MOUNTS DISC NUMBER SPECIFIED"
+2860 PRINT "`UNL` UNLOADS DISC NUMBER SPECIFIED"
+2870 PRINT "`IMS` USED TO PUNCH TAPE IN IMSAI BASIC FORMAT"
+2880 PRINT "`LLI` SAME AS `LIS` EXCEPT USES LINE PRINTER"
+2890 PRINT "`LPA` SAME AS `PAG` EXCEPT USES LINE PRINTER"
+```
