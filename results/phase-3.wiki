@@ -1,0 +1,144 @@
+<span id="project-phase-three---active"></span>
+= Project phase three - ACTIVE =
+
+<blockquote>The hardware platform of the permacomputer is largely settled.
+
+Please see [[phase-2.md]].
+</blockquote>
+The permacomputer itself now needs some sort of user operating environment–a human-computer interface.
+
+The project is opting for the distribution of the software environment in paradigmatic microcomputer BASIC.
+
+The various utilities and tools will be printed as code listings.
+
+The archival quality of paper is many orders of magnitude better than hard disks, CD-ROMs, or other digital mediums.
+
+https://github.com/slviajero/tinybasic
+
+Please find below the transcriptions of the type-in listings of the absolute minimum variety of tools and utilities a user will require to operate their permacomputer.
+
+It will take some time to render them into BASIC that the above github repo tinybasic will accept.
+
+<span id="table-of-contents."></span>
+== Table of contents. ==
+
+<span id="text-editors."></span>
+=== Text editors. ===
+
+* <code>100 REM PET/APPLE II</code> [[#led|<code>LED.BAS</code>]]
+* <code>200 REM TELEPRINTER</code> [[#wrdpro|<code>WRDPRO.BAS</code>]]
+* <code>300 REM VIC</code> [[#vic-editype|<code>EDITYPE.BAS</code>]]
+* <code>400 REM ATARI</code> [[#scriptor|<code>SCRIPTOR.BAS</code>]]
+
+<span id="filers."></span>
+=== Filers. ===
+
+* <code>500 REM TELEPRINTER</code> [[#utility|<code>UTILITY.BAS</code>]]
+* <code>600 REM VIC</code> [[#vicstation---file-reader|<code>VICSTATION - FILE READER</code>]]
+
+<span id="terminal-programs."></span>
+=== Terminal programs. ===
+
+* <code>REM 700 VIC</code> [[#dumbterm|<code>VICSTATION - DUMBTERM.BAS</code>]]
+
+<span id="a-text-editor."></span>
+== A text editor. ==
+
+<span id="l.e.d."></span>
+=== L.E.D. ===
+
+<blockquote>“Compute! Magazine Issue 009 : Internet Archive,” Compute! Magazine, 9, February 1981 https://archive.org/details/1981-02-compute-magazine
+</blockquote>
+See <code>L.E.D.</code> [[../basiclang/text-editors/led/README.md|README]].
+
+* [[../basiclang/text-editors/led/led.bas|Transcription complete]].
+* CBM PET/Apple II BASIC.
+* &lt; 300 lines of code.
+
+<span id="wrdpro"></span>
+=== WRDPRO ===
+
+<blockquote>Brown, R.W. (1977) Basic software library. 7, professional programs Vol 7. Scientific Research Inst.
+</blockquote>
+See <code>WRDPRO</code> [[../basiclang/text-editors/wrdpro/README.md|README]].
+
+* [[../basiclang/text-editors/wrdpro/wrdpro.bas|Transcription started]].
+* Word processor.
+
+<span id="vic-editype"></span>
+=== VIC EDITYPE ===
+
+<blockquote>“Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine, 35, April 1983 https://archive.org/details/1981-02-compute-magazine
+</blockquote>
+See <code>VIC EDITYPE</code> [[../basiclang/text-editors/editype/|DIRECTORY]].
+
+* Transcription not started.
+* Commodore BASIC V2.
+* Arcane code, so unlikely to be included in software distribution.
+
+<span id="scriptor"></span>
+=== Scriptor ===
+
+<blockquote>“Compute! Magazine Issue 035 : Internet Archive,” Compute! Magazine, 35, April 1983 https://archive.org/details/1981-02-compute-magazine
+</blockquote>
+See <code>Scriptor</code> [[../basiclang/text-editors/scriptor/|DIRECTORY]].
+
+* Transcription not started.
+* Atari 400/800 (32K, 40K recommended).
+
+<span id="a-telnet-client."></span>
+== A telnet client. ==
+
+<span id="dumbterm"></span>
+== DUMBTERM ==
+
+[[File:../basiclang/utilities/vicstation/really-dumb-terminal-program.jpg]]
+
+<blockquote>“Compute! Magazine Issue 027 : Internet Archive,” Compute! Magazine, 35, August 1982 https://archive.org/details/1982-08-compute-magazine
+</blockquote>
+and
+
+[[File:../basiclang/utilities/vicstation/dumb-term-modification.jpg]]
+
+<blockquote>“Compute! Magazine Issue 036 : Internet Archive,” Compute! Magazine, 35, May 1983 https://archive.org/details/1981-02-compute-magazine
+</blockquote>
+See <code>VICSTATION</code> [[../basiclang/utilities/vicstation/|DIRECTORY]].
+
+<span id="a-gopher-browser."></span>
+== A gopher browser. ==
+
+Research not started.
+
+<span id="file-utilities."></span>
+== File utilities. ==
+
+<span id="utility"></span>
+=== UTILITY ===
+
+<blockquote>Brown, R.W. (1977) Basic software library. 7, professional programs Vol 7. Scientific Research Inst.
+</blockquote>
+<pre>basiclang/utilities/utility/</pre>
+<pre>2720 PRINT &quot;THE LIST OF POSSIBLE COMMANDS ARE AS FOLLOWS:&quot;
+2730 PRINT &quot;`DAT` DATA OFF OF DISC IN OCTAL&quot;
+2740 PRINT &quot;`COP` COPIES WHOLE DISC&quot;
+2750 PRINT &quot;`FLS` COPIES ONLY THE FILES (TRACKS 6-76)&quot;
+2760 PRINT &quot;`BAS` COPIES ONLY BASIC (TRACKS 0-5)&quot;
+2770 PRINT &quot;`END` ENDS PROGRAM&quot;
+2780 PRINT &quot;`LIS` LISTS ASCII SAVED FILES (NO PAGING)&quot;
+2790 PRINT &quot;`PAG` LISTS ASCII SAVED FILE WITH PAGING&quot;
+2800 PRINT &quot;`DIR` LISTS THE DIRECTORY WITH HEADINGS&quot;
+2810 PRINT &quot;`SRT` PRINTS SORTED DIRECTORY WITH HEADINGS&quot;
+2820 PRINT &quot;`HEX` PRINTS DATA OFF OF DISC IN HEX&quot;
+2830 PRINT &quot;`CPF` COPIES DATA FILES&quot;
+2840 PRINT &quot;`MEM` RUNS MEMORY TEST BETWEEN TWO LIMITS SET.&quot;
+2850 PRINT &quot;`MNT` MOUNTS DISC NUMBER SPECIFIED&quot;
+2860 PRINT &quot;`UNL` UNLOADS DISC NUMBER SPECIFIED&quot;
+2870 PRINT &quot;`IMS` USED TO PUNCH TAPE IN IMSAI BASIC FORMAT&quot;
+2880 PRINT &quot;`LLI` SAME AS `LIS` EXCEPT USES LINE PRINTER&quot;
+2890 PRINT &quot;`LPA` SAME AS `PAG` EXCEPT USES LINE PRINTER&quot;</pre>
+<span id="vicstation---file-reader"></span>
+=== VICSTATION - FILE READER ===
+
+[[File:../basiclang/utilities/vicstation/Compute_Issue_036_1983_May_0189.jpg|thumb|none|alt=<code>VICSTATION - FILE READER</code>|<code>VICSTATION - FILE READER</code>]]
+
+[[File:../basiclang/utilities/vicstation/dumb-term-modification.jpg|thumb|none|alt=<code>VICSTATION - FILE READER</code>|<code>VICSTATION - FILE READER</code>]]
