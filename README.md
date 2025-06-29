@@ -61,6 +61,8 @@ _permaculture_.
 			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wrdpro.bas) transcribed.
 		- Terminal clients sourced.
 		- Gopher client not yet sourced.
+	- Begin conversion of software into Stefan's BASIC dialect.
+		- [See MORE](basiclang/stefans-basic/conversions.md)
 
 ## Project logs
 
