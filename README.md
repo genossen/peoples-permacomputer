@@ -58,7 +58,7 @@ _permaculture_.
 	- Distribute operating system as printed code listings.
 		- Text editors sourced.
 			- [`LED.BAS`](basiclang/text-editors/led/led.bas) transcribed.
-			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wordpro.bas) transcribed.
+			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wrdpro.bas) transcribed.
 		- Terminal clients sourced.
 		- Gopher client not yet sourced.
 
