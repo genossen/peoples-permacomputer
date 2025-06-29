@@ -57,7 +57,9 @@ _permaculture_.
     - **Paradigmatic microcomputer BASIC operating environment**.
 	- Distribute operating system as printed code listings.
 		- Text editors sourced.
-		- Telnet client not yet sourced.
+			- [`LED.BAS`](basiclang/text-editors/led/led.bas) transcribed.
+			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wordpro.bas) transcribed.
+		- Terminal clients sourced.
 		- Gopher client not yet sourced.
 
 ## Project logs
