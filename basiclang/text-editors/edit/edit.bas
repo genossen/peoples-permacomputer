@@ -18,7 +18,7 @@
 85 N2$="EDIT.TMP"
 90 OPEN "O",2,N2$:PRINT #2,""
 95 I=1:J=1:H=1
-100 '---------------------------------------------------INPUT COMMAND
+100 '---------------------------------------------------------INPUT COMMAND
 105 K=0
 110 IF A$="" THEN FOR Q9=1 TO 5:PRINT CHR$(7);:NEXT:LINE INPUT ">"; A$
 115 A=0:J1=1:U=0:T=1
@@ -39,4 +39,32 @@
 180 FOR N=0 TO 12:PRINT L2$(N):NEXT:GOTO 105
 185 '
 190 '-----------------------------------------------------------A COMMAND
-195 
+195 H=1:IF T=0 THEN GOTO 105 ELSE IF T<0 THEN J1=-1
+200 FOR I3=0 TO T-J1 STEP J1
+205     IF M1(J,0)=0 AND J1=-1 THEN GOTO 105
+210     IF M1(J,1)=-1 AND J1=1 THEN J=M1(J,0):GOTO 105
+215     IF J1=1 THEN J=M1(J,1) ELSE J=M1(J,0)
+220 NEXT
+225 GOTO 105
+230 '-----------------------------------------------------------B COMMAND
+235 J=LN:H=1:GOTO 105
+240 '-----------------------------------------------------------C COMMAND
+245 S$=MID$(S$,2):IF K=0 THEN S=LEN(S$):K=H
+250 IF K=1 THEN L1$(J)=S$+MID$(L1$(J),K+S) ELSE L1$(J)=LEFT$(L1$(J),K-1)+
+    S$+MID$(L1$(J),K+S)
+255 PRINT L1$(J):H=K+LEN(S$):GOTO 105
+260 '-----------------------------------------------------------D COMMAND
+265 IF H=1 THEN L1$(J)=MID$(L1$(J),H+T):
+    ELSE L1$(J)=LEFT$(L1$(J),H-1)+MID$(L1$(J),H+T)
+270 GOTO 105
+275 '-----------------------------------------------------------E COMMAND
+280 IF M1(J,1)=-1 THEN H=1:GOTO 105 ELSE J=M1(J,1):GOTO 280
+285 '-----------------------------------------------------------G COMMAND
+290 S$=MID$(S$,2):S=LEN(S$):IF S=0 THEN GOTO 105
+295 K=INSTR(H,L1$(J),S$):IF K=0 THEN IF M1(J,1)=-1
+    THEN PRINT "EOB":A$="":GOTO 105 ELSE J=M1(J,1):H=1:GOTO 295
+300 U=U+1:IF U<T THEN H=K+S:GOTO 295
+305 PRINT LEFT$(L1$(J),K+S-1):H=K
+310 GOTO 110
+315 '-----------------------------------------------------------I COMMAND
+320 
