@@ -135,4 +135,57 @@ or position within cell (H) and CELL that DOT is in (J).
 
 # Commands
 
+My editor, like many others, uses a single letter to select a
+command. For example, `A` will advance DOT one line. Most commands may
+be preceded by a number or a slash (/) to indicate that hey should be
+executed more than once. 13A will advance DOT 13 lines. OA will
+position DOT at the beginning of the current line. /A will advance DOT
+to the end of the page. All commands that allow a prefix will default
+to one if none is specified. The following is an explanation of the
+commands. (See TABLE 1 for a list of commands in alphabetical
+order. See TABLE 2 for a list divided into four main groups).
 
+```
+TABLE #1
+
+                    |-------OPERATES ON --------|--- ALLOWED ---|
+COMMAND DESCRIPTION | LINE | CHAR | DOT  | FILE | 0 | # |-# | / |
+--------------------|------|------|------|------|---|---|---|---|
+   A    ADVANCE     |      |      |  *   |      | * | * | * | * |
+--------------------|------|------|------|------|---|---|---|---|
+   B    BEGINNING   |      |      |  *   |      |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   C    CHANGE      |      |  *   |      |      |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   D    DELETE      |      |  *   |      |      |   | * |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   E    END         |      |      |  *   |      |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   G    GET         |      |  *   |      |      |   | * |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   I    INSERT      |  *   |  *   |      |      |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   J    JUMP        |      |      |  *   |      | * | * | * |   |
+--------------------|------|------|------|------|---|---|---|---|
+   K    KILL        |  *   |      |      |      |   | * |   | * |
+--------------------|------|------|------|------|---|---|---|---|
+   L    LIST        |  *   |      |      |      |   | * |   | * |
+--------------------|------|------|------|------|---|---|---|---|
+   N    NEXT        |      |      |      |  *   |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   R    READ        |      |      |      |  *   |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   V    VERIFY      |  *   |      |      |      |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+   X    EXIT        |      |      |      |  *   |   |   |   |   |
+--------------------|------|------|------|------|---|---|---|---|
+
+```
+
+# How to use edit's commands
+
+The commands in EDIT are broken up into four groups, as shown in
+TABLE 2. The use of these commands will be explained in that order.
+
+The commands that affect lines will work on one line at a time. Or, in
+the case of K & L, they may be

@@ -67,4 +67,7 @@
 305 PRINT LEFT$(L1$(J),K+S-1):H=K
 310 GOTO 110
 315 '-----------------------------------------------------------I COMMAND
-320 
+320 IF MID$(S$,2)<>"" THEN 345 ELSE I2=J:IF J=LN THEN LN=IN
+325 LINE INPUT L1$(IN):IF L1$(IN)"\\" THEN 105
+330 I3=M1(IN,1):M1(IN,1)=I2
+335 M1(IN,0)=M1(I2,0):
