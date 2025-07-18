@@ -193,31 +193,29 @@ V - Prints the current line up to DOT.
 
 COMMANDS THAT AFFECT CHARACTERS
 C - Changes last character string gotten with G command to
-something e l s e . Use: Ghere
-Cthere
-will change here to t h e r e .
-D - Delete a c h a r a c t e r . #D l e g a l .
-G - Get s t r i n g . Searches for occutance of s t r i n g .
-Use: 3Gstuff
-Finds third o c c u r r a n c e of s t u f f . #G l e g a l .
-I - Insert c h a r a c t e r s at O O T . Use: Iabcde
-Will insert abcde in c u r r e n t line at D O T .
+    something else. Use: Ghere
+                         Cthere
+    will change here to there.
+D - Delete a character. #D legal.
+G - Get string. Searches for occurrence of string.
+    Use: 3Gstuff
+    Finds third occurrrence of stuff. #G legal.
+I - Insert characters at DOT. Use: Iabcde
+    Will insert abcde in current line at DOT.
 
-C O M M A N D S THAT MOVE DOT
+COMMANDS THAT MOVE DOT
 A - Moves DOT forward or back the number of lines
-s p e c i f i e d . 0 A , # A , - # A , /A(same as E) legal.
-B - Moves DOT to beginning of p a g e .
-E - M o v e s DOT to end of p a g e .
-(same as /A)
-J - Moves DOT forward or back the number of c h a r a c t e r s
-s p e c i f i e d . 0 J , # J , -#J l e g a l .
+    specified. 0A, #A, -#A, /A(same as E) legal.
+B - Moves DOT to beginning of page .
+E - Moves DOT to end of page. (same as /A)
+J - Moves DOT forward or back the number of characters
+    specified. 0J, #J, -#J legal.
 
 COMMANDS THAT READ AND WRITE THE FILE
-N - W r i t e s o u t current page and reads in next p a g e .
-R - Read in a new p a g e .
-X - W r i t e s out c u r r e n t page then reads and writes until
-end of f i l e . Closes and renames f i l e s .
-
+N - Writes out current page and reads in next page.
+R - Read in a new page.
+X - Writes out current page then reads and writes until
+    end of file. Closes and renames files.
 ```
 
 # How to use edit's commands
