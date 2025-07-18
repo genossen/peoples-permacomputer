@@ -5,6 +5,8 @@
 
 ## MITS
 
+## Computer Notes, October 1977.
+
 # Why I wrote and editor
 
 My main objective in writing an editor was to complement DISK EXTENDED
@@ -282,3 +284,16 @@ without its limitations.
 
 # Modifications and improvements
 
+I will leave these up to the reader because they are easy to make. For
+example, suppose a command is needed to exit the program gracefully
+without making any changes. Follow these steps:
+
+1. Pick a command character. How about Q for quit?
+2. Alter line 250 to reflect where the program should go if it sees a
+   Q. Let's make this 1000.
+3. Put in the necessary code to perform the command.
+      ```basic
+      1000 CLOSE:CLEAR 200:END
+	  ```
+
+4. Save the new program. 
