@@ -224,4 +224,61 @@ The commands in EDIT are broken up into four groups, as shown in
 TABLE 2. The use of these commands will be explained in that order.
 
 The commands that affect lines will work on one line at a time. Or, in
-the case of K & L, they may be 
+the case of K & L, they may be preceded by a number or slash (/) to
+indicate that they are to be performed on several succeeding lines. TO
+begin insertion of lines, type I `<return>` and then the lines to
+insert. To tell EDIT that the last line to be inserted has been
+entered, type backslash (\).
+
+Of the commands that affect characters I & C cannot have a #
+prefix. #D deletes # characters to the right of DOT. G & C work
+together to allow gettings a string and then changing it to something
+else. G moved DOT ahead of the Nth occurrence of the string. Then C
+can be used to change th nth occurrence to a new string. It works like
+C, except instead of changing one string for another, it inserts a new
+string ahead of DOT.
+
+The commands that move DOT are A, B, E, and J. B & E require no other
+specifiers. They simply move DOT to the beginning or end of the
+current page. A & J move DOT forward or back a specified number of
+lines or characters.
+
+The ommands N, R, and X read and write the files. R reads the input
+file until EOF, until it has read 50 lines, or 2000 characters. It
+then clears and resets the INACTIVE CELLS. N writes out the current
+page and then executes and R (reads in the next page). X does a series
+of N's until the input file is EOF. Then it closes the files and
+renames them by giving the input file a backup name and the output
+file the input file's old name.
+
+The best way to learn to use EDIT is to load it in and try a few
+commands. (See EXAMPLE 3). Once you get the hang of it, the power and
+versatility will be well worth the time it took t type it in.
+
+# The other side of the coin
+
+All of the above is really wonderful isn't it? But this program is not
+without its limitations.
+
+1. The commands may or may not work the way the user expects them
+   to. This is a typical problem in any new program because the
+   commands take some getting used to. If, after trying it for a
+   while, the user wants a command to work differently or wants to use
+   another command, just remember that the program is written in
+   BASIC, so modifications are easy.
+2. The program allows workin on large files by breaking the file into
+   pages. This works out well except for one thing. No matter what the
+   user does, string space is used. Eventually, all available space
+   will be used.
+   
+   At that time, BASIC has to look through all of the string space,
+   shuffling things around and freeing up no-longer-used bytes so that
+   the program will have some more space. This is commonly referred to
+   as GARBAGE COLLECTING. IT can happen at the most unlikely of times
+   and can take as long as five minutes. Unfortunately to the
+   unsuspecting user, it looks as though the program has bombed BASIC
+   out because CTRL-C and RESET don't help solve the problem. But
+   patience is rewarded and the program does come back to life.
+
+# Modifications and improvements
+
