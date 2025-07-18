@@ -182,10 +182,48 @@ COMMAND DESCRIPTION | LINE | CHAR | DOT  | FILE | 0 | # |-# | / |
 
 ```
 
+```
+TABLE #2
+COMMANDS THAT AFFECT LINES
+I - Inserts lines until, backslash (\) is entered.
+K - Kills entire line. #K & /K are legal.
+L - Lists entire line. #L & /L are legal.
+V - Prints the current line up to DOT.
+    (Verify's the position of DOT).
+
+COMMANDS THAT AFFECT CHARACTERS
+C - Changes last character string gotten with G command to
+something e l s e . Use: Ghere
+Cthere
+will change here to t h e r e .
+D - Delete a c h a r a c t e r . #D l e g a l .
+G - Get s t r i n g . Searches for occutance of s t r i n g .
+Use: 3Gstuff
+Finds third o c c u r r a n c e of s t u f f . #G l e g a l .
+I - Insert c h a r a c t e r s at O O T . Use: Iabcde
+Will insert abcde in c u r r e n t line at D O T .
+
+C O M M A N D S THAT MOVE DOT
+A - Moves DOT forward or back the number of lines
+s p e c i f i e d . 0 A , # A , - # A , /A(same as E) legal.
+B - Moves DOT to beginning of p a g e .
+E - M o v e s DOT to end of p a g e .
+(same as /A)
+J - Moves DOT forward or back the number of c h a r a c t e r s
+s p e c i f i e d . 0 J , # J , -#J l e g a l .
+
+COMMANDS THAT READ AND WRITE THE FILE
+N - W r i t e s o u t current page and reads in next p a g e .
+R - Read in a new p a g e .
+X - W r i t e s out c u r r e n t page then reads and writes until
+end of f i l e . Closes and renames f i l e s .
+
+```
+
 # How to use edit's commands
 
 The commands in EDIT are broken up into four groups, as shown in
 TABLE 2. The use of these commands will be explained in that order.
 
 The commands that affect lines will work on one line at a time. Or, in
-the case of K & L, they may be
+the case of K & L, they may be 
