@@ -59,6 +59,7 @@ _permaculture_.
 		- Text editors sourced.
 			- [`LED.BAS`](basiclang/text-editors/led/led.bas) transcribed.
 			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wrdpro.bas) transcribed.
+			- [`EDIT.BAS`](basiclang/text-editors/edit/edit.bas) transcribed.
 		- Terminal clients sourced.
 		- Gopher client not yet sourced.
 	- Begin conversion of software into Stefan's BASIC dialect.

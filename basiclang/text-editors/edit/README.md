@@ -25,7 +25,7 @@ explanation of this editor, let's review the definition of an editor.
 # What is an editor?
 
 An editor is a program which permits the addition and deletion of
-lines and chracters in one file to make another file. The second file
+lines and characters in one file to make another file. The second file
 is the new up-to-date file, and the first file is retained as the
 backup file. Some editors permit the creation of new files and/or use
 multiple input files. An editor can be as extensive or as minimal as
@@ -124,9 +124,9 @@ BASIC, BASIC will put the lines in numerical order.
 
 # Internal structure
 
-The EDIT program maintains a double-linked list in memory. Each line
-(L1$(X)) has a pointer o the previous line [M1(X,0)] and to the next
-line [M1(X,1)] added to it when it is read in. The array (L1$) that
+The EDIT program maintains a double-linked list in memory. Each line 
+(`L1$(X)`) has a pointer to the previous line [`M1(X,0)`] and to the next
+line [`M1(X,1)`] added to it when it is read in. The array (L1$) that
 the lines are kept in is divided into two parts -- ACTIVE CELLS, which
 have data in them, and INACTIVE CELLS, available for use as data
 lines. Deleted lines are linked into the INACTIVE CELLS from the
@@ -146,6 +146,8 @@ to the end of the page. All commands that allow a prefix will default
 to one if none is specified. The following is an explanation of the
 commands. (See TABLE 1 for a list of commands in alphabetical
 order. See TABLE 2 for a list divided into four main groups).
+
+\newpage
 
 ```
 TABLE #1
@@ -183,6 +185,8 @@ COMMAND DESCRIPTION | LINE | CHAR | DOT  | FILE | 0 | # |-# | / |
 --------------------|------|------|------|------|---|---|---|---|
 
 ```
+
+\newpage
 
 ```
 TABLE #2
@@ -234,18 +238,18 @@ entered, type backslash (\).
 
 Of the commands that affect characters I & C cannot have a #
 prefix. #D deletes # characters to the right of DOT. G & C work
-together to allow gettings a string and then changing it to something
+together to allow getting a string and then changing it to something
 else. G moved DOT ahead of the Nth occurrence of the string. Then C
-can be used to change th nth occurrence to a new string. It works like
-C, except instead of changing one string for another, it inserts a new
-string ahead of DOT.
+can be used to change the nth occurrence to a new string. It works
+like C, except instead of changing one string for another, it inserts
+a new string ahead of DOT.
 
 The commands that move DOT are A, B, E, and J. B & E require no other
 specifiers. They simply move DOT to the beginning or end of the
 current page. A & J move DOT forward or back a specified number of
 lines or characters.
 
-The ommands N, R, and X read and write the files. R reads the input
+The commands N, R, and X read and write the files. R reads the input
 file until EOF, until it has read 50 lines, or 2000 characters. It
 then clears and resets the INACTIVE CELLS. N writes out the current
 page and then executes and R (reads in the next page). X does a series
@@ -268,7 +272,7 @@ without its limitations.
    while, the user wants a command to work differently or wants to use
    another command, just remember that the program is written in
    BASIC, so modifications are easy.
-2. The program allows workin on large files by breaking the file into
+2. The program allows working on large files by breaking the file into
    pages. This works out well except for one thing. No matter what the
    user does, string space is used. Eventually, all available space
    will be used.
