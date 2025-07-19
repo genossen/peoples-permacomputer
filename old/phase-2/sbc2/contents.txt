@@ -1,0 +1,31 @@
+SBC-2   V2.5  (C) Daryl Rictor 2003
+___________________________________________________________________________
+Here is a list of files included with this document set.
+
+This set contains the following 21 files:
+
+This file is named: 
+1) contents.txt
+
+2) readme.txt   Contains some basic details about the PCB and how to assemble
+                it.
+
+The following files are the schematics:
+3) serial.gif
+4) decoder.gif
+5) cpu.gif
+6) via1.gif
+7) via2.gif
+8) power.gif
+
+The ExpressPCB data file for the board is:
+9) sbc25.pcb
+
+The GIF screen capures of the ExpressPCB boards layers and layout are:
+10) top.gif      Top Layer of the PCB
+11) bot.gif      Bottom Layer of the PCB
+12) traces.gif   Top & bottom overlayed on color
+13) layout.gif   Detailed part placement with component values and pad labels
+14) options.gif  Contains strapping options for the serial port, EEPROM/EPROM
+                 and I/O port pinouts
+_______________________________________________________________________________
