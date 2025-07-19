@@ -4,3 +4,9 @@
 [submodule "old/phase-2/hb6502"]
 	path = old/phase-2/hb6502
 	url = https://github.com/adumont/hb6502.git
+[submodule "lisp/basic-lisp"]
+	path = lisp/basic-lisp
+	url = https://github.com/paoloboschini/basic-lisp.git
+[submodule "lisp/ebasic"]
+	path = lisp/ebasic
+	url = https://github.com/csebold/ebasic.git
