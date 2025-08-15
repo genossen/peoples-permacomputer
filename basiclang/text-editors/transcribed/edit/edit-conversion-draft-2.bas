@@ -41,19 +41,16 @@
 235 J=LN:H=1:GOTO 105
 240 REM-----------------------------------------------------------C COMMAND
 245 S$=MID$(S$,2):IF K=0 THEN S=LEN(S$):K=H
-250 IF K=1 THEN L1$(J)=S$+MID$(L1$(J),K+S) ELSE L1$(J)=LEFT$(L1$(J),K-1)+
-    S$+MID$(L1$(J),K+S)
+250 IF K=1 THEN L1$(J)=S$+MID$(L1$(J),K+S) ELSE L1$(J)=LEFT$(L1$(J),K-1)+S$+MID$(L1$(J),K+S)
 255 PRINT L1$(J):H=K+LEN(S$):GOTO 105
 260 REM-----------------------------------------------------------D COMMAND
-265 IF H=1 THEN L1$(J)=MID$(L1$(J),H+T):
-    ELSE L1$(J)=LEFT$(L1$(J),H-1)+MID$(L1$(J),H+T)
+265 IF H=1 THEN L1$(J)=MID$(L1$(J),H+T):ELSE L1$(J)=LEFT$(L1$(J),H-1)+MID$(L1$(J),H+T)
 270 GOTO 105
 275 REM-----------------------------------------------------------E COMMAND
 280 IF M1(J,1)=-1 THEN H=1:GOTO 105 ELSE J=M1(J,1):GOTO 280
 285 REM-----------------------------------------------------------G COMMAND
 290 S$=MID$(S$,2):S=LEN(S$):IF S=0 THEN GOTO 105
-295 K=INSTR(H,L1$(J),S$):IF K=0 THEN IF M1(J,1)=-1
-    THEN PRINT "EOB":A$="":GOTO 105 ELSE J=M1(J,1):H=1:GOTO 295
+295 K=INSTR(H,L1$(J),S$):IF K=0 THEN IF M1(J,1)=-1 THEN PRINT "EOB":A$="":GOTO 105 ELSE J=M1(J,1):H=1:GOTO 295
 300 U=U+1:IF U<T THEN H=K+S:GOTO 295
 305 PRINT LEFT$(L1$(J),K+S-1):H=K
 310 GOTO 110
