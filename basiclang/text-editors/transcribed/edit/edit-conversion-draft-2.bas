@@ -1,4 +1,11 @@
+REM - L1$(X), each line.
+REM - M1$(X,0), previous line.
+REM - M1$(X,1), next line.
 
+REM - LN, first active cell in L1$.
+REM - IN, first inactive cell in L1$.
+REM - H, DOT, for position within cell.
+REM - J, cell that DOT is in.
 
 55 SET 22, "Microsoft"
 60 DIM L1$(100),L2$(13),M1(100,1):FOR I=0 TO 13:READ L2$(I):NEXT
@@ -13,7 +20,7 @@
 95 I=1:J=1:H=1
 100 REM---------------------------------------------------------INPUT COMMAND
 105 K=0
-110 IF A$="" THEN FOR Q9=1 TO 5:PRINT CHR$(7);:NEXT:INPUT ">"; A$
+110 IF A$="" THEN FOR Q9=1 TO 5:PRINT "BELL!";:NEXT:INPUT ">"; A$
 115 A=0:J1=1:U=0:T=1
 120 IF A$="" THEN 105 ELSE I9=INSTR(A$,"*"):IF I9<>0 THEN S$=LEFT$(A$,I9-1):A$=MID$(A$,I9+1) ELSE S$=A$:A$=""
 125 SS=ASC(S$)
