@@ -20,11 +20,7 @@ resourcing the specification, and then construction of a
 
 - [50hz](https://cathode.church/@50htz)
 
-- [shufei](https://merveilles.town/@Shufei)
-
 - [vidak](https://social.solarpunk.au/users/vidak)
-
-- [crypto-anarchist research xmpp group](xmpp:crypto-anarchist-research@social.shadowkat.net?join)
  
 - [project social media profile](https://retro.social/@permacomputer) 
  
@@ -57,13 +53,15 @@ _permaculture_.
     - **Paradigmatic microcomputer BASIC operating environment**.
 	- Distribute operating system as printed code listings.
 		- Text editors sourced.
-			- [`LED.BAS`](basiclang/text-editors/led/led.bas) transcribed.
-			- [`WRDPRO.BAS`](basiclang/text-editors/wrdpro/wrdpro.bas) transcribed.
-			- [`EDIT.BAS`](basiclang/text-editors/edit/edit.bas) transcribed.
+			- [`LED.BAS`](basiclang/text-editors/transcribed/led/) transcribed.
+			- [`WRDPRO.BAS`](basiclang/text-editors/transcribed/wrdpro/) transcribed.
+			- [`EDIT.BAS`](basiclang/text-editors/transcribed/edit/) transcribed.
+			- [`EDITYPE.BAS`](basiclang/text-editors/transcribed/editype/) transcribed.
 		- Terminal clients sourced.
 		- Gopher client not yet sourced.
 	- Begin conversion of software into Stefan's BASIC dialect.
-		- [See MORE](basiclang/stefans-basic/conversions.md)
+		- `EDIT.BAS` conversion [in progress](basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
+		- [See MORE](basiclang/stefans-basic/conversions.md).
 
 ## Project logs
 
