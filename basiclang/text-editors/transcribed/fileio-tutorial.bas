@@ -38,11 +38,11 @@
 370 PRINT "Line",I,"string '";A$; "' Status = " @S
 380 NEXT
 390 CLOSE 0
-    
-    
-    
 400 PRINT I, "lines read"
 410 PRINT "Status =", @S
+    
+    
+
 500 PRINT "Read Character by Character use EOF status"
 510 @S=0
 520 OPEN "daten.txt"
