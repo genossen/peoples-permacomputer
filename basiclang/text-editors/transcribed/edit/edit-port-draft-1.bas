@@ -1,0 +1,2 @@
+SET 22, "Microsoft"
+INPUT "INPUT FILE NAME?";
