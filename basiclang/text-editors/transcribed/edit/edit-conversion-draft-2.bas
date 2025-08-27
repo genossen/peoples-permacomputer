@@ -14,9 +14,10 @@ REM - J, cell that DOT is in.
 75 INPUT "INPUT FILE NAME?"; N1$
 77 @S=0
 80 OPEN N1$,0
-85 N2$="EDIT.TMP"
-87 @S=0
-90 OPEN N2$,1:PRINT &16,""
+82 IF @S<>0 THEN PRINT "OPEN failed":END
+85 REM N2$="EDIT.TMP"
+87 REM @S=0
+90 REM OPEN N2$,1:PRINT &16,""
 95 I=1:J=1:H=1
 100 REM---------------------------------------------------------INPUT COMMAND
 105 K=0
@@ -91,7 +92,7 @@ REM - J, cell that DOT is in.
 450 IF M1(I2,1)=-1 THEN GOTO 465 ELSE PRINT #2,L1$(I2):I2=M1(I2,1)
 455 GOTO 450
 460 REM-----------------------------------------------------------R COMMAND
-465 J=1:A2=0:LN=1:I=1:FE=0:GOSUB 470:GOTO 105
+465 @S=0:J=1:A2=0:LN=1:I=1:FE=0:GOSUB 470:GOTO 105
 470 IF @S=-1 THEN PRINT "EOF1":I=I-1:FE=1:GOTO 495
 475 INPUT &16,L$:IF L$="" THEN GOTO 470
 480 A2=A2+LEN(L$)
