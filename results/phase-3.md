@@ -42,7 +42,7 @@ _Research not started_.
 - `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro) - _Transcription complete_.
 - `300 REM VIC` [`EDITYPE.BAS`](#vic-editype) - _Transcription complete_.
 - `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor) - _Transcription **started**_.
-- `500 REM ALTAIR 8K` [`EDIT.BAS`]() - _Transcription complete_.
+- `500 REM ALTAIR 8K` [`EDIT.BAS`](#edit) - _Transcription complete_.
 
 **
 
