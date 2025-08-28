@@ -28,6 +28,10 @@ repo tinybasic will accept.
 
 ## Table of contents.
 
+### [Gopher browser](#a-gopher-browser)
+
+### [Text editors](#text-editors)
+
 ### A gopher browser.
 
 _Research not started_.
