@@ -118,9 +118,9 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/transcribed/scriptor/).
 > Computer Notes Magazine, October 1977
 > <https://archive.org/details/Computer_Notes_1977_03_05/>
 
-See `EDIT.BAS` [README](..basiclang/text-editors/transcribed/edit/README.md).
+See `EDIT.BAS` [README](../basiclang/text-editors/transcribed/edit/README.md).
 
-- [Transcription complete](..basiclang/text-editors/transcribed/edit/edit.bas).
+- [Transcription complete](../basiclang/text-editors/transcribed/edit/edit.bas).
 - Altair 8K BASIC.
 - Most likely to be the first BASIC text editor the [project supports](..basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
 - ~ 100 lines of code.
