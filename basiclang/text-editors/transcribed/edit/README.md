@@ -7,7 +7,7 @@
 
 ## Computer Notes, October 1977.
 
-# Why I wrote and editor
+# Why I wrote an editor
 
 My main objective in writing an editor was to complement DISK EXTENDED
 BASIC's built-in EDIT feature. This feature is invaluable if the
