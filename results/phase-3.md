@@ -96,7 +96,7 @@ See `WRDPRO` [README](../basiclang/text-editors/transcribed/wrdpro/README.md).
 
 See `VIC EDITYPE` [README](../basiclang/text-editors/transcribed/editype/README.md).
 
-- [Transcription complete](../basiclang/text-editors/transcribed/editype/editype.bas)
+- [Transcription complete](../basiclang/text-editors/transcribed/editype/editype.bas).
 - Commodore BASIC V2.
 - Arcane code, so unlikely to be included in software distribution.
 - ~ 150 lines of code.
@@ -111,6 +111,19 @@ See `Scriptor` [DIRECTORY](../basiclang/text-editors/transcribed/scriptor/).
 
 - **Transcription started**.
 - Atari 400/800 (32K, 40K recommended).
+
+### EDIT
+
+> "Computer Notes Magazine Volume 03 Issue 05 : Internet Archive,"
+> Computer Notes Magazine, October 1977
+> <https://archive.org/details/Computer_Notes_1977_03_05/>
+
+See `EDIT.BAS` [README](..basiclang/text-editors/transcribed/edit/README.md).
+
+- [Transcription complete](..basiclang/text-editors/transcribed/edit/edit.bas).
+- Altair 8K BASIC.
+- Most likely to be the first BASIC text editor the [project supports](..basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
+- ~ 100 lines of code.
 
 ---
 
