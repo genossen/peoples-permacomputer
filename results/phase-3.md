@@ -36,8 +36,9 @@ _Research not started_.
 
 - `100 REM PET/APPLE II` [`LED.BAS`](#led) - _Transcription complete_.
 - `200 REM TELEPRINTER` [`WRDPRO.BAS`](#wrdpro) - _Transcription complete_.
-- `300 REM VIC` [`EDITYPE.BAS`](#vic-editype)
-- `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor)
+- `300 REM VIC` [`EDITYPE.BAS`](#vic-editype) - _Transcription complete_.
+- `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor) - _Transcription **started**_.
+- `500 REM ALTAIR 8K` [`EDIT.BAS`]() - _Transcription complete_.
 
 ### Terminal programs.
 
@@ -56,12 +57,13 @@ _Research not started_.
 
 ## TEXT EDITORS
 
-| Filename                    | Year | Platform             | Transcription status | Lines of code |
-|-----------------------------|------|----------------------|----------------------|---------------|
-| [LED.BAS](#led)             | 1981 | CBM PET, APPLE II    | COMPLETE             | < 300         |
-| [WRDPRO.BAS](#wrdpro)       | 1977 | GE 635 _(Dartmouth)_ | COMPLETE             | ~ 350         |
-| [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20               | NOT STARTED          | NOT STARTED   |
-| [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT          | NOT STARTED          | NOT STARTED   |
+| Filename                    | Year | Platform             | Transcription status | Lines of code | Code size |
+|-----------------------------|------|----------------------|----------------------|---------------|-----------|
+| [LED.BAS](#led)             | 1981 | CBM PET, APPLE II    | COMPLETE             | < 300         | ~ 7 KB    |
+| [WRDPRO.BAS](#wrdpro)       | 1977 | GE 635 _(Dartmouth)_ | COMPLETE             | ~ 350         | ~ 17 KB   |
+| [EDITYPE.BAS](#vic-editype) | 1983 | VIC-20               | COMPLETE             | ~ 150         | ~ 5 KB    |
+| [SCRIPTOR.BAS](#scriptor)   | 1983 | ATARI 8-BIT          | STARTED              | NOT FINISHED  |           |
+| [EDIT.BAS](#edit)           | 1977 | ALTAIR 8K            | COMPLETE             | ~ 100         | ~ 5 KB    |
 
 ### L.E.D.
 
@@ -69,9 +71,9 @@ _Research not started_.
 > 9, February 1981
 > <https://archive.org/details/1981-02-compute-magazine>
 
-See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
+See `L.E.D.` [README](../basiclang/text-editors/transcribed/led/README.md).
 
-- [Transcription complete](../basiclang/text-editors/led/led.bas).
+- [Transcription complete](../basiclang/text-editors/transcribed/led/led.bas).
 - CBM PET/Apple II BASIC.
 - < 300 lines of code.
 
@@ -80,9 +82,9 @@ See `L.E.D.` [README](../basiclang/text-editors/led/README.md).
 > Brown, R.W. (1977) Basic software library. 7, professional programs
 > Vol 7. Scientific Research Inst.
 
-See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
+See `WRDPRO` [README](../basiclang/text-editors/transcribed/wrdpro/README.md).
 
-- [Transcription complete](../basiclang/text-editors/wrdpro/wrdpro.bas).
+- [Transcription complete](../basiclang/text-editors/transcribed/wrdpro/wrdpro.bas).
 - Word processor.
 - ~ 350 lines of code.
 
@@ -92,11 +94,12 @@ See `WRDPRO` [README](../basiclang/text-editors/wrdpro/README.md).
 > 35, April 1983
 > <https://archive.org/details/1981-02-compute-magazine>
 
-See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
+See `VIC EDITYPE` [README](../basiclang/text-editors/transcribed/editype/README.md).
 
-- **Transcription not started**.
+- [Transcription complete](../basiclang/text-editors/transcribed/editype/editype.bas)
 - Commodore BASIC V2.
 - Arcane code, so unlikely to be included in software distribution.
+- ~ 150 lines of code.
 
 ### Scriptor
 
@@ -104,9 +107,9 @@ See `VIC EDITYPE` [DIRECTORY](../basiclang/text-editors/editype/).
 > 35, April 1983
 > <https://archive.org/details/1981-02-compute-magazine>
 
-See `Scriptor` [DIRECTORY](../basiclang/text-editors/scriptor/).
+See `Scriptor` [DIRECTORY](../basiclang/text-editors/transcribed/scriptor/).
 
-- **Transcription not started**.
+- **Transcription started**.
 - Atari 400/800 (32K, 40K recommended).
 
 ---
