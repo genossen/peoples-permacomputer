@@ -28,13 +28,13 @@ repo tinybasic will accept.
 
 ## Table of contents.
 
-### [Gopher browser](#a-gopher-browser)
-
-### [Text editors](#text-editors)
+**
 
 ### A gopher browser.
 
 _Research not started_.
+
+**
 
 ### Text editors.
 
@@ -44,20 +44,28 @@ _Research not started_.
 - `400 REM ATARI` [`SCRIPTOR.BAS`](#scriptor) - _Transcription **started**_.
 - `500 REM ALTAIR 8K` [`EDIT.BAS`]() - _Transcription complete_.
 
+**
+
 ### Terminal programs.
 
 - `REM 500 VIC` [`DUMBTERM.BAS`](#dumbterm)
 - `REM 600 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm-modification)
 
+**
+
 ### Filers.
 
 - `700 REM TELEPRINTER` [`UTILITY.BAS`](#utility)
+
+**
 
 ---
 
 ## GOPHER BROWSER.
 
 _Research not started_.
+
+---
 
 ## TEXT EDITORS
 
