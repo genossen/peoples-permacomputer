@@ -73,22 +73,40 @@ _permaculture_.
 
 ## What is the point of this project?
 
-There are many different dialectical approaches to making an
-introduction to the people's permacomputer. One thought experiment
-that has proved especially popular and easy to grasp sums up the
-mindset behind which we are functioning:
+The original purpose of this project was to design and then construct
+computers that would be able to survive a societal collapse.
 
-> Industrial society has collapsed. All semiconductor fabrication has
-> ceased, society-wide electrification is no longer guaranteed. There
-> is no longer any internet. Computing as it was once known in the early
-> 21st century is impossible. You need a computer for a task. What do
-> you do?
+After working on the project, it became apparent that the point of the
+project should not be to imagine a hypothetical future, but to engage
+practically with the problems of the present.
 
-This project is a response to the challenge posed by the above
-problem. The purpose of this project is to design and then construct
-computers that will be able to _survive a societal_ collapse.
+The entire computing stack of the modern era is large, confusing, and
+unsafe. People would rather excuse themselves from having to learn
+about it. Who can blame them?
 
-[READ MORE](about/project-purpose.md)
+The first aim of the project is to be exceedingly cost effective: "if
+the oppressed cannot access some technology, then it is not
+revolutionary".
+
+The second aim of the project is the promotion of digital
+literacy. Digital literacy should promote a joyful user experience
+that is non-exploitative. It should also foster a sense of
+community--"no-one is an island".
+
+To this end, the scope of the people's permacomputer project was
+deliberately limited to programs around or just over 100
+lines. Definitely not more than 200.
+
+The project therefore decided to investigate BASIC as the paradigmatic
+human-computer interface for the permacomputer.
+
+For the application towards which it was targeted, the investigation
+the project has done so far into BASIC has been fruitful, and even
+quite surprising--the 70s/80s hobby computing scene was far richer and
+more creative than the project previously assumed: not less than five
+(5) different text editors in BASIC were unearthed!
+
+[OLD](about/project-purpose.md).
 
 ## Mutual exclusion
 
