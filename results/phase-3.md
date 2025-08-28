@@ -48,14 +48,14 @@ _Research not started_.
 
 ### Terminal programs.
 
-- `REM 500 VIC` [`DUMBTERM.BAS`](#dumbterm)
-- `REM 600 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm-modification)
+- `REM 600 VIC` [`DUMBTERM.BAS`](#dumbterm)
+- `REM 700 VIC` [`VICSTATION - DUMBTERM.BAS`](#dumbterm-modification)
 
 **
 
 ### Filers.
 
-- `700 REM TELEPRINTER` [`UTILITY.BAS`](#utility)
+- `REM 800 TELEPRINTER` [`UTILITY.BAS`](#utility)
 
 **
 
