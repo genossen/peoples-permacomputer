@@ -122,7 +122,7 @@ See `EDIT.BAS` [README](../basiclang/text-editors/transcribed/edit/README.md).
 
 - [Transcription complete](../basiclang/text-editors/transcribed/edit/edit.bas).
 - Altair 8K BASIC.
-- Most likely to be the first BASIC text editor the [project supports](..basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
+- Most likely to be the first BASIC text editor the [project supports](../basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
 - ~ 100 lines of code.
 
 ---
