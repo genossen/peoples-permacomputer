@@ -106,7 +106,30 @@ The below reads every number digit as a character only.
 700 END 
 ```
 
-## hardware
+## Actual new results
+
+Quite a bit to cover here too.
+
+@ ~AUD$25 the Chinese LILYGO TTGO comes completely constructed, fully
+supporting Stefan's BASIC, unbeatable in terms of accessiblity.
+
+### Hardware
+
+#### Complete implementation, including support for Stefan's BASIC
+
+**LILYGO® TTGO VGA VGA32**
+
+https://www.aliexpress.com/item/33041602035.html
+
+- Best of the lot.
+
+**BASIC on the Raspberry Pi Pico & Pico 2 with VGA/HDMI and PS2/USB support**
+
+https://geoffg.net/picomitevga.html
+
+- Prohibitively expensive in Australia.
+
+#### Serial output only. No Video Display Processor.
 
 Propeller ANSI / VT-100 Terminal
 
@@ -116,25 +139,15 @@ VGA Serial Terminal for RC2014 OSH Park
 
 https://oshpark.com/shared_projects/Utghpucg
 
-BASIC on the Raspberry Pi Pico & Pico 2 with VGA/HDMI and PS2/USB support
-
-https://geoffg.net/picomitevga.html
-
 Legacy Pixels ASCII VT 100 Compatible Terminal Emulator RS232 Serial
 
 https://www.ebay.com.au/itm/225010233671
-
-LILYGO® TTGO VGA VGA32 Module V1.4 PSRAM ESP32 PS/2 Mouse And Keyboard Controller Graphics Library Game Engine ANSI/VT Terminal
-
-https://www.aliexpress.com/item/33041602035.html
 
 minimalist only Longan Nano RISC-V GD32VF103CBT6 MCU Development Board LITE 0.96 inch TFT HD IPS display 80*160
 
 https://www.aliexpress.com/item/4000368549335.html
 
-
 piccoloBASIC
-
 
 https://github.com/garyexplains/piccoloBASIC
 
@@ -142,14 +155,15 @@ Gary Sims' PiccoloBASIC Is a Minimalist Programming Language for the Raspberry P
 
 https://www.hackster.io/news/gary-sims-piccolobasic-is-a-minimalist-programming-language-for-the-raspberry-pi-pico-rp2040-3a53ec2fc684
 
-
 I wrote a BASIC interpreter! What should I do with it?
 
 https://www.youtube.com/watch?v=4MiT-29I_jI
 
-## software
+### Software
 
-### Tiny BASIC
+#### Tiny BASIC
+
+New discoveries about Tiny BASIC.
 
 http://www.ittybittycomputers.com/IttyBitty/TinyBasic/TBEK.txt
 
@@ -157,9 +171,9 @@ https://troypress.com/the-tiny-basic-interpretive-language-il-and-onions/
 
 https://github.com/bgolab/JustPicoBasic
 
+#### MINT
 
 
-### MINT
 
 https://retrocomputingforum.com/t/mint-a-minimal-interpreter-for-resource-limited-cpus/3037
 
@@ -169,12 +183,10 @@ https://github.com/trozodejamon/CMINT/
 
 https://github.com/orgMINT/MINT
 
-### APRICOT
+#### APRICOT
 
 https://projects.drogon.net/apricot/
 
-
-
-of note
+### Of note
 
 https://www.altairmini.com/product/vga-serial-terminal-emulator/
