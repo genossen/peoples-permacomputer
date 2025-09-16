@@ -52,7 +52,6 @@ The following outputs to text file two columns, the second being squares of the 
 150 PRINT &16, I*I
 160 NEXT I
 170 CLOSE 1
-    
 ```
 
 The following prints the numbers from file as the integer data type.
@@ -68,14 +67,11 @@ The following prints the numbers from file as the integer data type.
 270 CLOSE 0
 ```
 	
-	
 The following reads the file as strings.
 	
 Note the idiosyncratic file error handling compared to the historical BASICs.
 	
 Most similar to Microsoft BASIC.
-	
-	
 	
 ```
 300 PRINT "Read data as strings, use EOF status"
@@ -89,17 +85,14 @@ Most similar to Microsoft BASIC.
 380 NEXT
 390 CLOSE 0
 400 PRINT I, "lines read"
-410 PRINT "Status =", @S
-    
-```
- 
-The above read the file as lines of strings.
- 
-The below reads every number digit as a character only.
- 
- 
+410 PRINT "Status =", @S 
 ```
 
+The above read the file as lines of strings.
+
+The below reads every number digit as a character only.
+
+```
 500 PRINT "Read Character by Character use EOF status"
 510 @S=0
 520 OPEN "daten.txt"
