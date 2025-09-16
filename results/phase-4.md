@@ -17,7 +17,7 @@ https://vidakovich.itch.io/wrdprobas
 
 https://vidakovich.itch.io/editbas
 
-Please see results/phase-3.md for all transcription links.
+Please see [](phase-3.md) for all transcription links.
 
 ### _ENDOXA_: HISTORICAL TEXT EDITORS
 
