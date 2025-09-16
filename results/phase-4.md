@@ -66,11 +66,11 @@ The following prints the numbers from file as the integer data type.
 260 NEXT
 270 CLOSE 0
 ```
-	
+
 The following reads the file as strings.
 Note the idiosyncratic file error handling compared to the historical BASICs.	
 Most similar to Microsoft BASIC.
-	
+
 ```
 300 PRINT "Read data as strings, use EOF status"
 310 @S=0
