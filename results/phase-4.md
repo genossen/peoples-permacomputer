@@ -117,47 +117,26 @@ supporting Stefan's BASIC, unbeatable in terms of accessiblity.
 
 #### Complete implementation, including support for Stefan's BASIC
 
-**LILYGO® TTGO VGA VGA32**
-
-https://www.aliexpress.com/item/33041602035.html
-
-- Best of the lot.
-
-**BASIC on the Raspberry Pi Pico & Pico 2 with VGA/HDMI and PS2/USB support**
-
-https://geoffg.net/picomitevga.html
-
-- Prohibitively expensive in Australia.
+|                                                                               |                                                  |
+|-------------------------------------------------------------------------------|--------------------------------------------------|
+| **LILYGO® TTGO VGA VGA32**                                                    | https://www.aliexpress.com/item/33041602035.html |
+| **BASIC on the Raspberry Pi Pico & Pico 2 with VGA/HDMI and PS2/USB support** | https://geoffg.net/picomitevga.html              |
+|                                                                               |                                                  |
 
 #### Serial output only. No Video Display Processor.
 
-Propeller ANSI / VT-100 Terminal
+|                                                                                                                 |                                                                                                                                        |
+|-----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Propeller ANSI / VT-100 Terminal                                                                                | https://github.com/maccasoft/propeller-vt100-terminal                                                                                  |
+| VGA Serial Terminal for RC2014 OSH Park                                                                         | https://oshpark.com/shared_projects/Utghpucg                                                                                           |
+| Legacy Pixels ASCII VT 100 Compatible Terminal Emulator RS232 Serial                                            | https://www.ebay.com.au/itm/225010233671                                                                                               |
+| minimalist only Longan Nano RISC-V GD32VF103CBT6 MCU Development Board LITE 0.96 inch TFT HD IPS display 80*160 | https://www.aliexpress.com/item/4000368549335.html                                                                                     |
+| piccoloBASIC                                                                                                    | https://github.com/garyexplains/piccoloBASIC                                                                                           |
+|                                                                                                                 | https://www.hackster.io/news/gary-sims-piccolobasic-is-a-minimalist-programming-language-for-the-raspberry-pi-pico-rp2040-3a53ec2fc684 |
+|                                                                                                                 | https://www.youtube.com/watch?v=4MiT-29I_jI                                                                                            |
+|                                                                                                                 |                                                                                                                                        |
+|                                                                                                                 |                                                                                                                                        |
 
-https://github.com/maccasoft/propeller-vt100-terminal
-
-VGA Serial Terminal for RC2014 OSH Park
-
-https://oshpark.com/shared_projects/Utghpucg
-
-Legacy Pixels ASCII VT 100 Compatible Terminal Emulator RS232 Serial
-
-https://www.ebay.com.au/itm/225010233671
-
-minimalist only Longan Nano RISC-V GD32VF103CBT6 MCU Development Board LITE 0.96 inch TFT HD IPS display 80*160
-
-https://www.aliexpress.com/item/4000368549335.html
-
-piccoloBASIC
-
-https://github.com/garyexplains/piccoloBASIC
-
-Gary Sims' PiccoloBASIC Is a Minimalist Programming Language for the Raspberry Pi Pico, RP2040
-
-https://www.hackster.io/news/gary-sims-piccolobasic-is-a-minimalist-programming-language-for-the-raspberry-pi-pico-rp2040-3a53ec2fc684
-
-I wrote a BASIC interpreter! What should I do with it?
-
-https://www.youtube.com/watch?v=4MiT-29I_jI
 
 ### Software
 
@@ -173,7 +152,19 @@ https://github.com/bgolab/JustPicoBasic
 
 #### MINT
 
+From the author's forum post:
 
+> Minimalist languages have been around since the start of the
+> electronic computing era. I was delighted to discover that way back
+> around 1969, a lightweight character based interpreter called MUSYS
+> was written for the PDP-8, by Peter Grogono, in order to simplify
+> the task of electronic music composition. He later evolved this into
+> MOUSE - a language for microcomputers around 1980. Having recently
+> bought a copy of Grogono’s book to obtain the source code, I can see
+> that MINT is very close to MOUSE in functionality, but about 20%
+> smaller in terms of source code.
+>
+> MINT is also quite similar in nature to desk calculator (dc).
 
 https://retrocomputingforum.com/t/mint-a-minimal-interpreter-for-resource-limited-cpus/3037
 
@@ -184,6 +175,8 @@ https://github.com/trozodejamon/CMINT/
 https://github.com/orgMINT/MINT
 
 #### APRICOT
+
+Another minimalistic language.
 
 https://projects.drogon.net/apricot/
 
