@@ -1,4 +1,4 @@
-# Project phase three - ACTIVE
+# Project phase three - CLOSED
 
 > The hardware platform of the permacomputer is largely settled.
 > 
