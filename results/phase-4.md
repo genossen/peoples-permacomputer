@@ -68,9 +68,7 @@ The following prints the numbers from file as the integer data type.
 ```
 	
 The following reads the file as strings.
-	
-Note the idiosyncratic file error handling compared to the historical BASICs.
-	
+Note the idiosyncratic file error handling compared to the historical BASICs.	
 Most similar to Microsoft BASIC.
 	
 ```
