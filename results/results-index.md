@@ -25,7 +25,10 @@
 		- `EDIT.BAS` conversion [in progress](../basiclang/text-editors/transcribed/edit/edit-conversion-draft-2.bas).
 		- [See MORE](../basiclang/stefans-basic/conversions.md).
 		
-- [Fourth](
+- [Fourth](phase-4.md) phase.
+    - **Building towards a Proof-Of-Concept model**.
+	- Hardware [here](phase-4.md#hardware).
+	- Software [here](phase-4,md#software).
 
 ## Project logs
 

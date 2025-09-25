@@ -35,9 +35,9 @@ last a _really_ long time, and still stay operational.
 
 ### Are you serious?
 
-I largely regard this project to be a piece of art. If someone finds
-some practical use for what we are building, however, that would also
-give us joy.
+This project should largely be regarded as a piece of art. If someone
+finds some practical use for what we are building, however, that would
+also give us joy.
 
 ### Is this a kit project?
 
