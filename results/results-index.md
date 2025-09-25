@@ -28,7 +28,7 @@
 - [Fourth](phase-4.md) phase.
     - **Building towards a Proof-Of-Concept model**.
 	- Hardware [here](phase-4.md#hardware).
-	- Software [here](phase-4,md#software).
+	- Software [here](phase-4.md#software).
 
 ## Project logs
 
