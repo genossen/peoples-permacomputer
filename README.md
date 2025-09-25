@@ -24,17 +24,27 @@ resourcing the specification, and then construction of a
  
 - [project social media profile](https://retro.social/@permacomputer) 
  
- Yes you can join the committee.
+_Yes you can join the committee_.
 
 ## What is a permacomputer?
 
-A permacomputer is a computer which attempts to embody the virtues of
-permacomputing.
+### TL/DR
 
-Foundationally, permacomputing _itself_ is set of community practices
-and traditions which shares a set of social and ecological values
-inspired by the land management and settlement design of
-_permaculture_.
+The ultimate goal of the project is to construct computers which will
+last a _really_ long time, and still stay operational.
+
+### Are you serious?
+
+I largely regard this project to be a piece of art. If someone finds
+some practical use for what we are building, however, that would also
+give us joy.
+
+### Is this a kit project?
+
+It is a project pipe-dream to end up manufacturing permacomputer units
+at a kind of cottage-industry level, perhaps something for a worker's
+co-operative to do. These units will be really, really cheap--if it's
+not cheap, it's not accessible to the poor.
 
 ## What is the point of this project?
 
