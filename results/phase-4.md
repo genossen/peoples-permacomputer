@@ -134,9 +134,6 @@ supporting Stefan's BASIC, unbeatable in terms of accessiblity.
 | piccoloBASIC                                                                                                    | https://github.com/garyexplains/piccoloBASIC                                                                                           |
 |                                                                                                                 | https://www.hackster.io/news/gary-sims-piccolobasic-is-a-minimalist-programming-language-for-the-raspberry-pi-pico-rp2040-3a53ec2fc684 |
 |                                                                                                                 | https://www.youtube.com/watch?v=4MiT-29I_jI                                                                                            |
-|                                                                                                                 |                                                                                                                                        |
-|                                                                                                                 |                                                                                                                                        |
-
 
 ### Software
 
