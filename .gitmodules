@@ -10,3 +10,6 @@
 [submodule "lisp/ebasic"]
 	path = lisp/ebasic
 	url = https://github.com/csebold/ebasic.git
+[submodule "video-out/MCU/RPTerm/PicoTerminal-1.1.3/kilipili"]
+	path = video-out/MCU/RPTerm/PicoTerminal-1.1.3/kilipili
+	url = https://github.com/Megatokio/kilipili
