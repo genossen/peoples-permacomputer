@@ -89,7 +89,7 @@ REM - J, cell that DOT is in.
 435 GOTO 105
 440 REM-----------------------------------------------------------N COMMAND
 445 I2=LN
-450 IF M1(I2,2)=-1 THEN GOTO 465 ELSE PRINT &2,L1$()(I2):I2=M1(I2,2)
+450 IF M1(I2,2)=-1 THEN GOTO 465 ELSE PRINT L1$()(I2):I2=M1(I2,2)
 455 GOTO 450
 460 REM-----------------------------------------------------------R COMMAND
 465 @S=0:J=1:A2=0:LN=1:I=1:FE=0:GOSUB 470:GOTO 105
@@ -105,7 +105,7 @@ REM - J, cell that DOT is in.
 515 PRINT LEFT$(L1$()(J),H):GOTO 105
 520 REM-----------------------------------------------------------X COMMAND
 525 I2=LN
-530 IF M1(I2,2)=-1 THEN GOTO 535 ELSE PRINT @2,L1$()(I2):I2=M1(I2,2):GOTO 530
+530 IF M1(I2,2)=-1 THEN GOTO 535 ELSE PRINT &2,L1$()(I2):I2=M1(I2,2):GOTO 530
 535 IF FE=0 THEN I=1:A2=0:GOSUB 470 GOTO 525
 540 CLOSE:ON ERROR GOTO 555:INPUT "BACKUP FILE NAME?";N3$:KILL N3$
 545 NAME N1$ AS N3$
