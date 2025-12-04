@@ -7,8 +7,8 @@ REM - IN, first inactive cell in L1$.
 REM - H, DOT, for position within cell.
 REM - J, cell that DOT is in.
 
-55 SET 22, "Microsoft"
-60 DIM L1$(50,100):DIM L2$(13): DIM M1(100,1):FOR I=0 TO 13:READ L2$(I):NEXT
+55 SET 22, "Apple1"
+60 DIM L1$(80,100): DIM M1(100,2)
 65 DATA "ADVANCE","BEGINNING","CHANGE","DELETE","END","GET","INSERT","JUMP","KILL","LIST","NEXT","READ","VERIFY","EXIT"
 70 PRINT "EDIT -- VERSION 1.0":PRINT
 75 INPUT "INPUT FILE NAME?"; N1$
@@ -85,7 +85,7 @@ REM - J, cell that DOT is in.
 415 GOTO 105
 420 REM-----------------------------------------------------------L COMMAND
 425 I2=J:FOR J=1 TO T
-430 PRINT L1$(I2):IF M1(I2,1)=-1 THEN GOTO 105 ELSE I2=M1(I2,1):NEXT
+430 PRINT L1$()(I2):IF M1(I2,1)=-1 THEN GOTO 105 ELSE I2=M1(I2,1):NEXT
 435 GOTO 105
 440 REM-----------------------------------------------------------N COMMAND
 445 I2=LN
@@ -96,11 +96,11 @@ REM - J, cell that DOT is in.
 470 IF @S=-1 THEN PRINT "EOF1":I=I-1:FE=1:GOTO 495
 475 INPUT &16,L$:IF L$="" THEN GOTO 470
 480 A2=A2+LEN(L$)
-485 L1$(I)=L$:M1(I,0)=I-1:IF I=1 THEN 490 ELSE M1(I-1,1)=I
+485 L1$()(I)=L$:M1(I,1)=I-1:IF I=1 THEN 490 ELSE M1(I-1,2)=I
 490 IF I=50 OR A2>2000 THEN GOTO 495 ELSE I=I+1:GOTO 470
-495 M1(I,1)=I+1:I=I+1:L1$(I)="END OF BUFFER":M1(I,0)=I-1:M1(I,1)=-1:H=1:IN=I+1
-500 FOR I2=IN TO 100:M1(I2,1)=I2+1:M1(I2,0)=I2-1:NEXT
-505 M1(IN,0)=0:M1(I2-1,1)=-1:RETURN
+495 M1(I,2)=I+1:I=I+1:L1$()(I)="END OF BUFFER":M1(I,1)=I-1:M1(I,2)=-1:H=1:IN=I+1
+500 FOR I2=IN TO 100:M1(I2,2)=I2+1:M1(I2,1)=I2-1:NEXT
+505 M1(IN,1)=0:M1(I2-1,2)=-1:RETURN
 510 REM-----------------------------------------------------------V COMMAND
 515 PRINT LEFT$(L1$(J),H):GOTO 105
 520 REM-----------------------------------------------------------X COMMAND
