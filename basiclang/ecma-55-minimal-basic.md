@@ -6,7 +6,7 @@ date: January 1978
 
 \newpage
 
-# Brief History
+# BRIEF HISTORY
 
 The first version of the language BASIC, acronym for Beginner's
 All-purpose Symbolic Instruction Code, was produced in 1964 at the
@@ -31,7 +31,7 @@ as Standrd ECMA-55.
 
 \newpage
 
-# Scope
+# 1. SCOPE
 
 This Standard ECMA-55 is designed to promote the interchangeability of
 BASIC programs among a variety of automatic data processing
@@ -66,7 +66,7 @@ method of syntax specification is explained in Appendix 2.
 
 \newpage
 
-# References
+# 2. REFERENCES
 
 ECMA-6 : 7-Bit Input/Output Coded Character Set, 4th Edition
 
@@ -74,23 +74,23 @@ ECMA-53 : Representation of Source Programs
 
 \newpage
 
-# Definitions
+# 3. DEFINITIONS
 
 For the purposes of this Standard, the following terms have the
 meanings indicated.
 
-## BASIC
+## 3.1 BASIC
 
 A term applied as a name to members of a special class of languages
 which possess similar syntaxes and semantic meanings; acronym for
 Beginner's All-purpose Symbolic Instruction Code.
 
-## Batch-mode
+## 3.2 Batch-mode
 
 The processing of programs in an environment where no provision is
 made for user interaction.
 
-## End-of-line
+## 3.3 End-of-line
 
 The characters or indicator which identifies the termination of a
 line. Lines of three kinds may be identified in Minimal BASIC: program
@@ -102,12 +102,12 @@ the terminal being used in interactive or batch mode.
 Typical examples of end-of-line are carriage-return, carriage-return
 line-feed, and end of record (such as end of card).
 
-## Error
+## 3.4 Error
 
 A flaw in the syntax of a program which causes the program to be
 incorrect.
 
-## Exception
+## 3.5 Exception
 
 A circumstance arising in the course of executing a program which
 results from faulty data or computations or from exceeding some
@@ -118,17 +118,17 @@ the hardware or operating environment make it impossible to follow the
 given procedure, then the exception shall be handled by terminating
 the program.
 
-## Identifier
+## 3.6 Identifier
 
 A character string used to name a variable or a function.
 
-## Interactive mode
+## 3.7 Interactive mode
 
 The processing of programs in an environment which permits the user to
 respond directly to the actions of individual programs and to control
 the commencement and termination of these programs.
 
-## Keyword
+## 3.8 Keyword
 
 A character string, usually with the spelling of a commonly used or
 mnemonic word, which provides a distinctive identification of a
@@ -138,31 +138,31 @@ The keywords in Minimal BASIC are: BASE, DATA, DEF, DIM, END, FOR, GO,
 GOSUB, GOTO, IF, INPUT, LET, NEXT, ON, OPTION, PRINT, RANDOMIZE, READ,
 REM, RESTORE, RETURN, STEP, STOP, SUB, THEN, and TO.
 
-## Line
+## 3.9 Line
 
 A single transmission of characters which terminates with an
 end-of-line.
 
-## Nesting
+## 3.10 Nesting
 
 A set of statements is nested within another set of statements when:
 
 - the nested set is physically contiguous, and
 - the nesting set (divided by the nested set) is non-null.
 
-## Print zone
+## 3.11 Print zone
 
 A contiguous set of character positions in a printed output line which
 may contain an evaluated print statement element.
 
-## Rounding
+## 3.12 Rounding
 
 The process by which the presentations of a value with lower precision
 is generated froma  representation of higher precision taking into
 account the value of that portion of the original number which is to
 be omitted.
 
-## Significant digits
+## 3.13 Significant digits
 
 The contiguous sequence of digits ...
 
@@ -172,7 +172,7 @@ The contiguous sequence of digits ...
 > (that is including leading or trailing zeroes) in the
 > representation.
 
-## Truncation 
+## 3.14 Truncation 
 
 The process by which the representation of a value with lower
 precision is generated from a representation of higher precision by
@@ -181,30 +181,30 @@ representation.
 
 \newpage
 
-# Characters and Strings
+# 4. CHARACTERS AND STRINGS
 
-## General Description
+## 4.1 General Description
 
 The character set for BASIC is contained in the ECMA 7-bit coded
 character set. Strings are sequences of characters and are used in
 BASIC programs as comments (see 19), as string constants (see 6), or
 as data (see 15).
 
-## Syntax
+## 4.2 Syntax
 
-### letter
+### 1. letter
 
 A/B/C/D/E/F/G/H/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z 
 
-### digit
+### 2. digit
 
 0/1/2/3/4/5/6/7/8/9 
 
-### string-character
+### 3. string-character
 
 quotation-mark / quoted-string-character                                                                                                                            
 
-### quoted-string-character 
+### 4. quoted-string-character 
 
 exclamation-mark / number-sign / dollar-sign / percent-sign /
 ampersand / apostrophe / left-parenthesis / right-parenthesis /
@@ -212,28 +212,28 @@ asterisk / comma / solidus / colon / semi-colon / less-than-sign /
 equals-sign / greater-than-sgn / question-mark / circumflex-accent /
 underline / unquoted-string-character
 
-### unquoted-string-character
+### 5. unquoted-string-character
 
 space / plain-string-character
 
-### plain-string-character
+### 6. plain-string-character
 
 plus-sign / minus-sign / full-stop / digit / letter
 
-### remark-string
+### 7. remark-string
 
 string-character*
 
-### quoted-string
+### 8. quoted-string
 
 quotation-mark quoted-string-character* quotation-mark
 
-### unquoted-string
+### 9. unquoted-string
 
 plain-string character / plain-string-character
 unquoted-string-character* plain-string-character
 
-## Examples
+## 4.3 Examples
 
 ```
 ANY CHARACTERS AT ALL (?!*!!) CAN BE USED IN A "REMARK".
@@ -241,8 +241,9 @@ ANY CHARACTERS AT ALL (?!*!!) CAN BE USED IN A "REMARK".
 "SPACES AND COMMAS CAN OCCUR IN QUOTED STRINGS."
 
 COMMAS CANNOT OCCUR IN UNQUOTED STRINGS.
+```
 
-## Semantics
+## 4.4 Semantics
 
 The letters shall be the set of upper-case Roman letters contained in
 the ECMA 7-bit coded character set in positions 4/1 to 5/10.
@@ -252,23 +253,73 @@ The digits shall be the set of arabic digits contained in the ECMA
 
 ...
 
-THe names of characters are specified in Table 1.
+The names of characters are specified in Table 1.
 
 The coding of characters is specified in Table 2; however this coding
 applies only when programs and/or input/output data are exchanged by
 means of coded media.
 
-## Exceptions
+## 4.5 Exceptions
 
 None.
 
-## Remarks
+## 4.6 Remarks
 
 ...
 
 \newpage
 
-# Programs
+# 5. PROGRAMS
 
-## General Description
+## 5.1 General Description
+
+BASIC is a line-oriented language. A BASIC program is a sequence of
+lines, the last of which shall be an end-line and each of which
+contains a keyword. Each line shall contain a unique line-number which
+serves as a label for the statement contained in that line.
+
+## 5.2 Syntax
+
+### 1. program
+
+block* end-line
+
+### 2. block
+
+(line/for-block)*
+
+### 3. line
+
+line-number statement end-of-line
+
+### 4. line-number
+
+digit digit? digit? digit?
+
+### 5. end-of-line
+
+[implementation-defined]
+
+### 6. end-line
+
+line-number end-statement end-of-line
+
+### 7. end-statement
+
+END
+
+### 8. statement
+
+data-statement / def-statement / dimension-statement / gosub-statement
+/ goto-statement / if-then-statement / input-statement / let-statement
+/ on-goto-statement / option-statement / print-statement /
+randomize-statement / read-statement / remark-statement /
+restore-statement / return-statement / stop-statement
+
+## 5.3 Examples
+
+```
+999 END
+```
+
 
