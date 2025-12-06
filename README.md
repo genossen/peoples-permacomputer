@@ -23,6 +23,8 @@ resourcing the specification, and then construction of a
 - [vidak](https://social.solarpunk.au/users/vidak)
  
 - [project social media profile](https://retro.social/@permacomputer) 
+
+- [BASIC forum](https://basiclang.solarpunk.au/)
  
 _Yes you can join the committee_.
 

@@ -322,4 +322,14 @@ restore-statement / return-statement / stop-statement
 999 END
 ```
 
+A BASIC program shall be composed of a sequence of lines ordered by
+line-numbers, the last of which contains an end-statement. Program
+lines shall be executed in sequential order, starting with the first
+line, until
 
+- some other action is dictated by a control statement, or
+- an exception condition occurs, which results in a termination of the
+  program, or
+- a stop-statement or end-statement is executed.
+
+Special conventions shall be observed regarding spaces. 
