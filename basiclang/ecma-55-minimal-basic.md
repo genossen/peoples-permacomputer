@@ -202,7 +202,7 @@ A/B/C/D/E/F/G/H/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z
 
 ### 3. string-character
 
-quotation-mark / quoted-string-character                                                                                                                            
+quotation-mark / quoted-string-character
 
 ### 4. quoted-string-character 
 
@@ -322,6 +322,8 @@ restore-statement / return-statement / stop-statement
 999 END
 ```
 
+## 5.4 Semantics
+
 A BASIC program shall be composed of a sequence of lines ordered by
 line-numbers, the last of which contains an end-statement. Program
 lines shall be executed in sequential order, starting with the first
@@ -332,4 +334,173 @@ line, until
   program, or
 - a stop-statement or end-statement is executed.
 
-Special conventions shall be observed regarding spaces. 
+Special conventions shall be observed regarding spaces. With the
+following exceptions, spaces occur anywhere in a BASIC program without
+affecting the execution of that program and may be used to improve the
+appearance and readability of the program.
+
+Spaces shall not appear:
+
+- at the beginning of a line
+- within keywords
+- within numeric constants
+- within line numbers
+- within function or variable names
+- within two-character relation symbols
+
+All keywords in a program shall be preceded by at least one space and,
+if not at the end of a line, shall be followed by at least one space.
+
+Each line shall begin with a line-number. The values of the integers
+represented by the line-numbers shall be positive nonzero; leading
+zeroes shall have no effect. Statements shall occur in ascending
+line-number order. 
+
+The manner in which the end of a statement line is detected is
+determined by the implementation; e.g. the end-of-line may be a
+carriage-return character, a carriage-return character followed by a
+line-feed character, or the end of a physical record.
+
+Lines in a standard-conforming program may contain up to 72
+characters; the end-of-line indicator is not included within this 72
+character limit.
+
+The end-statement serves both to mark the physical end of the main
+body of a program and to terminate the execution of the program when
+encountered.
+
+## 5.4 Exceptions
+
+None.
+
+## 5.6 Remarks
+
+Local editing facilities may allow for the entry of statement lines in
+any order and also allow for duplicate line-numbers and lines
+containing only a line-number. Such editing facilities usually sort
+the program into the proper order and in the case of duplicate line
+numbers, the last line entered with that line-number is retained. In
+many implementations, a line containing only a line-number (without
+trailing spaces) is usually deleted from the program.
+
+\newpage
+
+# 6. CONSTANTS
+
+## 6.1 General Description
+
+Constants can denote both scalar numeric values and string values.
+
+A numeric-constant is a decimal representation in positional notation
+of a number. There are four general syntactic forms of (optionally
+signed) numeric constants:
+
+- implicit point representation
+
+```
+sd...d
+```
+
+- explicit point unscaled representation
+
+```
+sd..drd..d
+```
+
+- explicit point scaled representation
+
+```
+sd..drd..dEsd..d
+```
+
+- implicit point scaled representation
+
+```
+sd..dEsd..d
+```
+
+where:
+
+`d` is a decimal digit,\
+`r` is a full stop\
+`s` is an optional sign, and\
+`E` is the explicit character E.
+
+A string-constant is a character string enclosed in quotation marks
+(see 4).
+
+## 6.2 Syntax
+
+### 1. numeric-constant
+
+sign? numeric-rep
+
+### 2. sign
+
+plus-sign / minus-sign
+
+### 3. numeric-rep
+
+significand exrad?
+
+### 4. significand
+
+integer full-stop? / integer? fraction
+
+### 5. integer
+
+digit digit*
+
+### 6. fraction
+
+full-stop digit digit*
+
+### 7. exrad
+
+E sign? integer
+
+### 8. string-constant
+
+quoted-string
+
+## 6.3 Examples
+
+```
+1          500          -21.           .255          1E10
+5E-1       .4E+1
+"XYZ"              "X - 3B2"               "1E10"
+```
+
+## 6.4 Semantics
+
+The value of a numeric-constant is a the number represented by that
+constant. "E" stands for "times ten to the power"; if no sign follows
+the symbol "E", then a plus sign is understood. Spaces shall not occur
+in numeric-constants.
+
+A program may contain numeric representations which have an arbitrary
+number of digits, though implementations may round the values of such
+representations to an implementation-defined precision of not less
+than six significant decimal digits. Numeric constants can also have
+an arbitrary number of digits in the exrad, though nonzero constants
+whose magnitude is outside an implementation-defined range will be
+treated as exceptions. The implementation defined range shall be at
+least 1E-38 to 1E+38. Constants whose magnitudes are less than machine
+infinitesimal shall be replaced by zero, while constants whose
+magnitudes are larger than machine infinity shall be diagnosed as
+causing an overflow.
+
+A string-contant has as its value the string of all characters between
+the quotation marks; spaces shall not be ignored. The length of a
+string-constant, i.e. the number of characters contained between the
+quotation-marks, is limited only by the length of a line.
+
+## 6.5 Exceptions 
+
+The evaluation of a numeric constant causes an overflow (non-fatal,
+the recommended recovery procedure is to supply machine infinity with
+the appropriate sign and continue).
+
+## 6.6 Remarks
+
+
