@@ -25,6 +25,8 @@ resourcing the specification, and then construction of a
 - [project social media profile](https://retro.social/@permacomputer) 
 
 - [BASIC forum](https://basiclang.solarpunk.au/)
+
+- [Solarpunk BASIC Archive](https://archive.basiclang.solarpunk.au)
  
 _Yes you can join the committee_.
 
