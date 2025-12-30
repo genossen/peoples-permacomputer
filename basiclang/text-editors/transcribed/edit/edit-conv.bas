@@ -8,7 +8,7 @@ REM - H, DOT, for position within cell.
 REM - J, cell that DOT is in.
 
 55 SET 22, "Apple1"
-60 DIM L1$(80,100): DIM M1(100,2):FOR I=1 TO 14:READ L2$(I):NEXT
+60 DIM L1$(80,100): DIM L$(80,1):DIM M1(100,2):FOR I=1 TO 14:READ L2$(I):NEXT
 65 DATA "ADVANCE","BEGINNING","CHANGE","DELETE","END","GET","INSERT","JUMP","KILL","LIST","NEXT","READ","VERIFY","EXIT"
 70 PRINT "EDIT -- VERSION 1.0":PRINT
 75 INPUT "INPUT FILE NAME?"; N1$
@@ -35,7 +35,7 @@ REM - J, cell that DOT is in.
 165 REM             .A  .B  .C  .D  .E  <F> .G  <H> .I  .J  .K  .L  <M>
 170 ON SS-64 GOTO 195,235,245,265,280,180,290,180,320,360,385,425,180,445,180,180,180,465,180,180,180,515,180,525,180,180
 175 REM             .N  <O> <P> <Q> .R  <S> <T> <U> .V  <W> .X  <Y> <Z>
-180 FOR N=0 TO 12:PRINT L2$(N):NEXT:GOTO 105
+180 FOR N=1 TO 13:PRINT L2$(N):NEXT:GOTO 105
 185 REM
 190 REM-----------------------------------------------------------A COMMAND
 195 H=1:IF T=0 THEN GOTO 105 ELSE IF T<0 THEN J1=-1
