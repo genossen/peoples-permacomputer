@@ -20,7 +20,7 @@ resourcing the specification, and then construction of a
 
 - [50hz](https://cathode.church/@50htz)
 
-- [vidak](https://social.solarpunk.au/users/vidak)
+- [vidak](https://anticapitalist.party/@dirtycommo)
  
 - [project social media profile](https://retro.social/@permacomputer) 
 
