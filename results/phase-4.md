@@ -26,7 +26,7 @@ Please see [Phase 3 Results](phase-3.md) for all transcription links.
 | `LED.BAS`      | 1981 | CBM PET, APPLE II    | COMPLETE             | < 300         | ~ 7 KB    |
 | `WRDPRO.BAS`   | 1977 | GE 635 _(Dartmouth)_ | COMPLETE             | ~ 350         | ~ 17 KB   |
 | `EDITYPE.BAS`  | 1983 | VIC-20               | COMPLETE             | ~ 150         | ~ 5 KB    |
-| `SCRIPTOR.BAS` | 1983 | ATARI 8-BIT          | STARTED              | NOT FINISHED  |           |
+| `SCRIPTOR.BAS` | 1983 | ATARI 8-BIT          | STARTED              | ~ 350         | ~ 16 KB   |
 | `EDIT.BAS `    | 1977 | ALTAIR 8K            | COMPLETE             | ~ 100         | ~ 5 KB    |
 
 ### Stefan's BASIC
