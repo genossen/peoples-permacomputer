@@ -44,7 +44,7 @@
 350 PRINT TAB(4)"Do you want:"
 360 PRINT:PRINT TAB(6)"[S]ketch mode"
 370 PRINT TAB(6)"[D]raft mode"
-380 A$=INKEY$:IF A$="" GOTO 380
+380 GET A$:IF A$="" GOTO 380
 390 IF A$="S" OR A$="s" GOTO 420
 400 IF A$="D" OR A$="d" GOTO 710
 410 GOTO 380
