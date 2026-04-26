@@ -1,0 +1,129 @@
+10 REM ***********
+20 REM *         *
+30 REM * Sketch  *
+40 REM *         *
+50 REM ***********
+   
+55 REM *** Instructions ***
+   
+60 CLS:PRINT:PRINT
+70 PRINT TAB(12)"Instructions?"
+80 PRINT:PRINT TAB(16)"(Y/N)"
+90 GET A$:IF A$="" GOTO 90
+100 IF A$="Y" OR A$="y" THEN GOTO 110 ELSE GOTO 270
+110 CLS:PRINT:PRINT
+120 PRINT TAB(2)"You may use either Sketch or Draft"
+130 PRINT TAB(2)"modes. Sketch uses a moving line to"
+140 PRINT TAB(2)"draw, while Draft draws lines between"
+150 PRINT TAB(2)"two points you specify by hitting ";CHR$(34);"S";CHR$(34);"."
+160 PRINT:PRINT TAB(1)"= Hit any key for Sketch instructions =";
+170 GET A$:IF A$="" GOTO 170
+180 CLS:PRINT
+190 PRINT TAB(12)"==  Sketch =="
+200 PRINT TAB(13)"[Controls:]"
+210 PRINT TAB(2)"Arrow Keys -- Change direction"
+220 PRINT TAB(2)"Number keys -- Slow down cursor"
+230 PRINT TAB(2)CHR$(34);"F";CHR$(34);" -- Return to top speed"
+240 PRINT TAB(2)"Space Bar -- Toggle cursor (ON)-(OFF)"
+250 PRINT:PRINT TAB(11)"== Hit any key =="
+260 GET A$:IF A$="" GOTO 260
+    
+265 REM *** Set Delay ***
+    
+270 CLS:PRINT:PRINT
+280 PRINT TAB(6)"Enter speed desired:"
+290 PRINT
+300 PRINT TAB(6)"[1] Fast to [9] Slow"
+310 GET A$:IF A$="" GOTO 310
+320 OG=VAL(A$)*10:IF OG<1 GOTO 310
+330 DL=OG
+    
+335 REM ***  Choose Sketch or Draw Mode ***
+    
+340 CLS:PRINT:PRINT
+350 PRINT TAB(4)"Do you want:"
+360 PRINT:PRINT TAB(6)"[S]ketch mode"
+370 PRINT TAB(6)"[D]raft mode"
+380 A$=INKEY$:IF A$="" GOTO 380
+390 IF A$="S" OR A$="s" GOTO 420
+400 IF A$="D" OR A$="d" GOTO 710
+410 GOTO 380
+420 CLS
+430 REM FOR N=1 TO VAL(RIGHT$(TIME$,2))
+440 REM DM=RND(1)
+450 REM NEXT N
+460 X=239:Y=63
+470 X1=INT(RND(X)*X)+1:Y1=INT(RND(X)*Y)+1
+480 COLOR 255: PLOT X1,Y1
+    
+485 REM *** Sketch Mode ***
+    
+490 GET A$
+500 X1=X1+XD:IF X1>239 THEN X1=239
+510 IF X1<0 THEN X1=0
+520 Y1=Y1+YD:IF Y1>63 THEN Y1=63
+530 IF Y1<0 THEN Y1=0
+540 DELAY DL*10
+550 IF FLAG<>1 GOTO 570
+560 COLOR 255:PLOT X1,Y1:DELAY 100:NEXT N:COLOR 0:PLOT X1,Y1:GOTO 580
+570 COLOR 255:PLOT X1,Y1
+580 IF A$="" GOTO 490
+590 IF VAL(A$)<1 GOTO 610
+600 DL=DL*VAL(A$)
+610 IF A$="F" OR A$="f" THEN DL=OG
+620 A=ASC(A$)
+630 IF A<>32 GOTO 650
+640 IF FLAG=1 THEN FLAG=0 ELSE FLAG=1
+650 IF A<28 OR A>31 GOTO 490
+    
+655 REM *** Change direction of Cursor ***
+    
+660 ON A-27 GOTO 670, 680, 690, 700
+670 YD=0:XD=1:GOTO 490
+680 YD=0:XD=-1:GOTO 490
+690 XD=0:YD=-1:GOTO 490
+700 YD=1:XD=0:GOTO 490
+    
+705 REM *** Draft  Mode ***
+    
+710 X1=40:Y1=40
+720 CLS
+730 A$=INKEY$
+740 X1=X1+XD:IF X1>239 THEN X1=239
+750 IF X1<0 THEN X1=0
+760 Y1=Y1+YD:IF Y1>63 THEN Y1=63
+770 IF Y1<0 THEN Y1=0
+780 FOR N=1 TO DL:NEXT N
+790 PSET(X1,Y1)
+800 FOR N=1 TO 50:NEXT N
+810 PRESET(X1,Y1)
+820 IF A$="" GOTO 730
+830 IF A$="S" or A$="s" GOTO 850
+840 GOTO 990
+    
+845 REM *** Set one point ***
+    
+850 PO=PO+1
+860 PSET(X1,Y1)
+870 IF PO=1 THEN X2=X1:Y2=Y1:GOTO 730
+    
+875 REM ***  Draw Line ***
+    
+880 LINE (X2,Y2)-(X1,Y1)
+890 PO=0
+900 A$=INKEY$:IF A$="" GOTO 900
+910 IF A$="S" OR A$="s" GOTO 950
+920 A=ASC(A$)
+930 IF A<28 OR A>31 GOTO 900
+940 GOTO 980
+950 PO=1
+960 X2=X1:Y2=Y1
+970 GOTO 900
+    
+975 REM *** Change Cursor Direction ***
+
+980 ON A-27 GOTO 990, 1000, 1010, 1020
+990 YD=0:XD=1:GOTO 730
+1000 YD=0:XD=-1:GOTO 730
+1010 XD=0:YD=-1:GOTO 730
+1020 YD=1:XD=0:GOTO 730
